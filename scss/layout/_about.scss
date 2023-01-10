@@ -1,0 +1,232 @@
+@use '../abstracts' as *;
+@use '../components' as *;
+
+.about{
+    @include section(fit-content);
+    .container{
+        justify-content: flex-start;
+        @include homeRegularTitle(50px);
+        .cards{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .card{
+                width: 23%;
+                .icon{
+                    width: 64px;
+                    height: 64px;
+                    margin-bottom: 25px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    &.ic1{ background-image: url(../img/icon/bangunPortpolio.png); }
+                    &.ic2{ background-image: url(../img/icon/pesaing.png); }
+                    &.ic3{ background-image: url(../img/icon/kemampuan.png); }
+                    &.ic4{ background-image: url(../img/icon/jual.png); }
+                }
+                h2{
+                    font-size: 1.5em;
+                    margin-bottom: 10px;
+                    span{
+                        color: $secondary;
+                    }
+                }
+                p{
+                    text-align: justify;
+                }
+            }
+        }
+        .unduhApp{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .corner{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                h1.unduh{
+                    font-size: 2.5em;
+                    margin-bottom: 15px;
+                    text-align: start;
+                    span{
+                        color: $secondary;
+                    }
+                }
+                p{
+                    max-width: 500px;
+                    margin-bottom: 15px;
+                }
+                .app{
+                    display: flex;
+                    a .appIcon{
+                        width: 100px;
+                        height: 45px;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin-right: 10px;
+                        &.appStore{
+                            background-image: url(../img/icon/appStore.png);
+                            background-blend-mode: screen;
+                        }
+                        &.googlePlay{
+                            background-image: url(../img/icon/googlePlay.png);
+                            background-blend-mode: screen;
+                        }
+                    }
+                }
+            }
+            .mockupApp{
+                display: flex;
+                justify-content: flex-end;
+                img{
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
+@include media(leptop){
+    .about{
+        .container{
+            .cards{
+                .card{
+                    width: 23%;
+                }
+            }
+            .unduhApp{
+                .corner{
+                    p{
+                        width: 90%;
+                    }
+                    .app{
+                        display: flex;
+                    }
+                }
+                .mockupApp{
+                    width: 30%;
+                    img{
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media(notebook){
+    .about{
+        .container{
+            // h1{
+            //     font-size: 2.1em;
+            // }
+            .cards{
+                flex-wrap: wrap;
+                .card{
+                    width: 48%;
+                    .icon{
+                        width: 50px;
+                        height: 50px;
+                        margin-bottom: 5px;
+                    }
+                    p{
+                        font-size: .9em;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .unduhApp{
+                flex-direction: column;
+                .corner{
+                    width: 100%;
+                    h1{
+                        margin-top: 50px;
+                        font-size: 2.1em;
+                    }
+                    p{
+                        width: 80%;
+                        font-size: .9em;
+                    }
+                }
+                .mockupApp{
+                    width: 100%;
+                    justify-content: flex-end;
+                    img{
+                        width: 180px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media(tablet){
+    .about{
+        .container{
+            h1{
+                font-size: 2em;
+            }
+            .cards{
+                .card{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    p{
+                        text-align: center;
+                        font-size: .9em;
+                        width: 80%;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .unduhApp{
+                flex-direction: column;
+                .corner{
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    h1.unduh{
+                        width: 100%;
+                        margin-top: 50px;
+                        font-size: 2em;
+                        text-align: center;
+                    }
+                    p{
+                        text-align: center;
+                        width: 80%;
+                        font-size: .9em;
+                    }
+                    .app{
+                        margin-bottom: 20px;
+                    }
+                }
+                .mockupApp{
+                    width: 100%;
+                    justify-content: center;
+                    img{
+                        width: 180px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media(hp){
+    .about{
+        .container{
+            .cards{
+                .card{
+                    p{
+                        width: 90%;
+                    }
+                }
+            }
+            .unduhApp{
+                .corner{
+                    p{
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+} 

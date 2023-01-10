@@ -1,0 +1,23 @@
+@use 'color' as *;
+
+
+@mixin media($size){
+    $device: 100px;
+    @if$size == monitor{
+        $device: 1220px;
+    } @else if $size == leptop{
+        $device: 990px;
+    } @else if $size == notebook{
+        $device: 768px;
+    } @else if $size == tablet{
+        $device: 576px;
+    } @else if $size == hp{
+        $device: 390px;
+    } @else{
+        $device: $size;
+    }
+
+    @media (max-width: $device){
+        @content;
+    }
+}

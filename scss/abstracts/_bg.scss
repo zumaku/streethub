@@ -1,0 +1,8 @@
+@mixin bg($img: false, $size: cover, $position: center){
+    @if $img != false{
+        background-image: $img;
+    }
+    background-size: $size;
+    background-repeat: no-repeat;
+    background-position: $position;
+}

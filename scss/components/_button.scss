@@ -1,0 +1,78 @@
+@use '../abstracts' as *;
+@mixin normalBtn(){
+    .btn{
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        background-color: $secondary;
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: .1s linear;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.02);
+        }
+        &:active{
+            transform: scale(.98);
+        }
+    }
+}
+
+@mixin btnArrow($jenis: none){
+    .btnArrow{
+        width: fit-content;
+        padding: 8px 16px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: .1s linear;
+        @if $jenis == color{
+            background-color: $secondary;
+            border: 0;
+        } @else if $jenis == colorHover{
+            background-color: transparent;
+            border: 2px solid white;
+            &:hover{
+                border: 2px solid $secondary;
+                background-color: $secondary;
+                // border: 2px solid $primary;
+                // background-color: $primary;
+            }
+        } @else if $jenis == borderHover{
+            background-color: transparent;
+            border: 2px solid white;
+            &:hover{
+                border: 2px solid $secondary;
+            }
+        } @else{
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        p{
+            margin: 0;
+        }
+        .arrow{
+            width: 16px;
+            height: 16px;
+            @include bg(url(../img/icon/panahKanan1.png));
+            margin-left: 10px;
+        }
+        &:hover{
+            transform: scale(1.03);
+        }
+    }
+    @include media(leptop){
+        .btnArrow{
+            padding: 5px 10px;
+            .arrow{
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+}

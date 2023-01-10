@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+@mixin section($tinggi: 100vh){
+    width: 100%;
+    font-size: 16px;
+    height: fit-content;
+    .container{
+        width: 90%;
+        height: fit-content;
+        margin: auto;
+        @if $tinggi != false{
+            height: $tinggi;
+        }
+        padding: 60px 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    @include media(tablet){
+        .container{
+            width: 95%;
+            padding: 60px 0;
+        }
+    }
+}
