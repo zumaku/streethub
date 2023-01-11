@@ -376,7 +376,7 @@ div#bookmark.bookmark p {
   height: fit-content;
   margin: auto;
   height: 100vh;
-  padding: 60px 0;
+  padding: 100px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -541,7 +541,7 @@ div#bookmark.bookmark p {
   height: fit-content;
   margin: auto;
   height: fit-content;
-  padding: 60px 0;
+  padding: 100px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -790,7 +790,7 @@ div#bookmark.bookmark p {
   height: fit-content;
   margin: auto;
   height: fit-content;
-  padding: 60px 0;
+  padding: 100px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -845,12 +845,9 @@ div#bookmark.bookmark p {
 .big3 .container p {
   margin-bottom: 10px;
 }
-.big3 .container .btn {
-  margin-bottom: 60px;
-}
 .big3 .container .cards {
   width: 100%;
-  margin-top: 20px;
+  margin: 100px auto 50px;
   display: flex;
   justify-content: space-between;
 }
