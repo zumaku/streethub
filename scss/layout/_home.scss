@@ -2,7 +2,7 @@
 @use '../components' as *;
 
 .hero{
-    @include section();
+    @include section(100vh);
     animation: herobg 300s linear infinite;
     background-position: center;
     background-size: cover;
