@@ -196,6 +196,63 @@
         </div>
     </div>
     <!-- =============== LISENSI END =============== -->
+
+    <!-- =============== PRODUK START =============== -->
+    <div class="produk" id="produkSec">
+        <div class="container">
+            <!-- Sidebox untuk notebook, tablet dan mobile -->
+            <div class="sidebox" id="sb1">
+                <h2>Perhatikan dan lengkapi</h2>
+                <h1>Alat Tempurmu</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, magnam! Fugiat, reiciendis. Ipsum, dolorum aliquam itaque minima earum rerum sed amet quidem doloribus perferendis mollitia quis quisquam accusantium tempore voluptatem, corrupti non doloremque fugiat.</p>
+                <a href="#" class="btnArrow">
+                    <p>Lihat Lainnya</p>
+                    <div class="arrow"></div>
+                </a>
+            </div>
+            <div class="slider">
+                <!-- Sidebox untuk leptop dan diatasnya -->
+                <div class="sidebox" id="sb2">
+                    <h2>Perhatikan dan lengkapi</h2>
+                    <h1>Alat Tempurmu</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, magnam! Fugiat, reiciendis. Ipsum, dolorum aliquam itaque minima earum rerum sed amet quidem doloribus perferendis mollitia quis quisquam accusantium tempore voluptatem, corrupti non doloremque fugiat.</p>
+                    <a href="#" class="btnArrow">
+                        <p>Lihat Lainnya</p>
+                        <div class="arrow"></div>
+                    </a>
+                </div>
+                <div class="cards">
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/camera.png)">
+                        <div class="icon" style="background-image: url(img/icon/cameraCard.png)"></div>
+                        <h1>Camera</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/lensa.png)">
+                        <div class="icon" style="background-image: url(img/icon/lensCard.png)"></div>
+                        <h1>Lensa</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/filter.png)">
+                        <div class="icon" style="background-image: url(img/icon/filterCard.png)"></div>
+                        <h1>Filter</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/tripod.png)">
+                        <div class="icon" style="background-image: url(img/icon/monopodCard.png)"></div>
+                        <h1>Treepod</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/tas.png)">
+                        <div class="icon" style="background-image: url(img/icon/bagCard.png)"></div>
+                        <h1>Tas</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/baju.png)">
+                        <div class="icon" style="background-image: url(img/icon/kaosCard.png)"></div>
+                        <h1>Shirt</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="btnMove next"></div>
+            <div class="btnMove previous dnone"></div>
+        </div>
+    </div>
+    <!-- =============== PRODUK END =============== -->
     
     <BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR>
 
