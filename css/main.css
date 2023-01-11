@@ -845,6 +845,9 @@ div#bookmark.bookmark p {
 .big3 .container p {
   margin-bottom: 10px;
 }
+.big3 .container .btn {
+  margin-bottom: 60px;
+}
 .big3 .container .cards {
   width: 100%;
   margin-top: 20px;
