@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+@use '../components' as *;
+
+.lisensi{
+    @include section(fit-content, row);
+    .container{
+        justify-content: space-between;
+        img{
+            width: 48%;
+            max-width: 500px;
+        }
+        .sidebox{
+            width: 48%;
+            max-width: 600px;
+            @include homeSideBoxTitle();
+            @include btnArrow(color, 10px, 2);
+        }
+    }
+}
+@include media(notebook){
+    .lisensi{
+        @include section(fit-content, column-reverse);
+        .container{
+            img{
+                width: 90%;
+            }
+            .sidebox{
+                width: 90%;
+                margin-bottom: 80px;
+            }
+        }
+    }
+}
+@include media(tablet){
+    .lisensi{
+        .container{
+            .sidebox{
+                width: 90%;
+                margin-bottom: 80px;
+            }
+        }
+    }
+}

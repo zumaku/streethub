@@ -37,3 +37,39 @@
         }
     }
 }
+
+@mixin homeSideBoxTitle($miniTitle: false, $adaSpan: false){
+    h2{
+        color: $secondary;
+        font-size: 1.5em;
+    }
+    h1{
+        font-size: 3.5em;
+        width: 200px;
+        // background-color: darkgrey;
+        margin-bottom: 20px;
+        span{
+            color: $secondary;
+        }
+    }
+    p{
+        margin-bottom: 40px
+    }
+    
+    @include media(notebook){
+        h2{
+            font-size: 1.3em;
+        }
+        h1{
+            font-size: 3em;
+        }
+    }
+    @include media(notebook){
+        h2{
+            font-size: 1.2em;
+        }
+        h1{
+            font-size: 2.5em;
+        }
+    }
+}

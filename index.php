@@ -176,6 +176,26 @@
         </div>
     </div>
     <!-- =============== PORTPOLIO END =============== -->
+
+    <!-- =============== LISENSI START =============== -->
+    <?php
+        setBookmark('home/bookmark3.png', 'Lisensi', 'lisensi.png', false);
+    ?>
+    <div class="lisensi">
+        <div class="container">
+            <img src="img/home/lisensi.png" alt="Lisensi">
+            <div class="sidebox">
+                <h2>Dapatkan bayaran dari</h2>
+                <h1>Hasil Jepretanmu</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta neque blanditiis illum animi eveniet cupiditate alias eos corrupti exercitationem consequatur a iure autem culpa aut et asperiores assumenda, quis quas sit odit! Eum illo ut exercitationem aliquam explicabo voluptate ratione!</p>
+                <a href="#" class="btnArrow">
+                    <p>Info Lengkap</p>
+                    <div class="arrow"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- =============== LISENSI END =============== -->
     
     <BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR>
 
