@@ -18,3 +18,8 @@
         }
     }
 }
+@include media(tablet){
+    p{
+        width: 90%;
+    }
+}

@@ -1125,6 +1125,11 @@ div#bookmark.bookmark p {
   max-width: 700px;
 }
 
+@media (max-width: 576px) {
+  p {
+    width: 90%;
+  }
+}
 .lisensi {
   width: 100%;
   font-size: 16px;
@@ -1359,7 +1364,7 @@ div#bookmark.bookmark p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 8px 16px;
+  padding: 10px 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -1367,7 +1372,7 @@ div#bookmark.bookmark p {
   color: white;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: 0.1s linear;
   background-color: #18A13D;
   border: 0;
@@ -1390,7 +1395,7 @@ div#bookmark.bookmark p {
 @media (max-width: 990px) {
   .produk .container .sidebox .btnArrow {
     padding: 5px 10px;
-    padding: 5px 10px;
+    padding: 8px 16px;
   }
   .produk .container .sidebox .btnArrow .arrow {
     width: 12px;
@@ -1503,9 +1508,10 @@ div#bookmark.bookmark p {
   }
   .produk .container #sb1 {
     display: block;
+    align-self: center;
     margin-right: 0;
     margin-bottom: 40px;
-    width: 100%;
+    width: 90%;
   }
   .produk .container .slider #sb2 {
     display: none;
@@ -1529,6 +1535,16 @@ div#bookmark.bookmark p {
   }
 }
 @media (max-width: 390px) {
+  .produk .container .slider .cards .card:first-child {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 330px) {
+  .produk .container .slider .cards .card:first-child {
+    margin-left: 30px;
+  }
+}
+@media (max-width: 290px) {
   .produk .container .slider .cards .card:first-child {
     margin-left: 0;
   }
