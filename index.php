@@ -164,7 +164,17 @@
     <!-- =============== BIG 3 END =============== -->
     
     <!-- =============== PORTPOLIO START =============== -->
-    
+    <?php
+        setBookmark('home/bookmark2.png', 'Portpolio', 'portpolio.png', false);
+    ?>
+    <div class="portpolio">
+        <div class="container">
+            <h1>Desain dan bangun <span>portpoliomu</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis non incidunt tempore inventore ipsam labore?</p>
+            <a href="#" class="btn">Mulai Sekarang</a>
+            <img src="img/home/portpolio.png" alt="Bangun Portpoliomu">
+        </div>
+    </div>
     <!-- =============== PORTPOLIO END =============== -->
     
     <BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR>

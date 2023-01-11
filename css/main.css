@@ -375,7 +375,7 @@ div#bookmark.bookmark p {
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
-  height: 100vh;
+  height: fit-content;
   padding: 100px 0;
   box-sizing: border-box;
   display: flex;
@@ -843,7 +843,7 @@ div#bookmark.bookmark p {
   transform: scale(0.98);
 }
 .big3 .container p {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .big3 .container .cards {
   width: 100%;
@@ -1049,6 +1049,82 @@ div#bookmark.bookmark p {
     top: -25px;
   }
 }
+.portpolio {
+  width: 100%;
+  font-size: 16px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.portpolio .container {
+  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  height: fit-content;
+  padding: 100px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 576px) {
+  .portpolio .container {
+    width: 95%;
+    padding: 60px 0;
+  }
+}
+.portpolio .container h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.portpolio .container h1 span {
+  color: #18A13D;
+}
+@media (max-width: laptop) {
+  .portpolio .container h1 {
+    font-size: 2.3em;
+  }
+}
+@media (max-width: 768px) {
+  .portpolio .container h1 {
+    font-size: 2.1em;
+  }
+}
+@media (max-width: 576px) {
+  .portpolio .container h1 {
+    font-size: 2.1em;
+  }
+}
+.portpolio .container .btn {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background-color: #18A13D;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+.portpolio .container .btn:hover {
+  transform: scale(1.02);
+}
+.portpolio .container .btn:active {
+  transform: scale(0.98);
+}
+.portpolio .container p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.portpolio .container img {
+  margin: 80px auto 30px;
+  width: 90%;
+  max-width: 700px;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -2,12 +2,12 @@
 @use '../components' as *;
 
 .big3{
-    @include section(fit-content);
+    @include section();
     .container{
         @include homeRegularTitle();
         @include normalBtn();
         p{
-            margin-bottom: 10px;
+            margin-bottom: 30px;
         }
         .cards{
             width: 100%;

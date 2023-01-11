@@ -1,5 +1,5 @@
 @use '../abstracts' as *;
-@mixin section($tinggi: 100vh){
+@mixin section($tinggi: fit-content){
     width: 100%;
     font-size: 16px;
     height: fit-content;
