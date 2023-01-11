@@ -616,7 +616,7 @@ div#bookmark.bookmark p {
   color: #18A13D;
 }
 .about .container .cards .card p {
-  text-align: justify;
+  text-align: start;
 }
 .about .container .unduhApp {
   width: 100%;
@@ -733,7 +733,7 @@ div#bookmark.bookmark p {
     width: 100%;
   }
   .about .container .cards .card p {
-    text-align: center;
+    text-align: start;
     font-size: 0.9em;
     width: 80%;
     margin-bottom: 20px;
@@ -753,7 +753,7 @@ div#bookmark.bookmark p {
     text-align: center;
   }
   .about .container .unduhApp .corner p {
-    text-align: center;
+    text-align: start;
     width: 80%;
     font-size: 0.9em;
   }
