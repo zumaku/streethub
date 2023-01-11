@@ -856,6 +856,7 @@ div#bookmark.bookmark p {
 }
 .big3 .container .cards .card {
   width: 31%;
+  max-width: 350px;
   height: 470px;
   background-color: #1E201E;
   border-radius: 10px;
