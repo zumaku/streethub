@@ -263,8 +263,12 @@
         </div>
     </div>
     <!-- =============== KOMUNITAS END =============== -->
+
+    <!-- =============== FOOTER START =============== -->
+    <?php include 'partials/footer.php' ?>
+    <!-- =============== FOOTER END =============== -->
     
-    <BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR>
+    <!-- <BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR> -->
 
     <script src="js/script.js"></script>
 </body>

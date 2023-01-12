@@ -1,5 +1,5 @@
 @use '../abstracts' as *;
-@mixin section($tinggi: fit-content, $fdirec: column){
+@mixin section($tinggi: fit-content, $fdirec: column, $padding: 100px){
     width: 100%;
     font-size: 16px;
     height: fit-content;
@@ -10,7 +10,7 @@
         @if $tinggi != false{
             height: $tinggi;
         }
-        padding: 100px 0;
+        padding: $padding 0;
         box-sizing: border-box;
         display: flex;
         flex-direction: $fdirec;
