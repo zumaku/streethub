@@ -49,7 +49,7 @@
         <div class="line"></div>
         <div class="copyright">
             <div class="copyBy">
-                <p>&#169; Street Hub</p>
+                <p>&#169; 2023 Street Hub</p>
             </div>
             <div class="dll">
                 <a href="#">Terms</a>

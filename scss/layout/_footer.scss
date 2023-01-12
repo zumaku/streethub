@@ -110,8 +110,9 @@ footer.footer{
                 margin-top: 40px;
             }
             .copyright{
+                flex-direction: column;
                 .copyBy{
-                    width: 120px;
+                    margin-bottom: 10px;
                 }
                 .dll{
                     width: 200px;

@@ -1763,8 +1763,11 @@ footer.footer .container .copyright .dll {
   footer.footer .container .line {
     margin-top: 40px;
   }
+  footer.footer .container .copyright {
+    flex-direction: column;
+  }
   footer.footer .container .copyright .copyBy {
-    width: 120px;
+    margin-bottom: 10px;
   }
   footer.footer .container .copyright .dll {
     width: 200px;
