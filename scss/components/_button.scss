@@ -1,10 +1,10 @@
 @use '../abstracts' as *;
-@mixin normalBtn(){
+@mixin normalBtn($bg: $secondary, $color: white){
     .btn{
         font-weight: bold;
-        color: white;
+        color: $color;
         text-decoration: none;
-        background-color: $secondary;
+        background-color: $bg;
         padding: 10px 20px;
         border-radius: 10px;
         transition: .1s linear;

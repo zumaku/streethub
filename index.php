@@ -253,6 +253,16 @@
         </div>
     </div>
     <!-- =============== PRODUK END =============== -->
+
+    <!-- =============== KOMUNITAS START =============== -->
+    <div class="komunitas">
+        <div class="container">
+            <h1>Gabung komunitas kami</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus iusto dolor quisquam, architecto maxime unde eaque amet illum ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio tempora ducimus deleniti possimus!</p>
+            <a href="#" class="btn" id="btn">Daftar Kuy</a>
+        </div>
+    </div>
+    <!-- =============== KOMUNITAS END =============== -->
     
     <BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR>
 
