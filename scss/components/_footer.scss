@@ -1,5 +1,5 @@
 @use '../abstracts' as *;
-@use '../components' as *;
+@use 'section' as *;
 
 footer.footer{
     @include section(fit-content, column, 40px);

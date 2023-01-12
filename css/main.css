@@ -367,6 +367,162 @@ div#bookmark.bookmark p {
     font-size: 2em;
   }
 }
+footer.footer {
+  width: 100%;
+  font-size: 16px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+footer.footer .container {
+  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  height: fit-content;
+  padding: 40px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 576px) {
+  footer.footer .container {
+    width: 95%;
+    padding: 60px 0;
+  }
+}
+footer.footer .container .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+footer.footer .container .links ul {
+  list-style-type: none;
+}
+footer.footer .container .links .card {
+  width: 150px;
+}
+footer.footer .container .links .card ul li {
+  margin-bottom: 20px;
+}
+footer.footer .container .links .card ul li span {
+  font-weight: bold;
+}
+footer.footer .container .links .card ul li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+footer.footer .container .links .card ul li a:hover {
+  color: #18A13D;
+}
+footer.footer .container .links .card ul li .logo {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+footer.footer .container .links .card ul li .logo.fb {
+  background-image: url(../img/icon/facebook.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+footer.footer .container .links .card ul li .logo.ig {
+  background-image: url(../img/icon/instagram.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+footer.footer .container .links .card ul li .logo.tw {
+  background-image: url(../img/icon/twitter.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+footer.footer .container .links .card ul li .logo.web {
+  background-image: url(../img/icon/web.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+footer.footer .container .links .cardAppLink {
+  width: 220px;
+}
+footer.footer .container .links .cardAppLink span {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+footer.footer .container .links .cardAppLink .app {
+  display: flex;
+  justify-content: space-between;
+}
+footer.footer .container .links .cardAppLink .app .appLogo {
+  width: 100px;
+  height: 45px;
+}
+footer.footer .container .links .cardAppLink .app .appLogo.appStore {
+  background-image: url(../img/icon/appStore.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+footer.footer .container .links .cardAppLink .app .appLogo.googlePlay {
+  background-image: url(../img/icon/googlePlay.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+footer.footer .container .line {
+  width: 100%;
+  height: 3px;
+  background-color: #1E201E;
+  margin: 100px auto 20px;
+}
+footer.footer .container .copyright {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+footer.footer .container .copyright a {
+  color: white;
+  text-decoration: none;
+}
+footer.footer .container .copyright a:hover {
+  color: #18A13D;
+}
+footer.footer .container .copyright .dll {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  footer.footer .container .links .card {
+    margin-bottom: 20px;
+  }
+  footer.footer .container .line {
+    margin-top: 40px;
+  }
+  footer.footer .container .copyright .copyBy {
+    width: 150px;
+  }
+  footer.footer .container .copyright .dll {
+    width: 200px;
+  }
+}
+@media (max-width: 576px) {
+  footer.footer .container .copyright {
+    flex-direction: column;
+  }
+  footer.footer .container .copyright .copyBy {
+    margin-bottom: 10px;
+  }
+}
 .hero {
   width: 100%;
   font-size: 16px;
@@ -1617,162 +1773,6 @@ div#bookmark.bookmark p {
 @media (max-width: 630px) {
   .komunitas .container h1 {
     font-size: 2.7em;
-  }
-}
-footer.footer {
-  width: 100%;
-  font-size: 16px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-footer.footer .container {
-  width: 90%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: auto;
-  height: fit-content;
-  padding: 40px 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 576px) {
-  footer.footer .container {
-    width: 95%;
-    padding: 60px 0;
-  }
-}
-footer.footer .container .links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-}
-footer.footer .container .links ul {
-  list-style-type: none;
-}
-footer.footer .container .links .card {
-  width: 150px;
-}
-footer.footer .container .links .card ul li {
-  margin-bottom: 20px;
-}
-footer.footer .container .links .card ul li span {
-  font-weight: bold;
-}
-footer.footer .container .links .card ul li a {
-  text-decoration: none;
-  color: white;
-  display: flex;
-  align-items: center;
-}
-footer.footer .container .links .card ul li a:hover {
-  color: #18A13D;
-}
-footer.footer .container .links .card ul li .logo {
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
-}
-footer.footer .container .links .card ul li .logo.fb {
-  background-image: url(../img/icon/facebook.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-footer.footer .container .links .card ul li .logo.ig {
-  background-image: url(../img/icon/instagram.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-footer.footer .container .links .card ul li .logo.tw {
-  background-image: url(../img/icon/twitter.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-footer.footer .container .links .card ul li .logo.web {
-  background-image: url(../img/icon/web.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-footer.footer .container .links .cardAppLink {
-  width: 220px;
-}
-footer.footer .container .links .cardAppLink span {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-footer.footer .container .links .cardAppLink .app {
-  display: flex;
-  justify-content: space-between;
-}
-footer.footer .container .links .cardAppLink .app .appLogo {
-  width: 100px;
-  height: 45px;
-}
-footer.footer .container .links .cardAppLink .app .appLogo.appStore {
-  background-image: url(../img/icon/appStore.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-footer.footer .container .links .cardAppLink .app .appLogo.googlePlay {
-  background-image: url(../img/icon/googlePlay.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-footer.footer .container .line {
-  width: 100%;
-  height: 3px;
-  background-color: #1E201E;
-  margin: 100px auto 20px;
-}
-footer.footer .container .copyright {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-footer.footer .container .copyright a {
-  color: white;
-  text-decoration: none;
-}
-footer.footer .container .copyright a:hover {
-  color: #18A13D;
-}
-footer.footer .container .copyright .dll {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-}
-
-@media (max-width: 768px) {
-  footer.footer .container .links .card {
-    margin-bottom: 20px;
-  }
-  footer.footer .container .line {
-    margin-top: 40px;
-  }
-  footer.footer .container .copyright .copyBy {
-    width: 150px;
-  }
-  footer.footer .container .copyright .dll {
-    width: 200px;
-  }
-}
-@media (max-width: 576px) {
-  footer.footer .container .copyright {
-    flex-direction: column;
-  }
-  footer.footer .container .copyright .copyBy {
-    margin-bottom: 10px;
   }
 }
 * {

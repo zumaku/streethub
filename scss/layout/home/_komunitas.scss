@@ -1,5 +1,5 @@
-@use '../abstracts' as *;
-@use '../components' as *;
+@use '../../abstracts' as *;
+@use '../../components' as *;
 
 .komunitas{
     @include section();
