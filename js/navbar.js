@@ -37,7 +37,7 @@ window.addEventListener('scroll', () => {
 // ARROW DROPDOWN
 const arrow = document.querySelector('div#accountDd.account .arrow');
 var x = true;
-document.body.addEventListener('click', function(e){
+document.body.addEventListener('click', (e) =>{
     if( e.target == arrow && x == true){
         arrow.parentElement.nextElementSibling.setAttribute('style', 'display: flex');
         x = false;
