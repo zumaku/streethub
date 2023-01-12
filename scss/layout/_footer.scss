@@ -100,7 +100,6 @@ footer.footer{
 @include media(notebook){
     footer.footer{
         .container{
-            width: 90%;
             .links{
                 .card{
                     margin-bottom: 20px;
@@ -110,12 +109,23 @@ footer.footer{
                 margin-top: 40px;
             }
             .copyright{
-                flex-direction: column;
                 .copyBy{
-                    margin-bottom: 10px;
+                    width: 150px;
                 }
                 .dll{
                     width: 200px;
+                }
+            }
+        }
+    }
+}
+@include media(tablet){
+    footer.footer{
+        .container{
+            .copyright{
+                flex-direction: column;
+                .copyBy{
+                    margin-bottom: 10px;
                 }
             }
         }

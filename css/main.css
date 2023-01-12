@@ -1754,23 +1754,25 @@ footer.footer .container .copyright .dll {
 }
 
 @media (max-width: 768px) {
-  footer.footer .container {
-    width: 90%;
-  }
   footer.footer .container .links .card {
     margin-bottom: 20px;
   }
   footer.footer .container .line {
     margin-top: 40px;
   }
+  footer.footer .container .copyright .copyBy {
+    width: 150px;
+  }
+  footer.footer .container .copyright .dll {
+    width: 200px;
+  }
+}
+@media (max-width: 576px) {
   footer.footer .container .copyright {
     flex-direction: column;
   }
   footer.footer .container .copyright .copyBy {
     margin-bottom: 10px;
-  }
-  footer.footer .container .copyright .dll {
-    width: 200px;
   }
 }
 * {
