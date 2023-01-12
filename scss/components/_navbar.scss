@@ -3,8 +3,10 @@
 .secnav{
     width: 100%;
     position: fixed;
-    box-shadow: 0 10px 20px rgba(78, 78, 78, 0.274);
-    z-index: 9;
+    top: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.377);
+    z-index: 999;
+    transition: .2s ease-out;
     .nav1{
         background-color: $primary;
         width: 100%;
@@ -162,6 +164,9 @@
                         color: white;
                         text-decoration: none;
                         margin-bottom: 5px;
+                        &:hover{
+                            background-color: $semu2;
+                        }
                     }
                     span{
                         display: block;
@@ -177,6 +182,15 @@
     .nav2{
         display: none;
     }
+}
+
+// kelas scroll down ini nanti akan tersimpan di body
+.scroll-down div.secnav{
+    transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up div.secnav{
+
 }
 
 

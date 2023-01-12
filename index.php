@@ -270,6 +270,7 @@
     
     <!-- <BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR> -->
 
+    <script src="js/navbar.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

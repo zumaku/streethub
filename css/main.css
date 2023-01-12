@@ -1,8 +1,10 @@
 .secnav {
   width: 100%;
   position: fixed;
-  box-shadow: 0 10px 20px rgba(78, 78, 78, 0.274);
-  z-index: 9;
+  top: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.377);
+  z-index: 999;
+  transition: 0.2s ease-out;
 }
 .secnav .nav1 {
   background-color: #191A19;
@@ -161,6 +163,9 @@
   text-decoration: none;
   margin-bottom: 5px;
 }
+.secnav .nav1 .container .sec2 .dropdown a:hover {
+  background-color: #202320;
+}
 .secnav .nav1 .container .sec2 .dropdown span {
   display: block;
   width: 100%;
@@ -170,6 +175,10 @@
 }
 .secnav .nav2 {
   display: none;
+}
+
+.scroll-down div.secnav {
+  transform: translate3d(0, -100%, 0);
 }
 
 @media (max-width: 850px) {
