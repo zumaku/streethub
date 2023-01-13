@@ -1,0 +1,161 @@
+@use 'abstracts' as *;
+@use 'components' as *;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: $primary;
+    display: flex;
+}
+
+.sectionLeft{
+    width: 50%;
+    height: 100vh;
+    // background-color: darkolivegreen;
+    padding: 80px 100px;
+    box-sizing: border-box;
+    font-size: 16px;
+    .option{
+        width: 220px;
+        // background-color: grey;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 50px;
+        .sign{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            h3{
+                // background-color: blue;
+                width: 80px;
+                cursor: pointer;
+                span{
+                    color: $secondary;
+                }
+            }
+        }
+        .underline{
+            width: 80px;
+            height: 3px;
+            background-color: $secondary;
+            transition: .3s ease-in;
+        }
+    }
+    .signForm{
+        // background-color: darkslategrey;
+        display: flex;
+        flex-direction: column;
+        label{
+            font-size: .8em;
+        }
+        input{
+            width: 100%;
+            max-width: 350px;
+            border: 0;
+            outline: none;
+            border-radius: 10px;
+            padding: 5px 12px;
+            box-sizing: border-box;
+            background-color: $iform;
+            border: 1px solid $primary;
+            color: white;
+            margin: 10px 0;
+            &:focus{
+                border: 1px solid $secondary;
+                // box-shadow: 0 0 10px rgba(49, 181, 95, 0.274);
+            }
+        }
+        a{
+            text-decoration: none;
+            font-size: .8em;
+            color: grey;
+            &:hover{
+                color: rgb(169, 169, 169);
+                text-decoration: underline
+            }
+        }
+        @include normalBtn();
+        .btn{
+            width: fit-content;
+            border: none;
+            margin-top: 30px;
+        }
+    }
+    .dnone{
+        display: none;
+    }
+}
+.sectionRight{
+    width: 50%;
+    height: 100vh;
+    @include bg();
+}
+
+@include media(leptop){
+    .sectionLeft{
+        padding: 80px 50px;
+        .option{
+            width: 180px;
+        }
+        .signForm{
+            a{
+                text-decoration: none;
+                font-size: .8em;
+                color: white;
+                &:hover{
+                    color: white;
+                    text-decoration: underline
+                }
+            }
+        }
+    }
+}
+@include media(notebook){
+    body{
+        flex-direction: column;
+        align-items: center;
+    }
+    .sectionLeft{
+        padding: 100px 0 0;
+        width: 90%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .option{
+            width: 200px;
+            .underline{
+                width: 80px;
+                height: 3px;
+                background-color: $secondary;
+                transition: .3s ease-in;
+            }
+        }
+        .signForm{
+            width: 80%;
+            input{
+                max-width: 500px;
+            }
+        }
+    }
+    .sectionRight{
+        width: 100%;
+    }
+}
+
+@include media(hp){
+    .sectionLeft{
+        .option{
+            width: 180px;
+        }
+    }
+}
