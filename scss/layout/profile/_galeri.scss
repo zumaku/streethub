@@ -1,0 +1,42 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+.galeri{
+    .container{
+        width: 90%;
+        columns: 3;
+        column-gap: 20px;
+        margin: auto;
+        padding: 100px 0;
+        .gambar{
+            position: relative;
+            img{
+                width: 100%;
+                height: fit-content;
+                margin-bottom: 20px;
+                transition: .2s linear;
+                &:hover{
+                    transform: scale(1.01);
+                }
+            }
+            @include normalBtn();
+            .btn{
+                width: fit-content;
+                position: absolute;
+                z-index: 3;
+                top: 5px;
+                right: 5px;
+            }
+        }
+    }
+}
+
+@include media(tablet){
+    .galeri{
+        .container{
+            columns: 2;
+            column-gap: 20px;
+            padding: 60px 0;
+        }
+    }
+}

@@ -856,6 +856,64 @@ footer.footer .container .copyright .dll {
     height: 150px;
   }
 }
+.galeri .container {
+  width: 90%;
+  -moz-columns: 3;
+       columns: 3;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  margin: auto;
+  padding: 100px 0;
+}
+.galeri .container .gambar {
+  position: relative;
+}
+.galeri .container .gambar img {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 20px;
+  transition: 0.2s linear;
+}
+.galeri .container .gambar img:hover {
+  transform: scale(1.01);
+}
+.galeri .container .gambar .btn {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background-color: #18A13D;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+.galeri .container .gambar .btn:hover {
+  transform: scale(1.02);
+}
+.galeri .container .gambar .btn:active {
+  transform: scale(0.98);
+}
+.galeri .container .gambar .btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  z-index: 3;
+  top: 5px;
+  right: 5px;
+}
+
+@media (max-width: 576px) {
+  .galeri .container {
+    -moz-columns: 2;
+         columns: 2;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    padding: 60px 0;
+  }
+}
 * {
   margin: 0;
   padding: 0;
