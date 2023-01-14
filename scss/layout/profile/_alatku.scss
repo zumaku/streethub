@@ -33,10 +33,11 @@
                     &.filter{ @include bg(url(../img/icon/filterProfile.png), contain) }
                     &.tripod{ @include bg(url(../img/icon/podProfile.png), contain) }
                 }
-                ol{
-                    padding-left: 20px;
-                    box-sizing: border-box;
-                }
+                // ol{
+                //     padding-left: 20px;
+                //     box-sizing: border-box;
+                // }
+                
             }
         }
     }

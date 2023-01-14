@@ -32,7 +32,7 @@
             <input type="email" name="email" id="email">
             <label for="password">PASSWORD</label>
             <input type="password" name="password" id="password">
-            <button type="submit" name="signup" class="btn">SIGN UP</button>
+            <button name="signup" class="btn" id="signup">SIGN UP</button>
         </form>
     </div>
     <div class="sectionRight" style="background-image: url(../img/login/signin.jpg);"></div>

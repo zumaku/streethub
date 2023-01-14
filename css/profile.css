@@ -1084,10 +1084,6 @@ footer.footer .container .copyright .dll {
   background-repeat: no-repeat;
   background-position: center;
 }
-.alat .container .alatku .card ol {
-  padding-left: 20px;
-  box-sizing: border-box;
-}
 
 @media (max-width: 768px) {
   .alat .container {

@@ -57,8 +57,8 @@
                     <div class="segitiga"></div>
                     <a href="#">Profilmu</a><span></span>
                     <a href="#">Pengaturan</a><span></span>
-                    <a href="#">Sign In</a><span></span>
-                    <a href="#">Sign Up</a>
+                    <a href="../streetHub/pages/login.php">Sign In</a><span></span>
+                    <a href="../streetHub/pages/login.php">Sign Up</a>
                 </div>
             </div>
         </div>

@@ -14,6 +14,6 @@ body.addEventListener('click', (e) => {
         option.setAttribute('style', 'align-items: flex-end');
         signForm[0].classList.add('dnone');
         signForm[1].classList.remove('dnone');
-        sectionRight.setAttribute('style', 'background-image: url(../img/login/singup.jpg)')
+        sectionRight.setAttribute('style', 'background-image: url(../img/login/singup.jpg)');
     }
 });

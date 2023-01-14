@@ -51,44 +51,48 @@
             <div class="alatku">
                 <div class="card">
                     <div class="icon kamera"></div>
-                    <h3>Kamera</h3>
-                    <ol type="1">
+                    <h2>Kamera</h2>
+                    <p>Canon EOS 6D II</p>
+                    <!-- <ol type="1">
                         <li>Canon EOS 6D II</li>
                         <li>Canon EOS 90D</li>
                         <li>Canon EOS 2000D</li>
                         <li>Canon EOS A Plu++</li>
-                    </ol>
+                    </ol> -->
                 </div>
                 <div class="card">
                     <div class="icon lensa"></div>
-                    <h3>Lensa</h3>
-                    <ol type="1">
+                    <h2>Lensa</h2>
+                    <p>Canon EF 100-400mm f/4.5-6.5L IS II USM</p>
+                    <!-- <ol type="1">
                         <li>Canon EF 100-400mm f/4.5-6.5L IS II USM</li>
                         <li>Canon EF 100mm f/2.8L IS USM Macro</li>
                         <li>Canon EF 50mm f/1.8 STM</li>
                         <li>Nikon NIKON AF-P DX 70-200mm f/4.5-6.3G ED VR</li>
                         <li>Nikon NIKON AF-P DX 70-200mm f/4.5-6.3G ED VD</li>
-                    </ol>
+                    </ol> -->
                 </div>
                 <div class="card">
                     <div class="icon filter"></div>
-                    <h3>Filter</h3>
-                    <ol type="1">
+                    <h2>Filter</h2>
+                    <p>Ultra Violet</p>
+                    <!-- <ol type="1">
                         <li>Ultra Violet</li>
                         <li>Ultra Viola</li>
                         <li>Ultra Vanila</li>
                         <li>Ultra Men</li>
                         <li>Ultra Women</li>
-                    </ol>
+                    </ol> -->
                 </div>
                 <div class="card">
                     <div class="icon tripod"></div>
-                    <h3>Tripod</h3>
-                    <ol type="1">
+                    <h2>Tripod</h2>
+                    <p>Befree 3-Way Live Advanced</p>
+                    <!-- <ol type="1">
                         <li>Befree 3-Way Live Advanced</li>
                         <li>Vesta FB 204AB</li>
                         <li>GorillaPod 1K Kit</li>
-                    </ol>
+                    </ol> -->
                 </div>
             </div>
         </div>
