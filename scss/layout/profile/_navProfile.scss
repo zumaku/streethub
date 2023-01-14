@@ -1,0 +1,57 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+.navProfile{
+    width: 100%;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.377);
+    z-index: 99;
+    background-color: $primary;
+    .container{
+        margin: auto;
+        width: fit-content;
+        ul{
+            list-style: none;
+            display: flex;
+            li{
+                margin: 0 20px;
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    &:hover{
+                        color: $secondary;
+                    }
+                }
+            }
+            .ulActive{
+                a{
+                    color: white;
+                    &:hover{
+                        color: white;
+                    }
+                }
+                span{
+                    width: 100%;
+                    height: 3px;
+                    display: block;
+                    background-color: $secondary;
+                }
+            }
+        }
+    }
+}
+
+@include media(hp){
+    .navProfile{
+        .container{
+            ul{
+                li{
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}

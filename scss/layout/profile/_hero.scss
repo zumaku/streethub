@@ -1,0 +1,68 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+.hero{
+    @include bg();
+    @include section(100vh);
+    .bGradient{
+        background-color: red;
+    }
+    .container{
+        width: 100%;
+        background: linear-gradient(180deg, rgba(25, 26, 25, 0.3) 0%, #191A19 94.68%);
+        img{
+            width: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 10px;
+        }
+        h1{
+            margin-bottom: 10px;
+            font-size: 3em;
+        }
+        .sosmed{
+            display: flex;
+            .icon{
+                width: 16px;
+                height: 16px;
+                margin: 0 10px 50px;
+                @include bg(false, contain);
+                &.fb{background-image: url(../img/icon/facebook.png);}
+                &.ig{background-image: url(../img/icon/instagram.png);}
+                &.tw{background-image: url(../img/icon/twitter.png);}
+                &.web{background-image: url(../img/icon/web.png);}
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        p.quote{
+            font-style: italic;
+            text-align: center;
+            max-width: 720px;
+            width: 90%;
+        }
+    }
+}
+
+@include media(notebook){
+    .hero{
+        .container{
+            h1{
+                font-size: 2.5em;
+            }
+        }
+    }
+}
+@include media(tablet){
+    .hero{
+        .container{
+            img{
+                width: 140px;
+            }
+            h1{
+                font-size: 2em;
+            }
+        }
+    }
+}

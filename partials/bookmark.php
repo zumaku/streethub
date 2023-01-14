@@ -8,11 +8,13 @@
     function setBookmark($imgAddres, $h1, $iconAddres, $p){
 
         // menampilkan html
-        echo '<div class="bookmark" id="bookmark" style="background-image: url(img/' . $imgAddres . ');">';
+        echo '<div class="bookmark" id="bookmark" style="background-image: ' . $imgAddres . ';">';
+        echo'<div class="overlay"></div>';
+        echo'<div class="content">';
         if($iconAddres != false){
             echo '
                     <div class="logo">
-                        <div class="mainLogo" style="background-image: url(img/icon/' . $iconAddres . ');"></div>
+                        <div class="mainLogo" style="background-image: ' . $iconAddres . ';"></div>
                     </div>
             ';
         }
@@ -20,6 +22,7 @@
         if($p != false){
             echo '<p>' . $p . '</p>';
         }
+        echo '</div>';
         echo '</div>';
     }
 ?>

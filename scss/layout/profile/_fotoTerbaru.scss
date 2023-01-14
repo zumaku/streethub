@@ -1,0 +1,102 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+.fotoTerbaru{
+    @include section(fit-content, column, 100px);
+    .container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .cardTerbaru{
+            width: 410px;
+            height: 310px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 80px;
+            .backPic,
+            .frontPic{
+                width: 90%;
+                height: 90%;
+                @include bg();
+                border: 6px solid white;
+                transition: .3s linear;
+            }
+            .frontPic{
+                position: absolute;
+                display: flex;
+                text-decoration: none;
+                z-index: 2;
+                .content{
+                    width: 100%;
+                    height: 100%;
+                    background-color: $overlayPic;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    h2, p{
+                        text-align: center;
+                    }
+                    .line{
+                        width: 75%;
+                        height: 2.5px;
+                        background-color: white;
+                        margin: 30px 0;
+                    }
+                }
+            }
+            .backPic{
+                transform: rotateZ(-5deg);
+            }
+            .frontPic:hover ~ .backPic{
+                transform: rotateZ(-8deg);
+            }
+        }
+    }
+}
+
+@include media(monitor){
+    .fotoTerbaru{
+        .container{
+            .cardTerbaru{
+                width: 450px;
+                height: 350px;
+            }
+        }
+    }
+}
+@include media(leptop){
+    .fotoTerbaru{
+        .container{
+            .cardTerbaru{
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+}
+@include media(670px){
+    .fotoTerbaru{
+        .container{
+            .cardTerbaru{
+                width: 350px;
+                height: 250px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+@include media(hp){
+    .fotoTerbaru{
+        .container{
+            .cardTerbaru{
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+}

@@ -3,7 +3,9 @@
 
 @mixin media($size){
     $device: 100px;
-    @if$size == monitor{
+    @if($size == monitorBesar){
+        $device: 2000px;
+    }@else if$size == monitor{
         $device: 1220px;
     } @else if $size == leptop{
         $device: 990px;

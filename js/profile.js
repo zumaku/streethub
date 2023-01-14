@@ -1,0 +1,2 @@
+// ANIMASI SAAT CARD PICTURE DI HOVER
+// consts

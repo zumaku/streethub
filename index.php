@@ -73,7 +73,7 @@
     <!-- =============== BIG 3 START =============== -->
     <?php
         include 'partials/bookmark.php';
-        setBookmark('home/bookmark1.png', 'Sang 3 Besar', 'streetHub.png', false);
+        setBookmark('url(img/home/bookmark1.png)', 'Sang 3 Besar', 'url(img/icon/streetHub.png)', false);
     ?>
     <div class="big3">
         <div class="container">
@@ -165,7 +165,7 @@
     
     <!-- =============== PORTPOLIO START =============== -->
     <?php
-        setBookmark('home/bookmark2.png', 'Portpolio', 'portpolio.png', false);
+        setBookmark('url(img/home/bookmark2.png)', 'Portpolio', 'url(img/icon/portpolio.png)', false);
     ?>
     <div class="portpolio">
         <div class="container">
@@ -179,7 +179,7 @@
 
     <!-- =============== LISENSI START =============== -->
     <?php
-        setBookmark('home/bookmark3.png', 'Lisensi', 'lisensi.png', false);
+        setBookmark('url(img/home/bookmark3.png)', 'Lisensi', 'url(img/icon/lisensi.png)', false);
     ?>
     <div class="lisensi">
         <div class="container">
