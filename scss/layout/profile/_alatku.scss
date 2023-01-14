@@ -1,0 +1,85 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+.alat{
+    @include section();
+    @include bg();
+    .container{
+        background-color: $overlay;
+        align-items: flex-start;
+        width: 100%;
+        padding: 100px 5%;
+        h1{
+            font-size: 3em;
+            width: 350px;
+            margin-bottom: 50px;
+            span{
+                color: $secondary;
+            }
+        }
+        .alatku{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .card{
+                width: 22%;
+                .icon{
+                    width: 64px;
+                    height: 64px;
+                    margin-bottom: 10px;
+                    &.kamera{ @include bg(url(../img/icon/cameraProfile.png), contain) }
+                    &.lensa{ @include bg(url(../img/icon/lensProfile.png), contain) }
+                    &.filter{ @include bg(url(../img/icon/filterProfile.png), contain) }
+                    &.tripod{ @include bg(url(../img/icon/podProfile.png), contain) }
+                }
+                ol{
+                    padding-left: 20px;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+}
+
+@include media(notebook){
+    .alat{
+        .container{
+            padding: 100px 10%;
+            h1{
+                font-size: 3em;
+                width: 350px;
+                margin-bottom: 20px;
+            }
+            .alatku{
+                .card{
+                    width: 48%;
+                    margin-bottom: 20px;
+                    .icon{
+                        width: 58px;
+                        height: 58px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media(hp){
+    .alat{
+        .container{
+            h1{
+                font-size: 2.5em;
+                width: fit-content;
+            }
+            .alatku{
+                .card{
+                    width: 100%;
+                    .icon{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,165 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+.contact{
+    @include section();
+    .container{
+        flex-direction: row;
+        justify-content: space-around;
+        .favImage{
+            width: 500px;
+            height: 350px;
+            display: flex;
+            position: relative;
+            .img{
+                width: 70%;
+                height: 60%;
+                border: 5px solid white;
+                position: absolute;
+                @include bg();
+                &:last-child{
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+        form{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            h1{
+                font-size: 3em;
+                span{
+                    color: $secondary;
+                }
+            }
+            label{
+                font-size: 1em;
+                font-weight: bold;
+            }
+            input{
+                width: 100%;
+                max-width: 350px;
+                border: 0;
+                outline: none;
+                border-radius: 10px;
+                padding: 5px 12px;
+                box-sizing: border-box;
+                background-color: $iform;
+                border: 1px solid $primary;
+                color: white;
+                margin: 10px 0;
+                &:focus{
+                    border: 1px solid $secondary;
+                }
+            }
+            textarea{
+                width: 100%;
+                height: 100px;
+                max-width: 350px;
+                border: 0;
+                outline: none;
+                border-radius: 10px;
+                padding: 10px 12px;
+                box-sizing: border-box;
+                background-color: $iform;
+                border: 1px solid $primary;
+                color: white;
+                margin: 10px 0;
+                resize: vertical;
+                &:focus{
+                    border: 1px solid $secondary;
+                }
+            }
+            @include normalBtn();
+            .btn{
+                width: fit-content;
+                border: 0;
+            }
+        }
+    }
+}
+
+@include media(leptop){
+    .contact{
+        .container{
+            justify-content: space-between;
+            .favImage{
+                width: 400px;
+                height: 300px;
+            }
+            form{
+                width: 45%;
+                h1{
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+}
+@include media(830px){
+    .contact{
+        .container{
+            justify-content: space-between;
+            .favImage{
+                width: 350px;
+                height: 250px;
+            }
+            form{
+                width: 45%;
+                h1{
+                    font-size: 2.5em;
+                }
+            }
+        }
+    }
+}
+@include media(notebook){
+    .contact{
+        .container{
+            flex-direction: column;
+            .favImage{
+                width: 90%;
+                height: 400px;
+                margin-bottom: 20px;
+            }
+            form{
+                width: 90%;
+                h1{
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+}
+@include media(tablet){
+    .contact{
+        .container{
+            .favImage{
+                width: 90%;
+                height: 300px;
+            }
+            form{
+                h1{
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+}
+@include media(hp){
+    .contact{
+        .container{
+            .favImage{
+                width: 90%;
+                height: 200px;
+            }
+            form{
+                h1{
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}

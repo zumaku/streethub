@@ -1,0 +1,60 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+.siapaAku{
+    @include section();
+    .container{
+        flex-direction: row;
+        justify-content: space-around;
+        .fotoku{
+            max-height: 520px;     
+            overflow: hidden;
+            max-width: 500px;
+            width: 35%;
+            img{
+                width: 100%;
+            }
+        }
+        .tentangku{
+            width: 50%;
+            h1{
+                font-size: 3em;
+                margin-bottom: 10px;
+                span{
+                    color: $secondary;
+                }
+            }
+            p{
+                margin-bottom: 30px;
+            }
+            @include btnArrow(color, 10px);
+        }
+    }
+}
+
+@include media(tablet){
+    .siapaAku{
+        .container{
+            flex-direction: column;
+            .fotoku{
+                width: 70%;
+                margin-bottom: 20px;
+            }
+            .tentangku{
+                width: 90%;
+            }
+        }
+    }
+}
+@include media(hp){
+    .siapaAku{
+        .container{
+            .tentangku{
+                width: 90%;
+                h1{
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}
