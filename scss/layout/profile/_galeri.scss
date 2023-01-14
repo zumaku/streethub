@@ -9,7 +9,7 @@
         margin: auto;
         padding: 100px 0;
         .gambar{
-            position: relative;
+            // position: relative;
             img{
                 width: 100%;
                 height: fit-content;
@@ -19,14 +19,14 @@
                     transform: scale(1.01);
                 }
             }
-            @include normalBtn();
-            .btn{
-                width: fit-content;
-                position: absolute;
-                z-index: 3;
-                top: 5px;
-                right: 5px;
-            }
+            // @include normalBtn();
+            // .btn{
+            //     width: fit-content;
+            //     position: absolute;
+            //     z-index: 3;
+            //     top: 5px;
+            //     right: 5px;
+            // }
         }
     }
 }

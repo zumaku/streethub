@@ -865,9 +865,6 @@ footer.footer .container .copyright .dll {
   margin: auto;
   padding: 100px 0;
 }
-.galeri .container .gambar {
-  position: relative;
-}
 .galeri .container .gambar img {
   width: 100%;
   height: -webkit-fit-content;
@@ -878,31 +875,6 @@ footer.footer .container .copyright .dll {
 }
 .galeri .container .gambar img:hover {
   transform: scale(1.01);
-}
-.galeri .container .gambar .btn {
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  background-color: #18A13D;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: 0.1s linear;
-  cursor: pointer;
-}
-.galeri .container .gambar .btn:hover {
-  transform: scale(1.02);
-}
-.galeri .container .gambar .btn:active {
-  transform: scale(0.98);
-}
-.galeri .container .gambar .btn {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  position: absolute;
-  z-index: 3;
-  top: 5px;
-  right: 5px;
 }
 
 @media (max-width: 576px) {

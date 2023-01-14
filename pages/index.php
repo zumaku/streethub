@@ -30,12 +30,11 @@
     <!-- =============== GALERI START =============== -->
     <div class="galeri">
         <div class="container">
-            <div class="gambar"></div>
+            <div class="gambar">
                 <img src="../img/profile/galeri/00.jpg" alt="">
             </div>
             <div class="gambar">
                 <img src="../img/profile/galeri/01.jpg" alt="">
-                <div class="btn">Hapus</div>
             </div>
             <div class="gambar">
                 <img src="../img/profile/galeri/02.jpg" alt="">
@@ -63,7 +62,6 @@
             </div>
             <div class="gambar">
                 <img src="../img/profile/galeri/10.jpg" alt="">
-                <div class="btn">Hapus</div>
             </div>
             <div class="gambar">
                 <img src="../img/profile/galeri/11.jpg" alt="">
@@ -73,7 +71,6 @@
             </div>
             <div class="gambar">
                 <img src="../img/profile/galeri/13.jpg" alt="">
-                <div class="btn">Hapus</div>
             </div>
             <div class="gambar">
                 <img src="../img/profile/galeri/14.jpg" alt="">
