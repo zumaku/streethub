@@ -14,41 +14,17 @@
     <!-- =============== NAVBAR END =============== -->
 
     <!-- =============== HERO START =============== -->
-    <div class="hero" style="background-image: url(../img/profile/sampul01.jpg);">
-        <div class="bGradient"></div>
-        <div class="container">
-            <img src="../img/profile/profile1.png" alt="Profileku">
-            <h1>Ukhtie Kebo</h1>
-            <div class="sosmed">
-                <a href="" class="icon fb"></a>
-                <a href="" class="icon ig"></a>
-                <a href="" class="icon tw"></a>
-                <a href="" class="icon web"></a>
-            </div>
-            <p class="quote">"Fotografi menyadarkanku bahwa setiap detik itu berarti dan setiap hasil yang bagus ada kerja keras"</p>
-        </div>
-    </div>
+    <?php
+        include '../partials/heroProfile.php';
+        heroProfile('url(../img/profile/sampul01.jpg)', '../img/profile/profile1.png" alt="Profileku', 'Ukhhtie Kebo', '#', '#', '#', '#')
+    ?>
     <!-- =============== HERO END =============== -->
 
     <!-- =============== NAV PROFILE START =============== -->
-    <div class="navProfile">
-        <div class="container">
-            <ul>
-                <li class="ulActive">
-                    <a href="#">Foto Mereka</a>
-                    <span class="underline"></span>
-                </li>
-                <li>
-                    <a href="#">Galeri</a>
-                    <span class="underline"></span>
-                </li>
-                <li>
-                    <a href="#">Tentangku</a>
-                    <span class="underline"></span>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php
+        include '../partials/navProfile.php';
+        navProfile(true, false, false);
+    ?>
     <!-- =============== NAV PROFILE END =============== -->
 
     <!-- =============== FOTO TERBARU START =============== -->
