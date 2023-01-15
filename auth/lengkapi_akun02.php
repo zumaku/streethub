@@ -56,7 +56,7 @@ if(isset($_POST['lanjut'])){
             </div>
         </form>
     </div>
-    <div class="sectionRight" style="background-image: url(../img/login/singup.jpg);"></div>
+    <div class="sectionRight" style="background-image: url(../img/login/social.jpg);"></div>
 
 </body>
 </html>

@@ -15,7 +15,7 @@ if(isset($_POST['finish'])){
 
     if( insertProfile03($_POST) > 0 ){
         session_destroy();
-        echo' <script> alert("Upload data Berhasil!!! Profile Selesai"); window.location.href = "profile02.php"; </script> ';
+        echo' <script> alert("Upload data Berhasil!!! Profile Selesai"); window.location.href = "../profile/profile02.php"; </script> ';
     } else{
         echo' <script> alert("Upload data Gagal!!!"); window.location.href = "lengkapi_akun03.php"; </script> ';
     }
@@ -56,7 +56,7 @@ if(isset($_POST['finish'])){
             </div>
         </form>
     </div>
-    <div class="sectionRight" style="background-image: url(../img/login/singup.jpg);"></div>
+    <div class="sectionRight" style="background-image: url(../img/login/tools.jpg);"></div>
 
 </body>
 </html>

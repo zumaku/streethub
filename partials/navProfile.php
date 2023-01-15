@@ -4,19 +4,19 @@ function navProfile($li1 = false, $li2 = false, $li3 = false){
     else if($li2 == true){ $li2 = 'ulActive'; }
     else if($li3 == true){ $li3 = 'ulActive'; }
 
-    echo'<div class="navProfile">';
+    echo'<div class="navProfile" id="navProfile">';
         echo'<div class="container">';
             echo'<ul>';
                 echo'<li class="' . $li1 . '">';
-                    echo'<a href="#">Foto Mereka</a>';
+                    echo'<a href="magazine.php#navProfile">Foto Mereka</a>';
                     echo'<span class="underline"></span>';
                 echo'</li>';
                 echo'<li class="' . $li2 . '">';
-                    echo'<a href="#">Galeri</a>';
+                    echo'<a href="gallery.php#navProfile">Galeri</a>';
                     echo'<span class="underline"></span>';
                 echo'</li>';
                 echo'<li class="' . $li3 . '">';
-                    echo'<a href="#">Tentangku</a>';
+                    echo'<a href="aboutme.php#navProfile">Tentangku</a>';
                     echo'<span class="underline"></span>';
                 echo'</li>';
             echo'</ul>';
