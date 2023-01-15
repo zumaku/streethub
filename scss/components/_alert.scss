@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+@use 'button' as *;
+
+.alertSection#alertSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    text-align: center;
+    background-color: $overlay;
+    .container{
+        width: 90%;
+        height: 90%;
+        max-width: 500px;
+        max-height: 200px;
+        border-radius: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $primary;
+        h1{
+            margin-bottom: 5px;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        @include normalBtn;
+        .btn{
+            border: none;
+            &#btnNo{
+                background-color: $danger;
+            }
+        }
+    }
+}

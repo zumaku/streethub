@@ -156,7 +156,7 @@
                     flex-direction: column;
                     position: absolute;
                     right: 0;
-                    bottom: -145px;
+                    bottom: -180px;
                     padding: 10px 15px;
                     box-sizing: border-box;
                     box-shadow: 0 0 10px rgba(197, 197, 197, 0.274);
@@ -195,7 +195,7 @@
                             color: white;
                             border: 0;
                             &:hover{
-                                color: red;
+                                color: $danger;
                             }
                         }
                     }

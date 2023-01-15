@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../function/conection.php';
+include '../function/function.php';
 include '../function/loginFunction.php';
 
 if( isset($_SESSION['idActive']) ){

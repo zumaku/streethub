@@ -1,3 +1,11 @@
+<?php
+
+    if( isset($_POST['logout']) ){
+
+    }
+
+?>
+
 <div class="secnav">
     <nav class="nav1" id="nav1">
         <div class="container">
@@ -57,8 +65,9 @@
                         echo '<div class="arrow"></div>';
                     echo '</div>';
                     echo '<div class="dropdown" style="display: none;">';
-                    echo '<a href="http://localhost/streetHub/">Home</a><span></span>';
                         echo '<div class="segitiga"></div>';
+                        echo '<a href="#">Foto Baru</a><span></span>';
+                        echo '<a href="#">Galery Baru</a><span></span>';
                         echo '<a href="http://localhost/streetHub/profile/aboutme_ujicoba.php">Profile</a><span></span>';
                         echo '<a href="#">Pengaturan</a><span></span>';
                         echo '<form action="" method="post"><button type="submit" name="logout">Sign Out</button></form>';
@@ -121,3 +130,6 @@
         </div>
     </nav>
 </div>
+
+
+

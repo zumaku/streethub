@@ -168,7 +168,13 @@ function signin($data){
 
 // FUNGSI LOGOUT
 function signout(){
-
+    session_destroy();
+    echo'
+    <script>
+        alert("Sign Out berhasil!!!");
+        window.location.href = "http://localhost/streetHub/";
+    </script>
+';
 }
 
 
