@@ -15,7 +15,10 @@ if(isset($_POST['finish'])){
 
     if( insertProfile03($_POST) > 0 ){
         session_destroy();
+        session_start();
+        $_SESSION['idActive'] = $id;
         echo' <script> alert("Upload data Berhasil!!! Profile Selesai"); window.location.href = "../profile/aboutme.php"; </script> ';
+        
     } else{
         echo' <script> alert("Upload data Gagal!!!"); window.location.href = "insertTools.php"; </script> ';
     }

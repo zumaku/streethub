@@ -49,16 +49,27 @@
                 <div class="keranjang">
                     <a href="#"></a>
                 </div>
-                <div class="account" id="accountDd">
-                    <div class="profile"></div>
-                    <div class="arrow"></div>
-                </div>
-                <div class="dropdown" style="display: none;">
-                    <div class="segitiga"></div>
-                    <a href="http://localhost/streetHub/profile/aboutme.php">Profilmu</a><span></span>
-                    <a href="#">Pengaturan</a><span></span>
-                    <a href="http://localhost/streetHub/auth/login.php">Account</a><span></span>
-                </div>
+
+                <?php
+                if( isset($_SESSION['idActive']) ){
+                    echo '<div class="account" id="accountDd">';
+                        echo '<div class="profile"></div>';
+                        echo '<div class="arrow"></div>';
+                    echo '</div>';
+                    echo '<div class="dropdown" style="display: none;">';
+                    echo '<a href="http://localhost/streetHub/">Home</a><span></span>';
+                        echo '<div class="segitiga"></div>';
+                        echo '<a href="http://localhost/streetHub/profile/aboutme_ujicoba.php">Profile</a><span></span>';
+                        echo '<a href="#">Pengaturan</a><span></span>';
+                        echo '<form action="" method="post"><button type="submit" name="logout">Sign Out</button></form>';
+                    echo '</div>';
+                } else{
+                    echo '<div class="signinLink">';
+                        echo '<a href="http://localhost/streetHub/auth/login.php">Sign In</a>';
+                    echo '</div>';
+                }
+                ?>
+
             </div>
         </div>
     </nav>
@@ -90,9 +101,22 @@
                     <a href="#">Blog</a>
                     <span class="underline"></span>
                 </li>
-                <li class="newli">
-                    <a href="#">Akun</a>
-                </li>
+
+                <?php
+                if( isset($_SESSION['idActive']) ){
+                    echo '<li>';
+                        echo '<a href="#">Pengaturan</a>';
+                        echo '<span class="underline"></span>';
+                    echo '</li>';
+                    echo '<li class="newli">';
+                        echo '<form action="" method="post"><button type="submit" name="logout">Sign Out</button></form>';
+                    echo '</li>';
+                } else{
+                    echo '<li class="newli">';
+                        echo '<a href="http://localhost/streetHub/auth/login.php">Sign in</a>';
+                    echo '</li>';
+                }
+                ?>
             </ul>
         </div>
     </nav>

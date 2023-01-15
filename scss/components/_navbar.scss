@@ -110,6 +110,18 @@
                     margin-left: 20px;
                     cursor: pointer;
                 }
+                .signinLink{
+                    background-color: $secondary;
+                    padding: 3px 10px;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    margin-left: 10px;
+                    a{
+                        color: white;
+                        text-decoration: none;
+                        font-weight: bold;
+                    }
+                }
                 .account{
                     justify-self: flex-end;
                     background-color: $secondary;
@@ -175,12 +187,36 @@
                         background-color: white;
                         margin-bottom: 5px;
                     }
+                    form{
+                        button{
+                            font-size: .9em;
+                            font-weight: bold;
+                            background-color: $primary;
+                            color: white;
+                            border: 0;
+                            &:hover{
+                                color: red;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
     .nav2{
         display: none;
+        form{
+            button{
+                font-size: 1em;
+                font-weight: bold;
+                background-color: $primary;
+                color: white;
+                border: 0;
+                &:hover{
+                    color: red;
+                }
+            }
+        }
     }
 }
 
@@ -241,7 +277,7 @@
                     .keranjang{
                         margin-left: 0;
                     }
-                    .account{
+                    .account, .signinLink{
                         display: none;
                     }
                 }
@@ -285,6 +321,9 @@
                         flex-direction: column;
                         a{
                             margin-bottom: 10px;
+                            &:hover{
+                                color: $secondary;
+                            }
                         }
                     }
                 }

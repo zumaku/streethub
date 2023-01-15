@@ -107,6 +107,18 @@
   margin-left: 20px;
   cursor: pointer;
 }
+.secnav .nav1 .container .sec2 .signinLink {
+  background-color: #18A13D;
+  padding: 3px 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.secnav .nav1 .container .sec2 .signinLink a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 .secnav .nav1 .container .sec2 .account {
   justify-self: flex-end;
   background-color: #18A13D;
@@ -173,8 +185,28 @@
   background-color: white;
   margin-bottom: 5px;
 }
+.secnav .nav1 .container .sec2 .dropdown form button {
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: #191A19;
+  color: white;
+  border: 0;
+}
+.secnav .nav1 .container .sec2 .dropdown form button:hover {
+  color: red;
+}
 .secnav .nav2 {
   display: none;
+}
+.secnav .nav2 form button {
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #191A19;
+  color: white;
+  border: 0;
+}
+.secnav .nav2 form button:hover {
+  color: red;
 }
 
 .scroll-down div.secnav {
@@ -229,7 +261,7 @@
   .secnav .nav1 .container .sec2 .keranjang {
     margin-left: 0;
   }
-  .secnav .nav1 .container .sec2 .account {
+  .secnav .nav1 .container .sec2 .account, .secnav .nav1 .container .sec2 .signinLink {
     display: none;
   }
   .secnav .nav2 {
@@ -278,6 +310,9 @@
   }
   .secnav .nav2 .navbar .navMenu li a {
     margin-bottom: 10px;
+  }
+  .secnav .nav2 .navbar .navMenu li a:hover {
+    color: #18A13D;
   }
   .secnav .nav2 span {
     width: 99.9%;

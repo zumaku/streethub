@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'function/conection.php';
 include 'function/loginFunction.php';
 
@@ -7,9 +8,11 @@ $query = mysqli_query($koneksi, "SELECT * FROM $tblAccount");
 
 
 if(isset($_POST['submit'])){
-    $foto = $_FILES['foto'];
-    storePhoto($foto, 'D:\PHOTOS');
-    echo' <script> alert("' . $nama . '"); </script> ';
+    // $foto = $_FILES['foto'];
+    // storePhoto($foto, 'D:\PHOTOS');
+    $_SESSION['lanjutkan'] = 'lanjutkan';
+    echo' <script> window.location.href = "hlmCreateSession.php"; </script> ';
+    // echo' <script> alert("' . $nama . '"); </script> ';
 }
 
 

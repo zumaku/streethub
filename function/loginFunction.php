@@ -133,11 +133,13 @@ function signin($data){
     $hasil = mysqli_fetch_assoc($query);
 
     if($hasil['email'] === $email){
-        if(password_verify($pw, $hasil['password']) == 1){
+        if( password_verify($pw, $hasil['password']) == 1 ){
+            $_SESSION['idActive'] = $hasil['id_user'];
             echo'
                 <script>
+                    alert(' . $_SESSION['idActive'] . ');
                     alert("Login berhasil!!!");
-                    window.location.href = "../ujiCobaSignup.php";
+                    window.location.href = "../";
                 </script>
             ';
         } else{
@@ -157,6 +159,20 @@ function signin($data){
         ';
     }
 }
+
+
+
+
+
+
+
+// FUNGSI LOGOUT
+function signout(){
+
+}
+
+
+
 
 
 

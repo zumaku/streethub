@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+
+
+echo $_SESSION['idActive'];
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

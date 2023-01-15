@@ -3,6 +3,10 @@ session_start();
 include '../function/conection.php';
 include '../function/loginFunction.php';
 
+if( isset($_SESSION['idActive']) ){
+
+}
+
 if(isset($_POST['signup'])){
     if(signup($_POST) > 0){
         // Mengambil id akun yang baru dibuat dan membuatkannya session
