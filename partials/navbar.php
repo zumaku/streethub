@@ -1,7 +1,26 @@
 <?php
+    include 'alert.php';
 
+    // LOGOUT FUNCTION PROCCES
     if( isset($_POST['logout']) ){
-
+        alert(true, false, 'Serius?', 'Yakin ingin keluar?', 'Serius', 'Batal');
+    }
+    if( isset($_POST['alertYes']) ){
+        session_destroy();
+        echo'
+            <script>
+                window.location.href = "http://localhost/streetHub/";
+            </script>
+        ';
+    } else if( isset($_POST['alertNo']) ){
+        echo'
+            <script>
+                window.location.href;
+                setTimeout(()=>{
+                    alert("nyak.. ndak jadi keluar de\'");
+                }, 1000);
+            </script>
+        ';
     }
 
 ?>
@@ -74,7 +93,7 @@
                     echo '</div>';
                 } else{
                     echo '<div class="signinLink">';
-                        echo '<a href="http://localhost/streetHub/auth/login.php">Sign In</a>';
+                        echo '<a href="http://localhost/streetHub/auth/">Sign In</a>';
                     echo '</div>';
                 }
                 ?>
@@ -122,7 +141,7 @@
                     echo '</li>';
                 } else{
                     echo '<li class="newli">';
-                        echo '<a href="http://localhost/streetHub/auth/login.php">Sign in</a>';
+                        echo '<a href="http://localhost/streetHub/auth/">Sign in</a>';
                     echo '</li>';
                 }
                 ?>

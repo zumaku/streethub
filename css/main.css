@@ -579,6 +579,7 @@ footer.footer .container .copyright .dll {
 }
 .alertSection#alertSection .container .btn {
   border: none;
+  margin: 0 5px;
 }
 .alertSection#alertSection .container .btn#btnNo {
   background-color: #a02525;
@@ -1836,6 +1837,21 @@ footer.footer .container .copyright .dll {
     font-size: 2.7em;
   }
 }
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #18A13D;
+}
+
 * {
   margin: 0;
   padding: 0;

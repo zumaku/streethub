@@ -7,7 +7,7 @@ $id = $_SESSION['idNewUser'][0];
 // var_dump($_SESSION['idNewUser']);
 
 if( !isset($_SESSION['idNewUser']) ){
-    echo' <script> window.location.href = "login.php"; </script> ';
+    echo' <script> window.location.href = "./"; </script> ';
 }
 
 

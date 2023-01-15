@@ -7,7 +7,7 @@ include '../function/loginFunction.php';
 $id = $_SESSION['idNewUser'][0];
 
 if( !isset($_SESSION['idNewUser']) ){
-    echo' <script> window.location.href = "login.php"; </script> ';
+    echo' <script> window.location.href = "./"; </script> ';
 }
 
 
