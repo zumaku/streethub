@@ -578,6 +578,22 @@ body {
 .sectionLeft .signForm input:focus {
   border: 1px solid #18A13D;
 }
+.sectionLeft .signForm textarea {
+  width: 100%;
+  max-width: 350px;
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  background-color: rgba(224, 224, 224, 0.4352941176);
+  border: 1px solid #191A19;
+  color: white;
+  margin: 10px 0;
+}
+.sectionLeft .signForm textarea:focus {
+  border: 1px solid #18A13D;
+}
 .sectionLeft .signForm a {
   text-decoration: none;
   font-size: 0.8em;

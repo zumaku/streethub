@@ -84,7 +84,22 @@ body{
             margin: 10px 0;
             &:focus{
                 border: 1px solid $secondary;
-                // box-shadow: 0 0 10px rgba(49, 181, 95, 0.274);
+            }
+        }
+        textarea{
+            width: 100%;
+            max-width: 350px;
+            border: 0;
+            outline: none;
+            border-radius: 10px;
+            padding: 10px 12px;
+            box-sizing: border-box;
+            background-color: $iform;
+            border: 1px solid $primary;
+            color: white;
+            margin: 10px 0;
+            &:focus{
+                border: 1px solid $secondary;
             }
         }
         a{

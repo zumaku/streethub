@@ -1,3 +1,39 @@
+<?php
+session_start();
+include '../function/conection.php';
+include '../function/loginFunction.php';
+
+if(isset($_POST['signup'])){
+    if(signup($_POST) > 0){
+        // Mengambil id akun yang baru dibuat dan membuatkannya session
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $id = mysqli_query($koneksi, "SELECT `id_user` FROM $tblAccount WHERE username = '$username'");
+
+        $_SESSION['idNewUser'] = mysqli_fetch_row($id);
+        // var_dump(mysqli_fetch_row($id));
+
+        echo'
+            <script>
+                alert("Daftar Akun Berhasil");
+                window.location.href = "lengkapi_akun01.php";
+            </script>
+        ';
+    } else{
+        echo'
+        <script>
+            alert("Daftar Akun GAGAL!!!");
+            window.location.href = "login.php";
+        </script>
+    ';
+    }
+} else if(isset($_POST['sigin'])){
+    signin($_POST);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
