@@ -14,9 +14,9 @@ if( !isset($_SESSION['idNewUser']) ){
 if(isset($_POST['lanjut'])){
 
     if( insertProfile02($_POST) > 0 ){
-        echo' <script> alert("Upload data Berhasil!!! Lanjut ketahap selanjutnya"); window.location.href = "lengkapi_akun03.php"; </script> ';
+        echo' <script> alert("Upload data Berhasil!!! Lanjut ketahap selanjutnya"); window.location.href = "insertTools.php"; </script> ';
     } else{
-        echo' <script> alert("Upload data Gagal!!!"); window.location.href = "lengkapi_akun02.php"; </script> ';
+        echo' <script> alert("Upload data Gagal!!!"); window.location.href = "insertSocials.php"; </script> ';
     }
 
 }

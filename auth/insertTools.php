@@ -15,9 +15,9 @@ if(isset($_POST['finish'])){
 
     if( insertProfile03($_POST) > 0 ){
         session_destroy();
-        echo' <script> alert("Upload data Berhasil!!! Profile Selesai"); window.location.href = "../profile/profile02.php"; </script> ';
+        echo' <script> alert("Upload data Berhasil!!! Profile Selesai"); window.location.href = "../profile/aboutme.php"; </script> ';
     } else{
-        echo' <script> alert("Upload data Gagal!!!"); window.location.href = "lengkapi_akun03.php"; </script> ';
+        echo' <script> alert("Upload data Gagal!!!"); window.location.href = "insertTools.php"; </script> ';
     }
 
 }
