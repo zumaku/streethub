@@ -36,6 +36,7 @@
                 }
                 .navbar{
                     display: flex;
+                    align-items: center;
                     .pencarian{
                         margin: auto 20px;
                         input{
@@ -48,9 +49,11 @@
                             border-radius: 10px;
                             padding: 5px 12px;
                             box-sizing: border-box;
+                            transition: .3s ease-in-out;
                             &:focus{
                                 border: 1px solid $secondary;
                                 box-shadow: 0 0 10px rgba(49, 181, 95, 0.274);
+                                width: 200px;
                             }
                         }
                     }
