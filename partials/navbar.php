@@ -1,27 +1,11 @@
 <?php
-    include 'alert.php';
+    // include '';
 
     // LOGOUT FUNCTION PROCCES
     if( isset($_POST['logout']) ){
         alert(true, false, 'Serius?', 'Yakin ingin keluar?', 'Serius', 'Batal');
     }
-    if( isset($_POST['alertYes']) ){
-        session_destroy();
-        echo'
-            <script>
-                window.location.href = "http://localhost/streetHub/";
-            </script>
-        ';
-    } else if( isset($_POST['alertNo']) ){
-        echo'
-            <script>
-                window.location.href;
-                setTimeout(()=>{
-                    alert("nyak.. ndak jadi keluar de\'");
-                }, 1000);
-            </script>
-        ';
-    }
+    hasilAlert(true);
 
 ?>
 

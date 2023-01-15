@@ -1,10 +1,18 @@
 <?php
-session_start();
-include '../function/function.php';
-include '../function/loginFunction.php';
+    session_start();
+    include '../function/function.php';
+    include '../function/loginFunction.php';
 
-if( isset($_SESSION['idActive']) ){
-
+    if( isset($_SESSION['idActive']) ){
+        echo'
+        <script>
+            window.location.href = "../";
+            setTimeout(()=>{
+                alert("Woi.. Anda telah login");
+            }, 1000);
+        </script>
+    ';
+    alert(true, true, 'Yos..', 'Sign In Berhasil', 'Ok');
 }
 
 if(isset($_POST['signup'])){

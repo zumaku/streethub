@@ -3,6 +3,18 @@ session_start();
 include '../function/function.php';
 include '../function/loginFunction.php';
 
+if( isset($_SESSION['idActive']) ){
+    echo'
+    <script>
+        window.location.href = "../";
+        setTimeout(()=>{
+            alert("Woi.. Anda telah login");
+        }, 1000);
+    </script>
+';
+}
+
+
 $id = $_SESSION['idNewUser'][0];
 // var_dump($_SESSION['idNewUser']);
 
