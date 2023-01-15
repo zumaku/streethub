@@ -2,7 +2,7 @@
     <nav class="nav1" id="nav1">
         <div class="container">
             <div class="sec1">
-                <a href="#">
+                <a href="http://localhost/streetHub/">
                     <div class="logo"></div>
                 </a>
                 
@@ -42,7 +42,7 @@
                     </ul>
                 </div>
             </div>
-            <a href="#" class="secTengah">
+            <a href="http://localhost/streetHub/" class="secTengah">
                 <div class="logo"></div>
             </a>
             <div class="sec2">
@@ -55,10 +55,9 @@
                 </div>
                 <div class="dropdown" style="display: none;">
                     <div class="segitiga"></div>
-                    <a href="#">Profilmu</a><span></span>
+                    <a href="http://localhost/streetHub/profile/aboutme.php">Profilmu</a><span></span>
                     <a href="#">Pengaturan</a><span></span>
-                    <a href="../streetHub/pages/login.php">Sign In</a><span></span>
-                    <a href="../streetHub/pages/login.php">Sign Up</a>
+                    <a href="http://localhost/streetHub/auth/login.php">Account</a><span></span>
                 </div>
             </div>
         </div>

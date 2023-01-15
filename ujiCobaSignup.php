@@ -8,9 +8,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM $tblAccount");
 
 if(isset($_POST['submit'])){
     $foto = $_FILES['foto'];
-    storePhoto($foto, 'img/account/uji');
-    $fotobakka = $_FILES['fotoBakka'];
-    $nama = storePhoto($fotobakka, 'img/account/uji/bakka');
+    storePhoto($foto, 'D:\PHOTOS');
     echo' <script> alert("' . $nama . '"); </script> ';
 }
 
@@ -37,7 +35,6 @@ if(isset($_POST['submit'])){
 
     <form action="" method="post" enctype="multipart/form-data">
         <input type="file" name="foto">
-        <input type="file" name="fotoBakka">
         <button type="submit" name="submit">Kirim</button>
     </form>
 

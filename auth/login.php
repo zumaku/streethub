@@ -17,7 +17,7 @@ if(isset($_POST['signup'])){
         echo'
             <script>
                 alert("Daftar Akun Berhasil");
-                window.location.href = "lengkapi_akun01.php";
+                window.location.href = "insertBio.php";
             </script>
         ';
     } else{
