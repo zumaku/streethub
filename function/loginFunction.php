@@ -16,52 +16,6 @@ function signup($data){
     return $hasil;
 }
 
-
-
-
-
-
-// FUNGSI MENYIMPAN FOTO
-function storePhoto($foto, $folderTujuan){
-    $allowEks = ['jpg', 'jpeg', 'png'];
-
-    $namaFoto = $foto['name'];
-    $tmpFoto = $foto['tmp_name'];
-    $ukuranFoto = $foto['size'];
-    $errorFoto = $foto['error'];
-    $tipeFoto = $foto['type'];
-
-    $pecahEkstensiFoto = explode('.', $namaFoto);
-    $ekstensiFoto = strtolower(end($pecahEkstensiFoto));
-
-    if( in_array($ekstensiFoto, $allowEks) ){
-        if( $errorFoto === 0 ){
-            if( $ukuranFoto < 1000000 ){
-
-                $namaFotoBaru = uniqid('', true) . "." . $ekstensiFoto;
-                $folderTujuanAkhir = $folderTujuan . '/' . $namaFotoBaru;
-
-                move_uploaded_file($tmpFoto, $folderTujuanAkhir);
-
-                return $namaFotoBaru;
-                // echo' <script> alert("File Berhasil Diupload!!!"); window.location.href = "ujiCobaSignup.php" </script> ';
-            } else{
-                echo' <script> alert("Ukuran foto lebih besar dari 1mb!!!"); </script> ';
-            }
-        } else{
-            echo' <script> alert("Terdapat Error saat upload!!!"); </script> ';
-        }
-    } else{
-        echo' <script> alert("Ekstensi File Salah!!!"); </script> ';
-    }
-}
-
-
-
-
-
-
-
 // FUNGSI LENGKAPI AKUN
 function insertProfile01($data, $file){
     global $koneksi;
@@ -184,13 +138,6 @@ function signout(){
 
 
 
-// $uji = password_hash('haccing', PASSWORD_BCRYPT);
-// echo"$uji";
 
-// if(password_verify('haccing', $uji)){
-//     echo"Benar";
-// } else{
-//     echo"Salah";
-// }
 
 ?>

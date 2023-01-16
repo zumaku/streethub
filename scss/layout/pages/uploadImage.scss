@@ -1,0 +1,179 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: $secondary;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    color: white;
+    background-color: $primary;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.leftSect{
+    width: 50%;
+    height: 100vh;
+    @include bg();
+}
+.rightSect{
+    width: 50%;
+    height: 100vh;
+    overflow-y: scroll;
+    padding-left: 5%;
+    box-sizing: border-box;
+    h1{
+        font-size: 3em;
+        margin: 120px 0 20px;
+        span{
+            color: $secondary;
+        }
+    }
+    .previewImg{
+        max-width: 350px;
+        min-height: 200px;
+        // background-color: darkviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        border: 3px dashed white;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20px;
+        .iconImg{
+            cursor: pointer;
+            border: 0;
+            background-color: transparent;
+            width: 32px;
+            height: 32px;
+            @include bg(url(../img/icon/add-image.png))
+        }
+        img{
+            width: 100%;
+        }
+    }
+    h3{
+        margin-bottom: 5px;
+    }
+    p{
+        font-size: .8em;
+        margin-bottom: 10px;
+    }
+    input{
+        margin-bottom: 20px;
+    }
+    textarea{
+        width: 80%;
+        max-width: 350px;
+        margin-bottom: 60px;
+        resize: vertical;
+        border: 0;
+        outline: none;
+        border-radius: 10px;
+        padding: 10px 12px;
+        box-sizing: border-box;
+        background-color: $iform;
+        border: 1px solid $primary;
+        color: white;
+        &:focus{
+            border: 1px solid $secondary;
+        }
+    }
+    .buttons{
+        @include normalBtn();
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        justify-content: space-between;
+        max-width: 350px;
+        margin-bottom: 50px;
+        button{
+            border: 0;
+            margin-right: 3px;
+            &.tambah{
+                display: flex;
+                .arrowDown{
+                    margin-left: 3px;
+                    width: 16px;
+                    height: 16px;
+                    @include bg(url(../img/icon/panahKanan2.png), contain);
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        a.danger{
+            background-color: $danger;
+            font-size: .9em;
+            &:hover{
+                transform: scale(1.02);
+            }
+            &:active{
+                transform: scale(.98);
+            }
+        }
+    }
+}
+
+
+
+@include media(leptop){
+    .leftSect{
+        width: 40%;
+        height: 100vh;
+        @include bg();
+    }
+    .rightSect{
+        width: 60%;
+    }
+}
+@include media(notebook){
+    body{
+        justify-content: center;
+    }
+    .leftSect{
+        display: none;
+    }
+    .rightSect{
+        padding: 0;
+        width: fit-content;
+        height: fit-content;
+        overflow-y: hidden;
+    }
+}
+@include media(hp){
+    body{
+        justify-content: center;
+    }
+    .leftSect{
+        display: none;
+    }
+    .rightSect{
+        width: fit-content;
+        height: fit-content;
+        overflow-y: hidden;
+        padding: 20px 5% 0;
+    }
+}

@@ -999,7 +999,7 @@ footer.footer .container .copyright .dll {
 .galeri .tambahFoto .btn:active {
   transform: scale(0.98);
 }
-.galeri .tambahFoto h2 {
+.galeri .tambahFoto h4 {
   margin: auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1009,7 +1009,7 @@ footer.footer .container .copyright .dll {
   display: flex;
   justify-content: center;
 }
-.galeri .tambahFoto h2 a {
+.galeri .tambahFoto h4 a {
   margin: auto;
   text-decoration: none;
   color: white;

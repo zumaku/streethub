@@ -5,6 +5,7 @@ $tblAccount = 'user_account';
 $tblProfile = 'user_profile';
 $tblTools = 'user_tools';
 $tblMedsos = 'user_medsos';
+$tblGalery = 'galery';
 
 
 
@@ -55,27 +56,100 @@ function alert($color = true, $jenis = true, $h1, $p, $btn1 = false, $btn2 = fal
 }
 
 // FUNGSI MENGECEK HASIL ALERT
-function hasilAlert($logout = false){
+function hasilAlert($event = false){
     if( isset($_POST['alertYes']) ){
-        if($logout == true){
+        if($event === 'uploadImageGallery'){
+            echo'
+                <script>
+                    setTimeout(()=>{
+                        window.location.href = "http://localhost/streetHub/profile/uploadImage.php?upload=gallery";
+                    }, 2000)
+                </script>
+            ';
+        } else if($event === 'signout'){
             session_destroy();
             alert(true, true, 'Bye..', 'Sign Out Berhasil');
+            echo'
+                <script>
+                    setTimeout(()=>{
+                        window.location.href = "http://localhost/streetHub/";
+                    }, 2000)
+                </script>
+            ';
         }
-        echo'
-            <script>
-                setTimeout(()=>{
-                    window.location.href = "http://localhost/streetHub/";
-                }, 2000)
-            </script>
-        ';
     } else if( isset($_POST['alertNo']) ){
-        echo'
-            <script>
-                window.location.href;
-            </script>
-        ';
+        if($event === 'uploadImageGallery'){
+            echo'
+                <script>
+                    setTimeout(()=>{
+                        window.location.href = "http://localhost/streetHub/profile/gallery.php";
+                    }, 2000)
+                </script>
+            ';
+        } else if($event === 'signout'){
+            echo'
+                <script>
+                    window.location.href;
+                </script>
+            ';
+        }
     }
 }
+
+
+
+// FUNGSI STORE FOTO
+function storePhoto($foto, $folderTujuan){
+    $allowEks = ['jpg', 'jpeg', 'png'];
+
+    $namaFoto = $foto['name'];
+    $tmpFoto = $foto['tmp_name'];
+    $ukuranFoto = $foto['size'];
+    $errorFoto = $foto['error'];
+    $tipeFoto = $foto['type'];
+
+    $pecahEkstensiFoto = explode('.', $namaFoto);
+    $ekstensiFoto = strtolower(end($pecahEkstensiFoto));
+
+    if( in_array($ekstensiFoto, $allowEks) ){
+        if( $errorFoto === 0 ){
+            if( $ukuranFoto < 1000000 ){
+
+                $namaFotoBaru = uniqid('', true) . "." . $ekstensiFoto;
+                $folderTujuanAkhir = $folderTujuan . '/' . $namaFotoBaru;
+
+                move_uploaded_file($tmpFoto, $folderTujuanAkhir);
+
+                return $namaFotoBaru;
+                // echo' <script> alert("File Berhasil Diupload!!!"); window.location.href = "ujiCobaSignup.php" </script> ';
+            } else{
+                echo' <script> alert("Ukuran foto lebih besar dari 1mb!!!"); </script> ';
+            }
+        } else{
+            echo' <script> alert("Terdapat Error saat upload!!!"); </script> ';
+        }
+    } else{
+        echo' <script> alert("Ekstensi File Salah!!!"); </script> ';
+    }
+}
+
+
+
+
+// FUNGSI UPLOAD FOTO GALERY
+function uploadImageGallery($tags, $namaFoto, $id){
+    global $koneksi;
+    global $tblGalery;
+
+    $tanggal = new DateTime();
+    $tglUpload = $tanggal->format('Y-m-d');
+    $query = "INSERT INTO $tblGalery VALUES ('', '$id', '$tglUpload', '$namaFoto', '$tags')";
+
+    $hasil = mysqli_query($koneksi, $query);
+    // var_dump($hasil);
+    return $hasil;
+}
+
 
 
 ?>

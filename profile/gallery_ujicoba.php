@@ -51,12 +51,12 @@
         <?php
         if( isset($_SESSION['idActive']) ){
             echo'<div class="tambahFoto">';
-                echo'<h2 class="btn"><a href="#">Tambah Foto</a></h2>';
+                echo'<h4 class="btn"><a href="uploadImage.php?upload=gallery">Tambah Foto</a></h4>';
             echo'</div>';
         }
         ?>
         <div class="container">
-            <div class="gambar">
+            <!-- <div class="gambar">
                 <img src="../img/profile/galeri/00.jpg" alt="">
                 <div class="aksi">
                     <a href="../img/profile/galeri/00.jpg" download title="Unduh"><div class="iconDownload"></div></a>
@@ -69,8 +69,8 @@
                     }
                     ?>
                 </div>
-            </div>
-            <div class="gambar">
+            </div> -->
+            <!-- <div class="gambar">
                 <img src="../img/profile/galeri/01.jpg" alt="">
             </div>
             <div class="gambar">
@@ -81,46 +81,7 @@
             </div>
             <div class="gambar">
                 <img src="../img/profile/galeri/04.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/05.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/06.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/07.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/08.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/09.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/10.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/11.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/12.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/13.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/14.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/15.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/16.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/17.jpg" alt="">
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- =============== GALERI END =============== -->

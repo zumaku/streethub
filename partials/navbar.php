@@ -5,7 +5,7 @@
     if( isset($_POST['logout']) ){
         alert(true, false, 'Serius?', 'Yakin ingin keluar?', 'Serius', 'Batal');
     }
-    hasilAlert(true);
+    hasilAlert('signout');
 
 ?>
 
