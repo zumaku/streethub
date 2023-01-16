@@ -5,44 +5,45 @@
 
     if( isset($_SESSION['idActive']) ){
         echo'
-        <script>
-            window.location.href = "../";
-            setTimeout(()=>{
-                alert("Woi.. Anda telah login");
-            }, 1000);
-        </script>
-    ';
-    alert(true, true, 'Yos..', 'Sign In Berhasil', 'Ok');
-}
-
-if(isset($_POST['signup'])){
-    if(signup($_POST) > 0){
-        // Mengambil id akun yang baru dibuat dan membuatkannya session
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $id = mysqli_query($koneksi, "SELECT `id_user` FROM $tblAccount WHERE username = '$username'");
-
-        $_SESSION['idNewUser'] = mysqli_fetch_row($id);
-        // var_dump(mysqli_fetch_row($id));
-
-        echo'
             <script>
-                alert("Daftar Akun Berhasil");
-                window.location.href = "insertBio.php";
+                setTimeout(()=>{
+                    window.location.href = "../";
+                }, 3000);
             </script>
         ';
-    } else{
-        echo'
-        <script>
-            alert("Daftar Akun GAGAL!!!");
-            window.location.href = "login.php";
-        </script>
-    ';
+        // sleep(2);
+        alert(true, true, 'Perhatian!', 'Anda Telah Login');
+        // alert(true, true, 'Yos..', 'Sign In Berhasil', 'Ok');
     }
-} else if(isset($_POST['sigin'])){
-    signin($_POST);
-}
+
+    if(isset($_POST['signup'])){
+        if(signup($_POST) > 0){
+            // Mengambil id akun yang baru dibuat dan membuatkannya session
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $id = mysqli_query($koneksi, "SELECT `id_user` FROM $tblAccount WHERE username = '$username'");
+
+            $_SESSION['idNewUser'] = mysqli_fetch_row($id);
+            // var_dump(mysqli_fetch_row($id));
+
+            echo'
+                <script>
+                    alert("Daftar Akun Berhasil");
+                    window.location.href = "insertBio.php";
+                </script>
+            ';
+        } else{
+            echo'
+            <script>
+                alert("Daftar Akun GAGAL!!!");
+                window.location.href = "login.php";
+            </script>
+        ';
+        }
+    } else if(isset($_POST['sigin'])){
+        signin($_POST);
+    }
 
 ?>
 

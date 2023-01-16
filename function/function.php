@@ -9,6 +9,29 @@ $tblMedsos = 'user_medsos';
 
 
 
+// FUNGSI MENGAMBIL DATA
+function takeAccount($id){
+    global $koneksi;
+    global $tblAccount;
+    return mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblAccount WHERE id_user = '$id'") );
+}
+function takeProfile($id){
+    global $koneksi;
+    global $tblProfile;
+    return mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblProfile WHERE id_user = '$id'") );
+}
+function takeMedsos($id){
+    global $koneksi;
+    global $tblMedsos;
+    return mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblMedsos WHERE id_user = '$id'") );
+}
+function takeTools($id){
+    global $koneksi;
+    global $tblTools;
+    return mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblTools WHERE id_user = '$id'") );
+}
+
+
 
 // FUNGSI ALERT
 function alert($color = true, $jenis = true, $h1, $p, $btn1 = false, $btn2 = false){

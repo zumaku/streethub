@@ -2,13 +2,31 @@
 @use '../../components' as *;
 
 .galeri{
+    .tambahFoto{
+        @include normalBtn();
+        padding: 50px 0 0;
+        h2{
+            margin: auto;
+            width: fit-content;
+            box-sizing: border-box;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            a{
+                margin: auto;
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
     .container{
         width: 90%;
         columns: 3;
         column-gap: 20px;
         margin: auto;
-        padding: 100px 0;
+        padding: 40px 0;
         .gambar{
+            position: relative;
             // position: relative;
             img{
                 width: 100%;
@@ -19,14 +37,44 @@
                     transform: scale(1.01);
                 }
             }
-            // @include normalBtn();
-            // .btn{
-            //     width: fit-content;
-            //     position: absolute;
-            //     z-index: 3;
-            //     top: 5px;
-            //     right: 5px;
-            // }
+            .aksi{
+                // background-color: blue;
+                display: flex;
+                flex-direction: row;
+                width: fit-content;
+                position: absolute;
+                z-index: 3;
+                top: 5px;
+                right: 5px;
+                a{
+                    .iconDownload{
+                        height: 25px;
+                        width: 25px;
+                        @include bg(url(../img/icon/download.png), contain);
+                        opacity: .7;
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                }
+                form{
+                    padding: 0;
+                    .iconAksi{
+                        margin-left: 10px;
+                        height: 25px;
+                        width: 25px;
+                        border: 0;
+                        background-color: transparent;
+                        cursor: pointer;
+                        opacity: .7;
+                        &:hover{
+                            opacity: 1;
+                        }
+                        &.iconDelete{ @include bg(url(../img/icon/delete.png), contain); }
+                        &.iconEdit{ @include bg(url(../img/icon/editing.png), contain); }
+                    }
+                }
+            }
         }
     }
 }
