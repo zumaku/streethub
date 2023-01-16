@@ -69,11 +69,10 @@
                     echo '</div>';
                     echo '<div class="dropdown" style="display: none;">';
                         echo '<div class="segitiga"></div>';
-                        echo '<a href="#">Foto Baru</a><span></span>';
-                        echo '<a href="#">Galery Baru</a><span></span>';
+                        echo '<a href="#">Foto baru</a><span></span>';
                         echo '<a href="http://localhost/streetHub/profile/aboutme_ujicoba.php">Profile</a><span></span>';
                         echo '<a href="#">Pengaturan</a><span></span>';
-                        echo '<form action="" method="post"><button type="submit" name="logout">Sign Out</button></form>';
+                        echo '<form action="" method="post"><button type="submit" name="logout"><p>Sign out</p></button></form>';
                     echo '</div>';
                 } else{
                     echo '<div class="signinLink">';
@@ -90,9 +89,14 @@
         <div class="navbar">
             <form action="" method="" class="pencarian">
                 <input type="text" name="cariapa" id="cariapa" placeholder="Cari di sini">
+                <button type="submit" name="cari" hidden></button>
                 <span class="underline"></span>
             </form>
             <ul class="navMenu">
+                <li>
+                    <a href="#">Foto baru</a>
+                    <span cWass="underline"></span>
+                </li>
                 <li>
                     <a href="#">Tentang</a>
                     <span cWass="underline"></span>
@@ -120,8 +124,15 @@
                         echo '<a href="#">Pengaturan</a>';
                         echo '<span class="underline"></span>';
                     echo '</li>';
+                    echo '<li>';
+                        echo '<a href="http://localhost/streetHub/profile" class="profile">';
+                            echo'<div class="circleProfile"></div>';
+                            echo'<p>Name</p>';
+                        echo'</a>';
+                        echo '<span class="underline"></span>';
+                    echo '</li>';
                     echo '<li class="newli">';
-                        echo '<form action="" method="post"><button type="submit" name="logout">Sign Out</button></form>';
+                        echo '<form action="" method="post"><div class="iconLogout"></div><button type="submit" name="logout">Sign out</button></form>';
                     echo '</li>';
                 } else{
                     echo '<li class="newli">';

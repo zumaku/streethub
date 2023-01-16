@@ -156,7 +156,7 @@
   flex-direction: column;
   position: absolute;
   right: 0;
-  bottom: -180px;
+  bottom: -150px;
   padding: 10px 15px;
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(197, 197, 197, 0.274);
@@ -179,7 +179,7 @@
   margin-bottom: 5px;
 }
 .secnav .nav1 .container .sec2 .dropdown a:hover {
-  background-color: #202320;
+  color: #18A13D;
 }
 .secnav .nav1 .container .sec2 .dropdown span {
   display: block;
@@ -189,8 +189,8 @@
   margin-bottom: 5px;
 }
 .secnav .nav1 .container .sec2 .dropdown form button {
-  font-size: 0.9em;
-  font-weight: bold;
+  font-size: 1em;
+  font-weight: 300;
   background-color: #191A19;
   color: white;
   border: 0;
@@ -312,10 +312,39 @@
     flex-direction: column;
   }
   .secnav .nav2 .navbar .navMenu li a {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .secnav .nav2 .navbar .navMenu li a:hover {
     color: #18A13D;
+  }
+  .secnav .nav2 .navbar .navMenu li a.profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .secnav .nav2 .navbar .navMenu li a.profile .circleProfile {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 5px;
+  }
+  .secnav .nav2 .navbar .navMenu li form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .secnav .nav2 .navbar .navMenu li form .iconLogout {
+    background-image: url(../img/icon/logout.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
   }
   .secnav .nav2 span {
     width: 99.9%;

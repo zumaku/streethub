@@ -8,7 +8,7 @@ function navProfile($li1 = false, $li2 = false, $li3 = false){
         echo'<div class="container">';
             echo'<ul>';
                 echo'<li class="' . $li1 . '">';
-                    echo'<a href="magazine.php#navProfile">Foto Mereka</a>';
+                    echo'<a href="magazine.php#navProfile">Bingkai</a>';
                     echo'<span class="underline"></span>';
                 echo'</li>';
                 echo'<li class="' . $li2 . '">';
@@ -21,6 +21,7 @@ function navProfile($li1 = false, $li2 = false, $li3 = false){
                 echo'</li>';
             echo'</ul>';
         echo'</div>';
+        // echo'<p>Foto Baru</p>';
     echo'</div>';
 }
 ?>
