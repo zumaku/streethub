@@ -1,11 +1,12 @@
 <?php
-    // include '';
 
     // LOGOUT FUNCTION PROCCES
     if( isset($_POST['logout']) ){
         alert(true, false, 'Serius?', 'Yakin ingin keluar?', 'Serius', 'Batal');
     }
-    hasilAlert('signout');
+    if( !isset($_GET['upload']) ){
+        hasilAlert('signout');
+    }
 
 ?>
 

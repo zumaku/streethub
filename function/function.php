@@ -10,11 +10,16 @@ $tblGalery = 'galery';
 
 
 
-// FUNGSI MENGAMBIL DATA
+// FUNGSI MENGAMBIL DATA USER
 function takeAccount($id){
     global $koneksi;
     global $tblAccount;
-    return mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblAccount WHERE id_user = '$id'") );
+    $hasil = mysqli_query($koneksi, "SELECT * FROM $tblAccount WHERE id_user = '$id'");
+    // $rows = [];
+    // while( $baris = mysqli_fetch_assoc($hasil) ){
+    //     $rows[] = $baris;
+    // }
+    return mysqli_fetch_assoc($hasil);
 }
 function takeProfile($id){
     global $koneksi;
@@ -62,7 +67,7 @@ function hasilAlert($event = false){
             echo'
                 <script>
                     setTimeout(()=>{
-                        window.location.href = "http://localhost/streetHub/profile/uploadImage.php?upload=gallery";
+                        window.location.href;
                     }, 2000)
                 </script>
             ';
@@ -137,13 +142,13 @@ function storePhoto($foto, $folderTujuan){
 
 
 // FUNGSI UPLOAD FOTO GALERY
-function uploadImageGallery($tags, $namaFoto, $id){
+function uploadImageGallery($tags, $namaFoto, $idUser){
     global $koneksi;
     global $tblGalery;
 
     $tanggal = new DateTime();
     $tglUpload = $tanggal->format('Y-m-d');
-    $query = "INSERT INTO $tblGalery VALUES ('', '$id', '$tglUpload', '$namaFoto', '$tags')";
+    $query = "INSERT INTO $tblGalery VALUES ('', '$idUser', '$tglUpload', '$namaFoto', '$tags')";
 
     $hasil = mysqli_query($koneksi, $query);
     // var_dump($hasil);
@@ -151,5 +156,20 @@ function uploadImageGallery($tags, $namaFoto, $id){
 }
 
 
+
+
+// FUNGSI MENGAMBIL FOTO GALLERY
+function takeImageGallery($idUser){
+    global $koneksi;
+    global $tblGalery;
+
+    $query = "SELECT * FROM $tblGalery WHERE id_user = '$idUser'";
+    $hasil = mysqli_query($koneksi, $query);
+    $bnykBaris = [];
+    while ( $baris = mysqli_fetch_assoc($hasil) ){
+        $bnykBaris[] = $baris;
+    }
+    return $bnykBaris;
+}
 
 ?>

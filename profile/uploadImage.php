@@ -31,8 +31,10 @@
             alert(true, false, 'Berhasil!', 'Foto telah diunggah ke galeri', 'Lanjut', 'Batal');
         }
     }
-    hasilAlert('uploadImageGallery');
-
+    
+    if( $_GET['upload'] == 'gallery' ){
+        hasilAlert('uploadImageGallery');
+    }
 
 
 ?>
@@ -71,5 +73,6 @@
     </form>
 
     <script src="../js/uploadImage.js"></script>
+    <script src="../js/navbar.js"></script>
 </body>
 </html>

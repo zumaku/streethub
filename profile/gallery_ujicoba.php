@@ -7,6 +7,12 @@
     $account = takeAccount($idActive);
     $profile = takeProfile($idActive);
     $medsos = takeMedsos($idActive);
+
+    $images = takeImageGallery($idActive);
+    // var_dump($images);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -56,39 +62,30 @@
         }
         ?>
         <div class="container">
-            <!-- <div class="gambar">
-                <img src="../img/profile/galeri/00.jpg" alt="">
+            <?php foreach($images as $img) : ?>
+            <div class="gambar">
+                <img src="../img/gallery/<?= $img['foto_galery'] ?>" alt="">
                 <div class="aksi">
-                    <a href="../img/profile/galeri/00.jpg" download title="Unduh"><div class="iconDownload"></div></a>
                     <?php
                     if( isset($_SESSION['idActive']) ){
                         echo'<form action"" method="post" class="tambahFoto">';
                             echo'<button type="submit" name="hapus" class="iconAksi iconDelete" title="Hapus"></button>';
                             echo'<button type="submit" name="edit" class="iconAksi iconEdit" title="Edit"></button>';
                         echo'</form>';
+                    } else{
+                        echo '<a href="../img/profile/galeri/00.jpg" download title="Unduh"><div class="iconDownload"></div></a>';
                     }
                     ?>
                 </div>
-            </div> -->
-            <!-- <div class="gambar">
-                <img src="../img/profile/galeri/01.jpg" alt="">
             </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/02.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/03.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/04.jpg" alt="">
-            </div> -->
+            <?php endforeach; ?>
         </div>
     </div>
     <!-- =============== GALERI END =============== -->
 
 
     <!-- =============== FOOTER START =============== -->
-        <?php include '../partials/footer.php' ?>
+    <?php include '../partials/footer.php' ?>
     <!-- =============== FOOTER END =============== -->
     
     <script src="../js/navbar.js"></script>

@@ -17,23 +17,3 @@ function heroProfile($bgLink, $profilePicLink, $nama, $quote ,$fb = false, $ig =
     echo'</div>';
 }
 ?>
-
-// $account = mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblAccount WHERE id_user = '$idActive'") );
-// $profile = mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblProfile WHERE id_user = '$idActive'") );
-// $medsos = mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblMedsos WHERE id_user = '$idActive'") );
-// $tools = mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblTools WHERE id_user = '$idActive'") );
-
-<!-- <div class="hero" style="background-image: url(../img/profile/sampul01.jpg);">
-    <div class="bGradient"></div>
-    <div class="container">
-        <img src="../img/profile/profile1.png" alt="Profileku">
-        <h1>Ukhtie Kebo</h1>
-        <div class="sosmed">
-            <a href="" class="icon fb"></a>
-            <a href="" class="icon ig"></a>
-            <a href="" class="icon tw"></a>
-            <a href="" class="icon web"></a>
-        </div>
-        <p class="quote">"Fotografi menyadarkanku bahwa setiap detik itu berarti dan setiap hasil yang bagus ada kerja keras"</p>
-    </div>
-</div> -->
