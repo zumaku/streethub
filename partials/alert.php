@@ -29,21 +29,3 @@ function alert($color = true, $jenis = true, $h1, $p, $btn1 = false, $btn2 = fal
 }
 
 ?>
-
-
-
-<!-- <div class="alertSection noActive" id="alertSection">
-    <div class="container" style="border: 5px solid #18A13D;">
-        <h1>Perhatian!</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, labore.</p>
-        <div class="buttons">
-            <button type="submit" name="alertYes" class="btn">Ok!</button>
-            <button type="submit" name="alertNo" class="btn" id="btnNo">No!</button>
-        </div>
-    </div>
-</div> -->
-<!-- <script>
-    setTimeout(()=>{
-        alert("no");
-    }, 500)
-</script> -->

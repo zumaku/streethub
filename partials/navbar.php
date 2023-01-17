@@ -14,7 +14,7 @@
     <nav class="nav1" id="nav1">
         <div class="container">
             <div class="sec1">
-                <a href="http://localhost/streetHub/">
+                <a href="<?= $urlToRoot ?>">
                     <div class="logo"></div>
                 </a>
                 
@@ -54,7 +54,7 @@
                     </ul>
                 </div>
             </div>
-            <a href="http://localhost/streetHub/" class="secTengah">
+            <a href="<?= $urlToRoot ?>" class="secTengah">
                 <div class="logo"></div>
             </a>
             <div class="sec2">
@@ -64,20 +64,21 @@
 
                 <?php
                 if( isset($_SESSION['idActive']) ){
+                    $profile = takeProfile($_SESSION['idActive']);
                     echo '<div class="account" id="accountDd">';
-                        echo '<div class="profile"></div>';
+                        echo '<a href="' . $urlToRoot . '/profile/aboutme.php" class="profile" style="background-image: url(' . $urlToRoot . '/img/account/profile/'.$profile['foto_profile'].')"></a>';
                         echo '<div class="arrow"></div>';
                     echo '</div>';
                     echo '<div class="dropdown" style="display: none;">';
                         echo '<div class="segitiga"></div>';
                         echo '<a href="#">Foto baru</a><span></span>';
-                        echo '<a href="http://localhost/streetHub/profile/aboutme_ujicoba.php">Profile</a><span></span>';
+                        echo '<a href="' . $urlToRoot . '/profile/aboutme.php">Profile</a><span></span>';
                         echo '<a href="#">Pengaturan</a><span></span>';
                         echo '<form action="" method="post"><button type="submit" name="logout"><p>Sign out</p></button></form>';
                     echo '</div>';
                 } else{
                     echo '<div class="signinLink">';
-                        echo '<a href="http://localhost/streetHub/auth/">Sign In</a>';
+                        echo '<a href="' . $urlToRoot . '/auth/">Sign In</a>';
                     echo '</div>';
                 }
                 ?>
@@ -126,7 +127,7 @@
                         echo '<span class="underline"></span>';
                     echo '</li>';
                     echo '<li>';
-                        echo '<a href="http://localhost/streetHub/profile" class="profile">';
+                        echo '<a href="' . $urlToRoot . '/profile/" class="profile">';
                             echo'<div class="circleProfile"></div>';
                             echo'<p>Name</p>';
                         echo'</a>';
@@ -137,7 +138,7 @@
                     echo '</li>';
                 } else{
                     echo '<li class="newli">';
-                        echo '<a href="http://localhost/streetHub/auth/">Sign in</a>';
+                        echo '<a href="' . $urlToRoot . '/auth/">Sign in</a>';
                     echo '</li>';
                 }
                 ?>

@@ -44,8 +44,8 @@
                 width: fit-content;
                 position: absolute;
                 z-index: 3;
-                top: 5px;
-                right: 5px;
+                top: 10px;
+                right: 10px;
                 a{
                     .iconDownload{
                         height: 25px;
@@ -57,24 +57,85 @@
                         }
                     }
                 }
-                form{
-                    padding: 0;
-                    .iconAksi{
-                        margin-left: 10px;
-                        height: 25px;
-                        width: 25px;
-                        border: 0;
-                        background-color: transparent;
-                        cursor: pointer;
-                        opacity: .7;
-                        &:hover{
-                            opacity: 1;
-                        }
-                        &.iconDelete{ @include bg(url(../img/icon/delete.png), contain); }
-                        &.iconEdit{ @include bg(url(../img/icon/editing.png), contain); }
+            }
+        }
+    }
+}
+
+.preViewImgGallery{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: scroll;
+    padding: 40px 0;
+    box-sizing: border-box;
+    .container{
+        width: 80%;
+        max-width: 1200px;
+        min-height: fit-content;
+        height: fit-content;
+        max-height: fit-content;
+        padding: 40px;
+        box-sizing: border-box;
+        background-color: $primary;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.599);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        h3{
+            margin-bottom: 10px;
+        }
+        form.action{
+            display: flex;
+            flex-direction: row;
+            @include normalBtn($danger);
+            .btn{
+                border: 0;
+                display: flex;
+                font-size: 1em;
+                margin: 0 5px;
+                &.unduh{
+                    background-color: $secondary;
+                }
+                .icon{
+                    margin-left: 5px;
+                    width: 16px;
+                    height: 16px;
+                    background-size: contain;
+                    &.iconHapus{
+                        background-image: url(../img/icon/delete.png);
+                    }
+                    &.iconUnduh{
+                        background-image: url(../img/icon/download.png);
                     }
                 }
             }
+        }
+        .close{
+            width: 30px;
+            height: 30px;
+            background-image: url(../img/icon/close.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        img{
+            // width: fit-content;
+            max-width: 90%;
+            max-height: 500px;
+            margin-bottom: 20px;
         }
     }
 }
@@ -85,6 +146,15 @@
             columns: 2;
             column-gap: 20px;
             padding: 60px 0;
+        }
+    }
+    .preViewImgGallery{
+        align-items: center;
+        .container{
+            .close{
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 }

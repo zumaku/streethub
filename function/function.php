@@ -87,7 +87,7 @@ function hasilAlert($event = false){
             echo'
                 <script>
                     setTimeout(()=>{
-                        window.location.href = "http://localhost/streetHub/profile/gallery.php";
+                        window.location.href = "gallery.php";
                     }, 2000)
                 </script>
             ';
@@ -170,6 +170,16 @@ function takeImageGallery($idUser){
         $bnykBaris[] = $baris;
     }
     return $bnykBaris;
+}
+
+
+// FUNGSI HAPUS IMAGE GALLERY
+function deleteImageGallery($idImageGallery){
+    global $koneksi;
+    global $tblGalery;
+    
+    $query = "DELETE FROM $tblGalery WHERE id_galery = $idImageGallery";
+    return mysqli_query($koneksi, $query);
 }
 
 ?>

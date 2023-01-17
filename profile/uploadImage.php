@@ -1,12 +1,13 @@
 <?php
     session_start();
     include '../function/function.php';
+    $urlToRoot = '../';
     
     if( !isset($_SESSION['idActive']) ){
         echo'
             <script>
                 setTimeout(()=>{
-                    window.location.href = "http://localhost/streetHub/";
+                    window.location.href = "' . $urlToRoot . '";
                 }, 2000)
             </script>
         ';
@@ -15,7 +16,7 @@
         echo'
             <script>
                 setTimeout(()=>{
-                    window.location.href = "http://localhost/streetHub/profile/gallery_ujicoba.php";
+                    window.location.href = "' . $urlToRoot . '/profile/gallery_ujicoba.php";
                 }, 2000)
             </script>
         ';
@@ -28,7 +29,7 @@
         $tags = $_POST['upTags'];
 
         if( uploadImageGallery($tags, $namaFoto, $idActive) > 0 ){
-            alert(true, false, 'Berhasil!', 'Foto telah diunggah ke galeri', 'Lanjut', 'Batal');
+            alert(true, false, 'Berhasil!', 'Foto telah diunggah ke galeri. Ingin tambah foto lagi?', 'Ya', 'Tidak');
         }
     }
     
@@ -56,7 +57,7 @@
     <form  action="" method="post" enctype="multipart/form-data" class="rightSect">
         <h1>Galeri <span>baru</span>..</h1>
         <div class="previewImg">
-            <button type="button" class="iconImg" id="iconBtn"></button>
+            <div type="button" class="iconImg" id="iconBtn"></div>
             <img id="preImage" alt="" hidden>
         </div>
         <h3 for="upGallery">Foto</h3>
@@ -68,7 +69,7 @@
 
         <div class="buttons">
             <button type="submit" name="submitGallery" class="btn">Unggah</button>
-            <a href="http://localhost/streetHub/profile/gallery.php" class="btn danger">Batal</a>
+            <a href="' . $urlToRoot . '/profile/gallery.php" class="btn danger">Batal</a>
         </div>
     </form>
 

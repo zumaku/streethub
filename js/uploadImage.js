@@ -10,4 +10,9 @@ inpImg.addEventListener('change', (e)=>{
         preImage.removeAttribute('hidden');
         preImage.src = src;
     }
-}); 
+});
+
+iconBtn.addEventListener('click', ()=>{
+    inpImg.click();
+    console.log('ke klik');
+})

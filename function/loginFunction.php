@@ -122,11 +122,12 @@ function signin($data){
 
 // FUNGSI LOGOUT
 function signout(){
+    global $urlToRoot;
     session_destroy();
     echo'
     <script>
         alert("Sign Out berhasil!!!");
-        window.location.href = "http://localhost/streetHub/";
+        window.location.href = "' . $urlToRoot . '";
     </script>
 ';
 }

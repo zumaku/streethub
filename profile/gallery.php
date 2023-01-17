@@ -1,6 +1,31 @@
 <?php
     session_start();
     include '../function/function.php';
+    $urlToRoot = '../';
+
+    $idActive = $_SESSION['idActive'];
+
+    $account = takeAccount($idActive);
+    $profile = takeProfile($idActive);
+    $medsos = takeMedsos($idActive);
+
+    $images = takeImageGallery($idActive);
+    // var_dump($images);
+
+    if( isset($_POST['deleteGallery']) ){
+        if( deleteImageGallery($_POST['idImageGallery']) > 0 ){
+            alert(true, false, 'Berhasil!', 'Foto berhasil dihapus.');
+        } else{
+            alert(true, false, 'Gagal!', 'Terdapat error saat penghapusan.');
+        }
+        echo' <script>
+                setTimeout(() => {
+                    window.location.href = "http://localhost/streetHub/profile/gallery_ujicoba.php";
+                }, 2000);
+            </script>
+        ';
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +38,6 @@
     <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
-
     <!-- =============== NAVBAR START =============== -->
     <?php include '../partials/navbar.php' ?>
     <!-- =============== NAVBAR END =============== -->
@@ -21,7 +45,16 @@
     <!-- =============== HERO START =============== -->
     <?php
         include '../partials/heroProfile.php';
-        heroProfile('url(../img/profile/sampul01.jpg)', '../img/profile/profile1.png" alt="Profileku', 'Ukhhtie Kebo', '#', '#', '#', '#')
+        heroProfile(
+            'url(../img/account/cover/' . $profile['foto_sampul'] . ')',
+            '../img/account/profile/' . $profile['foto_profile'],
+            $account['username'],
+            $profile['kalimat_motivasi'],
+            $medsos['facebook'],
+            $medsos['instagram'],
+            $medsos['twiter'],
+            $medsos['website']
+        );
     ?>
     <!-- =============== HERO END =============== -->
 
@@ -34,70 +67,44 @@
 
     <!-- =============== GALERI START =============== -->
     <div class="galeri">
+        <?php
+        if( isset($_SESSION['idActive']) ){
+            echo'<div class="tambahFoto">';
+                echo'<h4 class="btn"><a href="uploadImage.php?upload=gallery">Tambah Foto</a></h4>';
+            echo'</div>';
+        }
+        ?>
         <div class="container">
+            <?php foreach($images as $img) : ?>
             <div class="gambar">
-                <img src="../img/profile/galeri/00.jpg" alt="">
+                <!-- <p><?= $img['id_galery'] ?></p> -->
+                <img src="../img/gallery/<?= $img['foto_galery'] ?>" class="imgGallery" data-id="<?= $img['id_galery'] ?>" data-tglUpload="<?= $img['tgl_upload'] ?>" alt="<?= $img['foto_galery'] ?>">
             </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/01.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/02.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/03.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/04.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/05.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/06.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/07.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/08.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/09.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/10.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/11.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/12.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/13.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/14.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/15.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/16.jpg" alt="">
-            </div>
-            <div class="gambar">
-                <img src="../img/profile/galeri/17.jpg" alt="">
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
     <!-- =============== GALERI END =============== -->
 
+    <div class="preViewImgGallery" style="display: none;">
+        <div class="container">
+            <img src="" alt="<?= $account['username'] ?> Photos">
+            <h3 id="tglUpload"></h3>
+            <form action="" method="post" class="action">
+                <input type="text" name="idImageGallery" id="inputId" hidden>
+                <button type="submit" name="deleteGallery" class="btn hapus"><p>Hapus</p> <div class="icon iconHapus"></div></button>
+                <a href="#" class="btn unduh" title="<?= $account['username'] ?> Photos" download><p>Unduh</p> <div class="icon iconUnduh"></div></a>
+            </form>
+            <div class="close"><div class="icon"></div></div>
+        </div>
+    </div>
 
     <!-- =============== FOOTER START =============== -->
-        <?php include '../partials/footer.php' ?>
+    <?php include '../partials/footer.php' ?>
     <!-- =============== FOOTER END =============== -->
     
     <script src="../js/navbar.js"></script>
+    <script src="../js/imgPreview.js"></script>
+
+
 </body>
 </html>

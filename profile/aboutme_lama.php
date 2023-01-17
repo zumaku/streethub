@@ -1,14 +1,6 @@
 <?php
     session_start();
     include '../function/function.php';
-
-    $idActive = $_SESSION['idActive'];
-
-    $account = takeAccount($idActive);
-    $profile = takeProfile($idActive);
-    $medsos = takeMedsos($idActive);
-    $tools = takeTools($idActive);
-
 ?>
 
 <!DOCTYPE html>
@@ -28,16 +20,7 @@
     <!-- =============== HERO START =============== -->
     <?php
         include '../partials/heroProfile.php';
-        heroProfile(
-            'url(../img/account/cover/' . $profile['foto_sampul'] . ')',
-            '../img/account/profile/' . $profile['foto_profile'],
-            $account['username'],
-            $profile['kalimat_motivasi'],
-            $medsos['facebook'],
-            $medsos['instagram'],
-            $medsos['twiter'],
-            $medsos['website']
-        );
+        heroProfile('url(../img/profile/sampul01.jpg)', '../img/profile/profile1.png" alt="Profileku', 'Ukhhtie Kebo', '#', '#', '#', '#')
     ?>
     <!-- =============== HERO END =============== -->
 
@@ -52,29 +35,29 @@
     <div class="siapaAku">
         <div class="container">
             <div class="fotoku">
-                <img src="../img/account/about/<?= $profile['foto_tentangku'] ?>" alt="">
+                <img src="../img/profile/fotoku.jpg" alt="">
             </div>
             <div class="tentangku">
                 <h1>Siapa <span>Aku</span>?</h1>
-                <p><?= $profile['tentangku'] ?></p>
-                <a href="#" class="btnArrow">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem corporis, facilis neque culpa ducimus vel laborum sunt beatae provident temporibus totam quibusdam laboriosam delectus ipsam eius debitis harum quas modi?</p>
+                <div class="btnArrow">
                     <p>Traktir aku</p>
                     <div class="arrow"></div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
     <!-- =============== SIAPA AKU END =============== -->
 
     <!-- =============== ALAT START =============== -->
-    <div class="alat" style="background-image: url(../img/account/favorite/<?= $profile['foto_tempat_favorit'] ?>);">
+    <div class="alat" style="background-image: url(../img/profile/alat.jpg);">
         <div class="container">
             <h1>Dengan apa aku <span>Memotret</span>?</h1>
             <div class="alatku">
                 <div class="card">
                     <div class="icon kamera"></div>
                     <h2>Kamera</h2>
-                    <p><?= $tools['camera'] ?></p>
+                    <p>Canon EOS 6D II</p>
                     <!-- <ol type="1">
                         <li>Canon EOS 6D II</li>
                         <li>Canon EOS 90D</li>
@@ -85,7 +68,7 @@
                 <div class="card">
                     <div class="icon lensa"></div>
                     <h2>Lensa</h2>
-                    <p><?= $tools['lensa'] ?></p>
+                    <p>Canon EF 100-400mm f/4.5-6.5L IS II USM</p>
                     <!-- <ol type="1">
                         <li>Canon EF 100-400mm f/4.5-6.5L IS II USM</li>
                         <li>Canon EF 100mm f/2.8L IS USM Macro</li>
@@ -97,7 +80,7 @@
                 <div class="card">
                     <div class="icon filter"></div>
                     <h2>Filter</h2>
-                    <p><?= $tools['filter'] ?></p>
+                    <p>Ultra Violet</p>
                     <!-- <ol type="1">
                         <li>Ultra Violet</li>
                         <li>Ultra Viola</li>
@@ -109,7 +92,7 @@
                 <div class="card">
                     <div class="icon tripod"></div>
                     <h2>Tripod</h2>
-                    <p><?= $tools['tripod'] ?></p>
+                    <p>Befree 3-Way Live Advanced</p>
                     <!-- <ol type="1">
                         <li>Befree 3-Way Live Advanced</li>
                         <li>Vesta FB 204AB</li>
@@ -125,8 +108,8 @@
     <div class="contact">
         <div class="container">
             <div class="favImage">
-                <div class="img" style="background-image: url(../img/account/kece/<?= $profile['foto_kece1'] ?>);"></div>
-                <div class="img" style="background-image: url(../img/account/kece/<?= $profile['foto_kece2'] ?>);"></div>
+                <div class="img" style="background-image: url(../img/profile/contact1.jpg);"></div>
+                <div class="img" style="background-image: url(../img/profile/contact2.jpg);"></div>
             </div>
             <form action="">
                 <h1>Hubungi <span>aku</span>?</h1>

@@ -139,6 +139,9 @@
   background-color: white;
   border-radius: 50%;
   margin: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .secnav .nav1 .container .sec2 .account .arrow {
   width: 20px;
@@ -1045,8 +1048,8 @@ footer.footer .container .copyright .dll {
   width: fit-content;
   position: absolute;
   z-index: 3;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
 }
 .galeri .container .gambar .aksi a .iconDownload {
   height: 25px;
@@ -1060,32 +1063,103 @@ footer.footer .container .copyright .dll {
 .galeri .container .gambar .aksi a .iconDownload:hover {
   opacity: 1;
 }
-.galeri .container .gambar .aksi form {
-  padding: 0;
+
+.preViewImgGallery {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: scroll;
+  padding: 40px 0;
+  box-sizing: border-box;
 }
-.galeri .container .gambar .aksi form .iconAksi {
-  margin-left: 10px;
-  height: 25px;
-  width: 25px;
-  border: 0;
-  background-color: transparent;
+.preViewImgGallery .container {
+  width: 80%;
+  max-width: 1200px;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #191A19;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.599);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.preViewImgGallery .container h3 {
+  margin-bottom: 10px;
+}
+.preViewImgGallery .container form.action {
+  display: flex;
+  flex-direction: row;
+}
+.preViewImgGallery .container form.action .btn {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background-color: #a02525;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.1s linear;
   cursor: pointer;
-  opacity: 0.7;
 }
-.galeri .container .gambar .aksi form .iconAksi:hover {
-  opacity: 1;
+.preViewImgGallery .container form.action .btn:hover {
+  transform: scale(1.02);
 }
-.galeri .container .gambar .aksi form .iconAksi.iconDelete {
+.preViewImgGallery .container form.action .btn:active {
+  transform: scale(0.98);
+}
+.preViewImgGallery .container form.action .btn {
+  border: 0;
+  display: flex;
+  font-size: 1em;
+  margin: 0 5px;
+}
+.preViewImgGallery .container form.action .btn.unduh {
+  background-color: #18A13D;
+}
+.preViewImgGallery .container form.action .btn .icon {
+  margin-left: 5px;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+}
+.preViewImgGallery .container form.action .btn .icon.iconHapus {
   background-image: url(../img/icon/delete.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
-.galeri .container .gambar .aksi form .iconAksi.iconEdit {
-  background-image: url(../img/icon/editing.png);
-  background-size: contain;
+.preViewImgGallery .container form.action .btn .icon.iconUnduh {
+  background-image: url(../img/icon/download.png);
+}
+.preViewImgGallery .container .close {
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/icon/close.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.preViewImgGallery .container img {
+  max-width: 90%;
+  max-height: 500px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 576px) {
@@ -1095,6 +1169,13 @@ footer.footer .container .copyright .dll {
     -moz-column-gap: 20px;
          column-gap: 20px;
     padding: 60px 0;
+  }
+  .preViewImgGallery {
+    align-items: center;
+  }
+  .preViewImgGallery .container .close {
+    width: 20px;
+    height: 20px;
   }
 }
 .siapaAku {

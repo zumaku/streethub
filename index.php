@@ -1,6 +1,7 @@
 <?php
     session_start();
-    include 'function/function.php'
+    include 'function/function.php';
+    $urlToRoot = '.';
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +28,7 @@
             <h1>TEMUKAN</h1>
             <h2>Semua yang ada di jalanan selalu memberikan sebuah pelajaran.</h2>
             <p>Dapatkan inspirasi dan bagikan jepretanmu serta cerita yang kau dapat  di jalan dan tunjukkan pada dunia.</p>
-            <a href="http://localhost/streetHub/auth/" class="btn">Daftar Kuy</a>
+            <a href="auth/" class="btn">Daftar Kuy</a>
         </div>
     </div>
     <!-- =============== HOME END =============== -->
@@ -264,7 +265,7 @@
         <div class="container">
             <h1>Gabung komunitas kami</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus iusto dolor quisquam, architecto maxime unde eaque amet illum ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio tempora ducimus deleniti possimus!</p>
-            <a href="http://localhost/streetHub/auth/" class="btn" id="btn">Daftar Kuy</a>
+            <a href="auth/" class="btn" id="btn">Daftar Kuy</a>
         </div>
     </div>
     <!-- =============== KOMUNITAS END =============== -->
