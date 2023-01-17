@@ -91,8 +91,26 @@
         justify-content: flex-start;
         align-items: center;
         position: relative;
-        h3{
-            margin-bottom: 10px;
+        a.uploader{
+            text-decoration: none;
+            color: white;
+            display: flex;
+            margin-bottom: 0 auto 20px;
+            justify-content: center;
+            align-items: center;
+            .profilePic{
+                width: 40px;
+                height: 40px;
+                @include bg();
+                background-color: $secondary;
+                border-radius: 50%;
+            }
+            h2{
+                margin-left: 5px;
+            }
+        }
+        p#tglUpload{
+            margin-bottom: 20px;
         }
         form.action{
             display: flex;
@@ -151,6 +169,55 @@
     .preViewImgGallery{
         align-items: center;
         .container{
+            a.uploader{
+                .profilePic{
+                    width: 32px;
+                    height: 32px;
+                }
+                h2{
+                    font-size: 1.9em;
+                }
+            }
+            p#tglUpload{
+                font-size: 1em;
+            }
+            .close{
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
+@include media(hp){
+    .galeri{
+        .container{
+            columns: 2;
+            column-gap: 20px;
+            padding: 60px 0;
+        }
+    }
+    .preViewImgGallery{
+        align-items: center;
+        .container{
+            a.uploader{
+                .profilePic{
+                    width: 32px;
+                    height: 32px;
+                }
+                h2{
+                    font-size: 1em;
+                }
+            }
+            p#tglUpload{
+                text-align: center;
+                font-size: .8em;
+            }
+            form.action{
+                flex-direction: column;
+                .btn{
+                    margin-bottom: 5px;
+                }
+            }
             .close{
                 width: 20px;
                 height: 20px;

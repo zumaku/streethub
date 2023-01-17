@@ -710,6 +710,22 @@ html {
 .rightSect input {
   margin-bottom: 20px;
 }
+.rightSect input#namaJalan {
+  width: 100%;
+  max-width: 350px;
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  padding: 5px 12px;
+  box-sizing: border-box;
+  background-color: rgba(224, 224, 224, 0.4352941176);
+  border: 1px solid #191A19;
+  color: white;
+  margin-bottom: 20px;
+}
+.rightSect input#namaJalan:focus {
+  border: 1px solid #18A13D;
+}
 .rightSect textarea {
   width: 80%;
   max-width: 350px;

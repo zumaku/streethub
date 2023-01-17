@@ -84,6 +84,22 @@ html{
     }
     input{
         margin-bottom: 20px;
+        &#namaJalan{
+            width: 100%;
+            max-width: 350px;
+            border: 0;
+            outline: none;
+            border-radius: 10px;
+            padding: 5px 12px;
+            box-sizing: border-box;
+            background-color: $iform;
+            border: 1px solid $primary;
+            color: white;
+            margin-bottom: 20px;
+            &:focus{
+                border: 1px solid $secondary;
+            }
+        }
     }
     textarea{
         width: 80%;

@@ -70,15 +70,14 @@
         <?php
         if( isset($_SESSION['idActive']) ){
             echo'<div class="tambahFoto">';
-                echo'<h4 class="btn"><a href="uploadImage.php?upload=gallery">Tambah Foto</a></h4>';
+                echo'<h4 class="btn"><a href="../pages/uploadImage.php?upload=gallery">Tambah Foto</a></h4>';
             echo'</div>';
         }
         ?>
         <div class="container">
             <?php foreach($images as $img) : ?>
             <div class="gambar">
-                <!-- <p><?= $img['id_galery'] ?></p> -->
-                <img src="../img/gallery/<?= $img['foto_galery'] ?>" class="imgGallery" data-id="<?= $img['id_galery'] ?>" data-tglUpload="<?= $img['tgl_upload'] ?>" alt="<?= $img['foto_galery'] ?>">
+                <img src="../img/gallery/<?= $img['foto_galery'] ?>" class="imgGallery" data-id="<?= $img['id_galery'] ?>" data-idUser="<?= $img['id_user'] ?>" data-tglUpload="<?= $img['tgl_upload'] ?>" alt="<?= $img['foto_galery'] ?>">
             </div>
             <?php endforeach; ?>
         </div>
@@ -88,7 +87,11 @@
     <div class="preViewImgGallery" style="display: none;">
         <div class="container">
             <img src="" alt="<?= $account['username'] ?> Photos">
-            <h3 id="tglUpload"></h3>
+            <a href="#" class="uploader">
+                <div class="profilePic" style="background-image: url(../img/account/profile/<?= $profile['foto_profile'] ?>);"></div>
+                <h2>Nurul Habibie</h2>
+            </a>
+            <p id="tglUpload"></p>
             <form action="" method="post" class="action">
                 <input type="text" name="idImageGallery" id="inputId" hidden>
                 <button type="submit" name="deleteGallery" class="btn hapus"><p>Hapus</p> <div class="icon iconHapus"></div></button>

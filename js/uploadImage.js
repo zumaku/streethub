@@ -1,4 +1,5 @@
-const inpImg = document.querySelector('#upGallery');
+// UPLOAD IMAGE GALLERY
+const inpImg = document.querySelector('#upInput');
 const preImage = document.querySelector('#preImage');
 const iconBtn = document.querySelector('#iconBtn');
 

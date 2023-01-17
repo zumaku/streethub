@@ -12,14 +12,14 @@ galeri.addEventListener('click', (e)=>{
         let img = preViewImgGallery.querySelector('img');
         let close = preViewImgGallery.querySelector('.close');
         let btnDownload = preViewImgGallery.querySelector('.btn.unduh');
-        let h3 = preViewImgGallery.querySelector('#tglUpload');
+        let p = preViewImgGallery.querySelector('#tglUpload');
 
         body.style.overflow = 'hidden';
         preViewImgGallery.removeAttribute('style');
         input.setAttribute('value', idImg);
         img.setAttribute('src', imgSrc);
         btnDownload.setAttribute('href', imgSrc);
-        h3.innerHTML = "Tanggal Upload: " + tglUpload;
+        p.innerHTML = "Tanggal Upload: " + tglUpload;
 
         close.addEventListener('click', ()=>{
             body.removeAttribute('style');

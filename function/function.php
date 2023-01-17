@@ -6,6 +6,7 @@ $tblProfile = 'user_profile';
 $tblTools = 'user_tools';
 $tblMedsos = 'user_medsos';
 $tblGalery = 'galery';
+$tblMegazine = 'megazine';
 
 
 
@@ -62,8 +63,10 @@ function alert($color = true, $jenis = true, $h1, $p, $btn1 = false, $btn2 = fal
 
 // FUNGSI MENGECEK HASIL ALERT
 function hasilAlert($event = false){
+    global $urlToRoot;
+
     if( isset($_POST['alertYes']) ){
-        if($event === 'uploadImageGallery'){
+        if($event === 'uploadImageGallery' || $event === 'uploadImageMegazine'){
             echo'
                 <script>
                     setTimeout(()=>{
@@ -77,7 +80,7 @@ function hasilAlert($event = false){
             echo'
                 <script>
                     setTimeout(()=>{
-                        window.location.href = "http://localhost/streetHub/";
+                        window.location.href = "' . $urlToRoot . '";
                     }, 2000)
                 </script>
             ';
@@ -87,7 +90,15 @@ function hasilAlert($event = false){
             echo'
                 <script>
                     setTimeout(()=>{
-                        window.location.href = "gallery.php";
+                        window.location.href = "../profile/gallery.php";
+                    }, 2000)
+                </script>
+            ';
+        } else if($event === 'uploadImageMegazine'){
+            echo'
+                <script>
+                    setTimeout(()=>{
+                        window.location.href = "../profile/megazine.php";
                     }, 2000)
                 </script>
             ';
@@ -151,7 +162,19 @@ function uploadImageGallery($tags, $namaFoto, $idUser){
     $query = "INSERT INTO $tblGalery VALUES ('', '$idUser', '$tglUpload', '$namaFoto', '$tags')";
 
     $hasil = mysqli_query($koneksi, $query);
-    // var_dump($hasil);
+    return $hasil;
+}
+
+// FUNGSI UPLOAD FOTO MEGAZINE
+function uploadImageMegazine($namaJalan, $namaFoto, $idUser){
+    global $koneksi;
+    global $tblMegazine;
+
+    $tanggal = new DateTime();
+    $tglUpload = $tanggal->format('Y-m-d');
+    $query = "INSERT INTO $tblMegazine VALUES ('', '$idUser', '$namaFoto', '$namaJalan', '$tanggal')";
+
+    $hasil = mysqli_query($koneksi, $query);
     return $hasil;
 }
 
