@@ -15,12 +15,13 @@
     if( isset($_POST['deleteGallery']) ){
         if( deleteImageGallery($_POST['idImageGallery']) > 0 ){
             alert(true, false, 'Berhasil!', 'Foto berhasil dihapus.');
+            unlink( $urlToRoot . 'img/gallery/' . $_POST['imgGalleryName'] );
         } else{
             alert(true, false, 'Gagal!', 'Terdapat error saat penghapusan.');
         }
         echo' <script>
                 setTimeout(() => {
-                    window.location.href = "http://localhost/streetHub/profile/gallery_ujicoba.php";
+                    window.location.href = "' . $urlToRoot . 'profile/gallery.php";
                 }, 2000);
             </script>
         ';
@@ -94,6 +95,7 @@
             <p id="tglUpload"></p>
             <form action="" method="post" class="action">
                 <input type="text" name="idImageGallery" id="inputId" hidden>
+                <input type="text" name="imgGalleryName" id="inputImgName">
                 <button type="submit" name="deleteGallery" class="btn hapus"><p>Hapus</p> <div class="icon iconHapus"></div></button>
                 <a href="#" class="btn unduh" title="<?= $account['username'] ?> Photos" download><p>Unduh</p> <div class="icon iconUnduh"></div></a>
             </form>

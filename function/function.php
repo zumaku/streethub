@@ -266,11 +266,17 @@ function uploadImageMagazine($namaJalan, $namaFoto, $idUser){
     return $hasil;
 }
 // FUNGSI MENGAMBIL INFO FOTO MAGAZINE TERBARU
-function takeInfoMagazineTerbaru($idUser){
+function takeInfoMagazine($kondisiFoto, $idUser){
     global $koneksi;
     global $tblMagazine;
 
-    $query = mysqli_query($koneksi, "SELECT DISTINCT nama_jalan, tangal_upload FROM $tblMagazine WHERE DAY(tangal_upload) >= DAY(CURRENT_DATE) - 7 AND id_user = '$idUser'");
+    if($kondisiFoto == 'terbaru'){
+        $operasi = '>=';
+    } else if($kondisiFoto == 'lawas'){
+        $operasi = '<=';
+    }
+
+    $query = mysqli_query($koneksi, "SELECT DISTINCT nama_jalan, tgl_upload FROM $tblMagazine WHERE DAY(tgl_upload)" . $operasi . " DAY(CURRENT_DATE) - 7 AND id_user = '$idUser'");
 
     $infos = [];
     while ( $data = mysqli_fetch_assoc($query) ){
@@ -280,12 +286,18 @@ function takeInfoMagazineTerbaru($idUser){
     return $infos;
 }
 // FUNGSI MENGAMBIL FOTO MAGAZINE TERBARU
-function takeImageMagazineTerbaru($idUser, $namaJalan){
+function takeImageMagazine($kondisiFoto, $idUser, $namaJalan, $tglFoto){
     global $koneksi;
     global $tblMagazine;
 
+    if($kondisiFoto == 'terbaru'){
+        $operasi = '>=';
+    } else if($kondisiFoto == 'lawas'){
+        $operasi = '<=';
+    }
+
     // Query untuk mengambil gambar pada jalan dan tanggal tersebut secara acak
-    $query = mysqli_query($koneksi, "SELECT * FROM $tblMagazine WHERE nama_jalan = '$namaJalan' AND DAY(tangal_upload) >= DAY(CURRENT_DATE) - 7 AND id_user = '$idUser'");
+    $query = mysqli_query($koneksi, "SELECT * FROM $tblMagazine WHERE nama_jalan = '$namaJalan' AND tgl_upload = '$tglFoto' AND DAY(tgl_upload) " . $operasi . " DAY(CURRENT_DATE) - 7 AND id_user = '$idUser'");
     $image = [];
     while ( $baris = mysqli_fetch_assoc($query) ){
         $image[] = $baris;
@@ -295,7 +307,6 @@ function takeImageMagazineTerbaru($idUser, $namaJalan){
     
     return $image[$randomNo]['foto_megazine'];
 }
-
 
 
 

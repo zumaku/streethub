@@ -12,7 +12,8 @@
     $bookmarImage1 = randomBookmarCover($idActive);
     $bookmarImage2 = randomBookmarCover($idActive);
 
-    $infos = takeInfoMagazineTerbaru($idActive);
+    $infosTerbaru = takeInfoMagazine('terbaru', $idActive);
+    $infosLawas = takeInfoMagazine('lawas', $idActive);
 
 ?>
 
@@ -72,10 +73,10 @@
             <?php
             include '../partials/cardTerbaru.php';
 
-            foreach($infos as $data){
-                $img = takeImageMagazineTerbaru($idActive, $data['nama_jalan']);
+            foreach($infosTerbaru as $data){
+                $img = takeImageMagazine('terbaru',$idActive, $data['nama_jalan'], $data['tgl_upload']);
                 // var_dump($img);
-                setCardTerbaru('#', 'url(../img/magazine/' . $img . ')', $data['nama_jalan'], $data['tangal_upload']);
+                setCardTerbaru('#', 'url(../img/magazine/' . $img . ')', $data['nama_jalan'], $data['tgl_upload']);
             }
             
             ?>
@@ -89,13 +90,14 @@
     ?>
     <div class="fotoLawas">
         <div class="container">
-            <?php include '../partials/cardLawas.php' ?>
-            <?= setCardLawas('#', 'url(../img/profile/10.jpg)', 'Jl. In Aja Dulu') ?>
-            <?= setCardLawas('#', 'url(../img/profile/11.jpg)', 'Jl. Yuk') ?>
-            <?= setCardLawas('#', 'url(../img/profile/12.jpg)', 'Jl. Entah Dimana') ?>
-            <?= setCardLawas('#', 'url(../img/profile/13.jpg)', 'Jl. Kemana Aja') ?>
-            <?= setCardLawas('#', 'url(../img/profile/14.jpg)', 'Jl. Kaki') ?>
-            <?= setCardLawas('#', 'url(../img/profile/15.jpg)', 'Jl. Kita Masih Panjang') ?>
+            <?php
+            include '../partials/cardLawas.php';
+            
+            foreach($infosLawas as $data){
+                $img = takeImageMagazine('lawas',$idActive, $data['nama_jalan'], $data['tgl_upload']);
+                setCardLawas('#', 'url(../img/magazine/' . $img . ')', $data['nama_jalan'], $data['tgl_upload']);
+            }
+            ?>
         </div>
     </div>
     <!-- =============== FOTO LAWAS END =============== -->

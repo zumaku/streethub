@@ -12,17 +12,9 @@ if( isset($_POST['upload']) ){
     // if( uploadImageMagazine($namaJalan, $namaFoto, $idActive) > 0 ){
     //     alert(true, false, 'Berhasil!', 'Foto telah diunggah ke galeri. Ingin tambah foto lagi?', 'Ya', 'Tidak');
     // }
-
-
-
-
+} else if( isset($_POST['delete']) ){
+    unlink('img/63c7dc015c2716.86336175.jpg');
 }
-
-
-
-
-
-
 
 
 ?>
@@ -41,6 +33,7 @@ if( isset($_POST['upload']) ){
     <form action="" method="post" enctype="multipart/form-data">
         <input type="file" name="images[]" multiple><br>
         <button type="submit" name="upload">Upload</button>
+        <button type="submit" name="delete">Delete</button>
     </form>
 
 </body>
