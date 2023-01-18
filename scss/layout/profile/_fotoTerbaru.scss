@@ -3,6 +3,23 @@
 
 .fotoTerbaru{
     @include section(fit-content, column, 100px);
+    .tambahFoto{
+        @include normalBtn();
+        padding: 50px 0 0;
+        h4{
+            margin: auto;
+            width: fit-content;
+            box-sizing: border-box;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            a{
+                margin: auto;
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
     .container{
         flex-direction: row;
         flex-wrap: wrap;

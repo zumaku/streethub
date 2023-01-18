@@ -1,5 +1,5 @@
 <?php
-
+    include 'function/function.php';
 
 if( isset($_POST['upload']) ){
 
@@ -89,6 +89,38 @@ if( isset($_POST['upload']) ){
         <input type="file" name="image[]"><br>
         <button type="submit" name="upload">Upload</button>
     </form>
+
+    <?php
+
+        $id_gallery = mysqli_query($koneksi, "SELECT foto_galery FROM $tblGalery WHERE id_user = '34'");
+        $bnykBaris = [];
+        while ( $baris = mysqli_fetch_assoc($id_gallery) ){
+            $bnykBaris[] = $baris;
+        }
+        var_dump($bnykBaris);
+        
+        echo'<br><br>';
+        
+        $randomNo = array_rand($bnykBaris);
+        var_dump($randomNo);
+        
+        echo'<br><br>';
+        
+        var_dump($bnykBaris[$randomNo]);
+        echo'<br><br>';
+        echo $bnykBaris[$randomNo]['foto_galery'];
+        
+        echo'<br><br>';
+        echo'<br><br>';
+
+
+
+        // SELECT nama_jalan FROM `magazine` WHERE DAY(tangal_upload) >= DAY(CURRENT_DATE);
+        // SELECT nama_jalan FROM `magazine` WHERE DAY(tangal_upload) >= DAY(CURRENT_DATE) - 7 AND nama_jalan = 'Jl. Kita Masih Panjang';
+        // SELECT DISTINCT nama_jalan, tanggal_upload FROM `magazine` WHERE DAY(tangal_upload) >= DAY(CURRENT_DATE) - 7;        // untuk menghilangkan duplikasi
+
+        // SELECT id_galery, foto_galery FROM galery WHERE id_galery = (SELECT MAX(id_galery) FROM galery WHERE id_user = '34');
+    ?>
 
 </body>
 </html>

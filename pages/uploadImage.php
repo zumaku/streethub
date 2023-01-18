@@ -13,7 +13,7 @@
         ';
     }
     if( !isset($_GET['upload']) ){
-        if( $_GET['upload'] != 'gallery' || $_GET['upload'] != 'megazine' ){
+        if( $_GET['upload'] != 'gallery' || $_GET['upload'] != 'magazine' ){
             echo'
                 <script>
                     setTimeout(()=>{
@@ -47,23 +47,23 @@
         echo'</form>';
     }
 
-    function formUploadMegazine(){
-        echo'<div class="leftSect" style="background-image: url(../img/upload/upMegazine.jpg);"></div>';
+    function formUploadMagazine(){
+        echo'<div class="leftSect" style="background-image: url(../img/upload/upMagazine.jpg);"></div>';
         echo'<form  action="" method="post" enctype="multipart/form-data" class="rightSect">';
             echo'<h1>Bingkai <span>baru</span>..</h1>';
             echo'<div class="previewImg">';
                 echo'<div type="button" class="iconImg" id="iconBtn"></div>';
                 echo'<img id="preImage" alt="" hidden>';
             echo'</div>';
-            echo'<h3 for="upGallery">Foto</h3>';
+            echo'<h3 id="h3UpGallery">Foto</h3>';
 
-            echo'<input type="file" name="upMegazine" id="upInput">';
+            echo'<input type="file" name="upMagazine[]" class="inputMagazine" id="upInput" multiple>';
             echo'<h3 for="upTag">Jalan</h3>';
             echo'<input type="text" name="namaJalan" id="namaJalan">';
 
             echo'<div class="buttons">';
-                echo'<button type="submit" name="submitMegazine" class="btn">Unggah</button>';
-                echo'<a href="megazine.php" class="btn danger">Batal</a>';
+                echo'<button type="submit" name="submitMagazine" class="btn">Unggah</button>';
+                echo'<a href="../profile/magazine.php" class="btn danger">Batal</a>';
             echo'</div>';
         echo'</form>';
     }
@@ -80,12 +80,20 @@
         }
     }
 
-    if( isset($_POST['submitMegazine']) ){
-        $namaFoto = storePhoto($_FILES['upMegazine'], '../img/megazine');
+    if( isset($_POST['submitMagazine']) ){
+        $namaFotos = storeMultiplePhoto($_FILES['upMagazine'], '../img/magazine');
         $namaJalan = $_POST['namaJalan'];
+        $bnykFoto = count($_FILES['upMagazine']['name']);
+        // var_dump($namaFotos);
 
-        if( uploadImageMegazine($namaJalan, $namaFoto, $idActive) > 0 ){
-            alert(true, false, 'Berhasil!', 'Foto telah diunggah ke galeri. Ingin tambah foto lagi?', 'Ya', 'Tidak');
+        $berhasil = 0;
+        for($i=0; $i<$bnykFoto; $i++){
+            if( uploadImageMagazine($namaJalan, $namaFotos[$i], $idActive) > 0){
+                $berhasil++;
+            }
+        }
+        if( $berhasil == $bnykFoto ){
+            alert(true, false, 'Berhasil!', 'Foto telah diunggah ke Bingkai. Ingin tambah foto lagi?', 'Ya', 'Tidak');
         }
     }
     
@@ -93,8 +101,8 @@
 
     if( $_GET['upload'] == 'gallery' ){
         hasilAlert('uploadImageGallery');
-    } else if( $_GET['upload'] == 'megazine' ){
-        hasilAlert('uploadImageMegazine');
+    } else if( $_GET['upload'] == 'magazine' ){
+        hasilAlert('uploadImageMagazine');
     }
 
 
@@ -116,8 +124,8 @@
     
         if( $_GET['upload'] == 'gallery' ){
             formUploadGallery();
-        } else if( $_GET['upload'] == 'megazine' ){
-            formUploadMegazine();
+        } else if( $_GET['upload'] == 'magazine' ){
+            formUploadMagazine();
         }
         
     ?>

@@ -789,6 +789,40 @@ footer.footer .container .copyright .dll {
     padding: 60px 0;
   }
 }
+.fotoTerbaru .tambahFoto {
+  padding: 50px 0 0;
+}
+.fotoTerbaru .tambahFoto .btn {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background-color: #18A13D;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+.fotoTerbaru .tambahFoto .btn:hover {
+  transform: scale(1.02);
+}
+.fotoTerbaru .tambahFoto .btn:active {
+  transform: scale(0.98);
+}
+.fotoTerbaru .tambahFoto h4 {
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  box-sizing: border-box;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+}
+.fotoTerbaru .tambahFoto h4 a {
+  margin: auto;
+  text-decoration: none;
+  color: white;
+}
 .fotoTerbaru .container {
   flex-direction: row;
   flex-wrap: wrap;
