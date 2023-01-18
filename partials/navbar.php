@@ -8,6 +8,8 @@
         hasilAlert('signout');
     }
 
+    $profile = takeProfile($idActive);
+
 ?>
 
 <div class="secnav">
@@ -66,13 +68,13 @@
                 if( isset($_SESSION['idActive']) ){
                     $profile = takeProfile($_SESSION['idActive']);
                     echo '<div class="account" id="accountDd">';
-                        echo '<a href="' . $urlToRoot . '/profile/aboutme.php" class="profile" style="background-image: url(' . $urlToRoot . '/img/account/profile/'.$profile['foto_profile'].')"></a>';
+                        echo '<a href="' . $urlToRoot . 'profile/" class="profile" style="background-image: url(' . $urlToRoot . '/img/account/profile/'.$profile['foto_profile'].')"></a>';
                         echo '<div class="arrow"></div>';
                     echo '</div>';
                     echo '<div class="dropdown" style="display: none;">';
                         echo '<div class="segitiga"></div>';
                         echo '<a href="#">Foto baru</a><span></span>';
-                        echo '<a href="' . $urlToRoot . '/profile/aboutme.php">Profile</a><span></span>';
+                        echo '<a href="' . $urlToRoot . '/profile/">Profile</a><span></span>';
                         echo '<a href="#">Pengaturan</a><span></span>';
                         echo '<form action="" method="post"><button type="submit" name="logout"><p>Sign out</p></button></form>';
                     echo '</div>';
@@ -128,8 +130,8 @@
                     echo '</li>';
                     echo '<li>';
                         echo '<a href="' . $urlToRoot . '/profile/" class="profile">';
-                            echo'<div class="circleProfile"></div>';
-                            echo'<p>Name</p>';
+                            echo'<div class="circleProfile" style="background-image: url(../img/account/profile/' . $profile['foto_profile'] . ');"></div>';
+                            echo'<p>' . $account['username'] .  '</p>';
                         echo'</a>';
                         echo '<span class="underline"></span>';
                     echo '</li>';

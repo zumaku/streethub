@@ -19,7 +19,7 @@ function navProfile($li1 = false, $li2 = false, $li3 = false){
                 echo'</li>';
                 echo'<li class="' . $li3 . '">';
                     // echo'<a href="aboutme.php#navProfile">Tentangku</a>';
-                    echo'<a href="aboutme.php#navProfile">Tentangku</a>';
+                    echo'<a href="index.php#navProfile">Tentangku</a>';
                     echo'<span class="underline"></span>';
                 echo'</li>';
             echo'</ul>';

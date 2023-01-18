@@ -95,7 +95,7 @@
             <p id="tglUpload"></p>
             <form action="" method="post" class="action">
                 <input type="text" name="idImageGallery" id="inputId" hidden>
-                <input type="text" name="imgGalleryName" id="inputImgName">
+                <input type="text" name="imgGalleryName" id="inputImgName" hidden>
                 <button type="submit" name="deleteGallery" class="btn hapus"><p>Hapus</p> <div class="icon iconHapus"></div></button>
                 <a href="#" class="btn unduh" title="<?= $account['username'] ?> Photos" download><p>Unduh</p> <div class="icon iconUnduh"></div></a>
             </form>

@@ -405,6 +405,7 @@ div#bookmark.bookmark .content h1 {
 }
 div#bookmark.bookmark .content p {
   margin-top: 5px;
+  font-size: 1.3em;
 }
 
 footer.footer {

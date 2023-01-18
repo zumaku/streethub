@@ -643,6 +643,7 @@ footer.footer .container .copyright .dll {
 
 body {
   display: flex;
+  flex-direction: column;
   color: white;
   background-color: #191A19;
   font-family: Arial, Helvetica, sans-serif;
@@ -653,194 +654,237 @@ html {
   scroll-behavior: smooth;
 }
 
-.leftSect {
-  width: 50%;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+#bookmark {
+  margin-top: 40px;
 }
 
-.rightSect {
-  width: 50%;
-  height: 100vh;
-  overflow-y: scroll;
-  padding-left: 5%;
+.secBackBtn#secBackBtn {
+  width: 100%;
+  background-color: #191A19;
+  margin: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+.secBackBtn#secBackBtn .btnArrow {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 16px;
   box-sizing: border-box;
-}
-.rightSect h1 {
-  font-size: 3em;
-  margin: 120px 0 20px;
-}
-.rightSect h1 span {
-  color: #18A13D;
-}
-.rightSect .previewImg {
-  max-width: 350px;
-  min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  border: 3px dashed white;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 20px;
-}
-.rightSect .previewImg .iconImg {
-  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: 0.1s linear;
+  background-color: #18A13D;
   border: 0;
-  background-color: transparent;
-  width: 32px;
-  height: 32px;
-  background-image: url(../img/icon/add-image.png);
+}
+.secBackBtn#secBackBtn .btnArrow p {
+  margin: 0;
+}
+.secBackBtn#secBackBtn .btnArrow .arrow {
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/icon/panahKanan1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 10px;
+}
+.secBackBtn#secBackBtn .btnArrow:hover {
+  transform: scale(1.03);
+}
+@media (max-width: 990px) {
+  .secBackBtn#secBackBtn .btnArrow {
+    padding: 5px 10px;
+    padding: 5px 10px;
+  }
+  .secBackBtn#secBackBtn .btnArrow .arrow {
+    width: 12px;
+    height: 12px;
+  }
+}
+.secBackBtn#secBackBtn a.btnArrow {
+  margin: 15px 9%;
+}
+.secBackBtn#secBackBtn a.btnArrow .arrow {
+  margin-left: 0;
+  margin-right: 10px;
+  transform: rotate(180deg);
+}
+
+.container#container {
+  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  padding: 50px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.container#container .card {
+  background-color: #1E201E;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.377);
+  padding: 25px 20px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  transition: 0.1s linear;
+}
+.container#container .card:hover {
+  transform: scale(1.01);
+}
+.container#container .card .image {
+  width: 250px;
+  height: 350px;
+  margin-bottom: 15px;
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-.rightSect .previewImg img {
-  width: 100%;
-}
-.rightSect h3 {
-  margin-bottom: 5px;
-}
-.rightSect p {
-  font-size: 0.8em;
-  margin-bottom: 10px;
-}
-.rightSect input {
-  margin-bottom: 20px;
-}
-.rightSect input#namaJalan {
-  width: 100%;
-  max-width: 350px;
-  border: 0;
-  outline: none;
-  border-radius: 10px;
-  padding: 5px 12px;
-  box-sizing: border-box;
-  background-color: rgba(224, 224, 224, 0.4352941176);
-  border: 1px solid #191A19;
-  color: white;
-  margin-bottom: 20px;
-}
-.rightSect input#namaJalan:focus {
-  border: 1px solid #18A13D;
-}
-.rightSect textarea {
-  width: 80%;
-  max-width: 350px;
-  margin-bottom: 60px;
-  resize: vertical;
-  border: 0;
-  outline: none;
-  border-radius: 10px;
-  padding: 10px 12px;
-  box-sizing: border-box;
-  background-color: rgba(224, 224, 224, 0.4352941176);
-  border: 1px solid #191A19;
-  color: white;
-}
-.rightSect textarea:focus {
-  border: 1px solid #18A13D;
-}
-.rightSect .buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  justify-content: space-between;
-  max-width: 350px;
-  margin-bottom: 50px;
-}
-.rightSect .buttons .btn {
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  background-color: #18A13D;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: 0.1s linear;
-  cursor: pointer;
-}
-.rightSect .buttons .btn:hover {
-  transform: scale(1.02);
-}
-.rightSect .buttons .btn:active {
-  transform: scale(0.98);
-}
-.rightSect .buttons button {
-  border: 0;
-  margin-right: 3px;
-}
-.rightSect .buttons button.tambah {
-  display: flex;
-}
-.rightSect .buttons button.tambah .arrowDown {
-  margin-left: 3px;
-  width: 16px;
-  height: 16px;
-  background-image: url(../img/icon/panahKanan2.png);
-  background-size: contain;
+.container#container .card .image .watermark {
+  background-image: url(../img/icon/watermark.png);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  transform: rotate(90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
-.rightSect .buttons a.danger {
-  background-color: #a02525;
-  font-size: 0.9em;
+.container#container .card .info {
+  position: relative;
 }
-.rightSect .buttons a.danger:hover {
-  transform: scale(1.02);
+.container#container .card .info p {
+  margin-bottom: 15px;
 }
-.rightSect .buttons a.danger:active {
-  transform: scale(0.98);
+.container#container .card .info p.harga {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.container#container .card .info .addToKeranjang {
+  background-color: #18A13D;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: -40px;
+}
+.container#container .card .info .addToKeranjang .icon {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url(../img/icon/keranjang2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media (max-width: 990px) {
-  .leftSect {
-    width: 40%;
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  .container#container {
+    width: 90%;
+    padding: 100px 0;
+    justify-content: space-between;
   }
-  .rightSect {
-    width: 60%;
+  .container#container .card {
+    padding: 20px 15px;
+    margin-bottom: 50px;
+  }
+  .container#container .card .image {
+    width: 220px;
+    height: 320px;
+    margin-bottom: 15px;
+  }
+  .container#container .card .info {
+    position: relative;
+  }
+  .container#container .card .info .addToKeranjang {
+    width: 52px;
+    height: 52px;
+  }
+  .container#container .card .info .addToKeranjang .icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 870px) {
+  .secBackBtn#secBackBtn a.btnArrow {
+    margin: 15px 4%;
+  }
+  .container#container .card {
+    padding: 25px 20px;
+    margin-bottom: 50px;
+  }
+  .container#container .card .image {
+    width: 280px;
+    height: 380px;
   }
 }
 @media (max-width: 768px) {
-  body {
+  .container#container {
+    justify-content: space-around;
+  }
+  .container#container .card {
+    padding: 18px 13px;
+    margin-bottom: 50px;
+  }
+  .container#container .card .image {
+    width: 240px;
+    height: 340px;
+  }
+}
+@media (max-width: 690px) {
+  .container#container {
+    justify-content: space-between;
+  }
+  .container#container .card {
+    padding: 18px 13px;
+    margin-bottom: 50px;
+  }
+  .container#container .card .image {
+    width: 220px;
+    height: 320px;
+  }
+}
+@media (max-width: 576px) {
+  .container#container {
+    padding: 50px 0;
     justify-content: center;
   }
-  .leftSect {
-    display: none;
+  .container#container .card {
+    padding: 20px 15px;
+    margin-bottom: 50px;
   }
-  .rightSect {
-    padding: 0;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    overflow-y: hidden;
+  .container#container .card .image {
+    width: 270px;
+    height: 370px;
   }
 }
 @media (max-width: 390px) {
-  body {
-    justify-content: center;
+  .container#container {
+    padding: 50px 0;
   }
-  .leftSect {
-    display: none;
+  .container#container .card {
+    padding: 20px 15px;
   }
-  .rightSect {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    overflow-y: hidden;
-    padding: 20px 5% 0;
+  .container#container .card .image {
+    width: 230px;
+    height: 330px;
   }
-}/*# sourceMappingURL=uploadImage.css.map */
+}/*# sourceMappingURL=street.css.map */

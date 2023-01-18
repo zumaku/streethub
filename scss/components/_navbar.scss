@@ -4,7 +4,7 @@
     width: 100%;
     position: fixed;
     top: 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.377);
+    box-shadow: $shadow;
     z-index: 999;
     transition: .2s ease-out;
     .nav1{

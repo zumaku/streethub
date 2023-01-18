@@ -142,7 +142,6 @@ function storePhoto($foto, $folderTujuan){
     $tmpFoto = $foto['tmp_name'];
     $ukuranFoto = $foto['size'];
     $errorFoto = $foto['error'];
-    $tipeFoto = $foto['type'];
 
     $pecahEkstensiFoto = explode('.', $namaFoto);
     $ekstensiFoto = strtolower(end($pecahEkstensiFoto));
@@ -305,9 +304,22 @@ function takeImageMagazine($kondisiFoto, $idUser, $namaJalan, $tglFoto){
     
     $randomNo = array_rand($image);
     
-    return $image[$randomNo]['foto_megazine'];
+    return $image[$randomNo]['foto_magazine'];
 }
+// FUNGSI MENAMPILKAN FOTO MAGAZINE SESUAI JALAN DAN TANGGAL
+function displayImageMagazine($idUser, $namaJalan, $tglFoto){
+    global $koneksi;
+    global $tblMagazine;
 
+    $query = mysqli_query($koneksi, "SELECT * FROM $tblMagazine WHERE id_user = '$idUser' AND nama_jalan = '$namaJalan' AND tgl_upload = '$tglFoto'");
+
+    $infos = [];
+    while ( $baris = mysqli_fetch_assoc($query) ){
+        $infos[] = $baris;
+    }
+    
+    return $infos;
+}
 
 
 

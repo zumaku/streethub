@@ -75,8 +75,13 @@
 
             foreach($infosTerbaru as $data){
                 $img = takeImageMagazine('terbaru',$idActive, $data['nama_jalan'], $data['tgl_upload']);
-                // var_dump($img);
-                setCardTerbaru('#', 'url(../img/magazine/' . $img . ')', $data['nama_jalan'], $data['tgl_upload']);
+                // $data['tgl_upload'] = date('l, d M Y ');
+                setCardTerbaru(
+                    '../pages/index.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'],
+                    'url(../img/magazine/' . $img . ')',
+                    $data['nama_jalan'],
+                    $data['tgl_upload'] = date('l, d M Y ')
+                );
             }
             
             ?>
@@ -95,7 +100,12 @@
             
             foreach($infosLawas as $data){
                 $img = takeImageMagazine('lawas',$idActive, $data['nama_jalan'], $data['tgl_upload']);
-                setCardLawas('#', 'url(../img/magazine/' . $img . ')', $data['nama_jalan'], $data['tgl_upload']);
+                setCardLawas(
+                    '../pages/index.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'],
+                    'url(../img/magazine/' . $img . ')',
+                    $data['nama_jalan'],
+                    $data['tgl_upload']
+                );
             }
             ?>
         </div>

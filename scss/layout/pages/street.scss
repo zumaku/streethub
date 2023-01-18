@@ -1,0 +1,222 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: $secondary;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: $primary;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#bookmark{
+    margin-top: 40px;
+}
+
+.secBackBtn#secBackBtn{
+    width: 100%;
+    background-color: $primary;
+    margin: auto;
+    @include btnArrow(color);
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    a.btnArrow{
+        margin: 15px 9%;
+        .arrow{
+            margin-left: 0;
+            margin-right: 10px;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.container#container{
+    width: 90%;
+    height: fit-content;
+    margin: auto;
+    padding: 50px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    .card{
+        background-color: $semu;
+        box-shadow: $shadow;
+        padding: 25px 20px;
+        margin-bottom: 50px;
+        box-sizing: border-box;
+        transition: .1s linear;
+        &:hover{
+            transform: scale(1.01);
+        }
+        .image{
+            width: 250px;
+            height: 350px;
+            margin-bottom: 15px;
+            position: relative;
+            @include bg();
+            .watermark{
+                @include bg(url(../img/icon/watermark.png));
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .info{
+            position: relative;
+            p{
+                margin-bottom: 15px;
+                &.harga{
+                    font-weight: bold;
+                    margin-bottom: 0;
+                }
+            }
+            .addToKeranjang{
+                background-color: $secondary;
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                right: 20px;
+                top: -40px;
+                .icon{
+                    width: 32px;
+                    height: 32px;
+                    border: 0;
+                    background-color: transparent;
+                    cursor: pointer;
+                    @include bg(url(../img/icon/keranjang2.png));
+                }
+            }
+        }
+    }
+}
+
+@include media(leptop){
+    .container#container{
+        width: 90%;
+        padding: 100px 0;
+        justify-content: space-between;
+        .card{
+            padding: 20px 15px;
+            margin-bottom: 50px;
+            .image{
+                width: 220px;
+                height: 320px;
+                margin-bottom: 15px;
+            }
+            .info{
+                position: relative;
+                .addToKeranjang{
+                    width: 52px;
+                    height: 52px;
+                    .icon{
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media(870px){
+    .secBackBtn#secBackBtn{
+        a.btnArrow{
+            margin: 15px 4%;
+        }
+    }
+    .container#container{
+        .card{
+            padding: 25px 20px;
+            margin-bottom: 50px;
+            .image{
+                width: 280px;
+                height: 380px;
+            }
+        }
+    }
+}
+@include media(notebook){
+    .container#container{
+        justify-content: space-around;
+        .card{
+            padding: 18px 13px;
+            margin-bottom: 50px;
+            .image{
+                width: 240px;
+                height: 340px;
+            }
+        }
+    }
+}
+@include media(690px){
+    .container#container{
+        justify-content: space-between;
+        .card{
+            padding: 18px 13px;
+            margin-bottom: 50px;
+            .image{
+                width: 220px;
+                height: 320px;
+            }
+        }
+    }
+}
+@include media(tablet){
+    .container#container{
+        padding: 50px 0;
+        justify-content: center;
+        .card{
+            padding: 20px 15px;
+            margin-bottom: 50px;
+            .image{
+                width: 270px;
+                height: 370px;
+            }
+        }
+    }
+}
+@include media(hp){
+    .container#container{
+        padding: 50px 0;
+        .card{
+            padding: 20px 15px;
+            .image{
+                width: 230px;
+                height: 330px;
+            }
+        }
+    }
+}
