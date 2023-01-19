@@ -100,24 +100,46 @@ html{
                     margin-bottom: 0;
                 }
             }
-            .addToKeranjang{
-                background-color: $secondary;
-                width: 52px;
-                height: 52px;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            form.action{
+                width: fit-content;
                 position: absolute;
                 right: 20px;
                 top: -40px;
-                .icon{
-                    width: 32px;
-                    height: 32px;
+                display: flex;
+                background-color: red;
+                button.circle{
+                    width: 52px;
+                    height: 52px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    right: 20px;
+                    top: -40px;
+                    width: 52px;
+                    height: 52px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     border: 0;
-                    background-color: transparent;
-                    cursor: pointer;
-                    @include bg(url(../img/icon/keranjang2.png));
+                    background-color: $secondary;
+                    &:last-child{
+                        background-color: $danger;
+                    }
+                    .icon{
+                        width: 32px;
+                        height: 32px;
+                        background-color: transparent;
+                        cursor: pointer;
+                        &.iconAdd{
+                            @include bg(url(../img/icon/keranjang2.png));
+                        }
+                        &.iconDelete{
+                            @include bg(url(../img/icon/delete.png));
+                        }
+                    }
                 }
             }
         }

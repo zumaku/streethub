@@ -3,7 +3,18 @@
     include '../function/function.php';
     $urlToRoot = '../';
 
-    $idActive = $_SESSION['idActive'];
+    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+        $idActive = $_SESSION['idActive'];
+    } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
+        $idActive = $_GET['idActive'];
+    } else{
+        echo' <script>
+                setTimeout(() => {
+                    window.location.href = "' . $urlToRoot . 'profile/gallery.php";
+                }, 2000);
+            </script>
+        ';
+    }
 
     $account = takeAccount($idActive);
     $profile = takeProfile($idActive);
@@ -77,10 +88,11 @@
                 $img = takeImageMagazine('terbaru',$idActive, $data['nama_jalan'], $data['tgl_upload']);
                 // $data['tgl_upload'] = date('l, d M Y ');
                 setCardTerbaru(
-                    '../pages/client.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'],
+                    '../pages/client.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'] . '&idActive=' . $idActive,
                     'url(../img/magazine/' . $img . ')',
                     $data['nama_jalan'],
-                    $data['tgl_upload'] = date('l, d M Y ')
+                    $data['tgl_upload'] = date('l, d M Y '),
+
                 );
             }
             
@@ -101,7 +113,7 @@
             foreach($infosLawas as $data){
                 $img = takeImageMagazine('lawas',$idActive, $data['nama_jalan'], $data['tgl_upload']);
                 setCardLawas(
-                    '../pages/client.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'],
+                    '../pages/client.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'] . '&idActive=' . $idActive,
                     'url(../img/magazine/' . $img . ')',
                     $data['nama_jalan'],
                     $data['tgl_upload']

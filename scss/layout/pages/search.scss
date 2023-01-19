@@ -1,60 +1,102 @@
 @use '../../abstracts' as *;
 @use '../../components' as *;
 
-.galeri{
-    .tambahFoto{
-        @include normalBtn();
-        padding: 50px 0 0;
-        h4{
-            margin: auto;
-            width: fit-content;
-            box-sizing: border-box;
-            background-color: blue;
-            display: flex;
-            justify-content: center;
-            a{
-                margin: auto;
-                text-decoration: none;
-                color: white;
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: $secondary;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: $primary;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.streeters{
+    width: 100%;
+    // background-color: darkolivegreen;
+    @include section();
+    align-items: flex-start;
+    .container{
+        align-items: flex-start;
+        overflow: hidden;
+        h1{
+            span{
+                color: $secondary;
             }
+        }
+        .profiles{
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            position: relative;
+            .profile{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0 20px 20px;
+                .image{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    // background-color: red;
+                    margin-bottom: 5px;
+                    @include bg();
+                }
+            }
+        }
+    }
+}
+
+.ygDicari{
+    h1{
+        span{
+            color: $secondary;
         }
     }
     .container{
         width: 90%;
-        columns: 3;
-        column-gap: 20px;
         margin: auto;
-        padding: 40px 0;
-        .gambar{
-            position: relative;
-            // position: relative;
-            img{
-                width: 100%;
-                height: fit-content;
-                margin-bottom: 20px;
-                transition: .2s linear;
-                &:hover{
-                    transform: scale(1.01);
-                }
-            }
-            .aksi{
-                // background-color: blue;
-                display: flex;
-                flex-direction: row;
-                width: fit-content;
-                position: absolute;
-                z-index: 3;
-                top: 10px;
-                right: 10px;
-                a{
-                    .iconDownload{
-                        height: 25px;
-                        width: 25px;
-                        @include bg(url(../img/icon/download.png), contain);
-                        opacity: .7;
-                        &:hover{
-                            opacity: 1;
-                        }
+        .galeri{
+            width: 100%;
+            columns: 3;
+            column-gap: 20px;
+            padding: 40px 0;
+            .gambar{
+                position: relative;
+                // position: relative;
+                img{
+                    width: 100%;
+                    height: fit-content;
+                    margin-bottom: 20px;
+                    transition: .2s linear;
+                    &:hover{
+                        transform: scale(1.01);
                     }
                 }
             }
@@ -158,12 +200,15 @@
     }
 }
 
+
 @include media(tablet){
-    .galeri{
+    .ygDicari{
         .container{
-            columns: 2;
-            column-gap: 20px;
-            padding: 60px 0;
+            .galeri{
+                columns: 2;
+                column-gap: 20px;
+                padding: 60px 0;
+            }
         }
     }
     .preViewImgGallery{
@@ -188,12 +233,34 @@
         }
     }
 }
+
 @include media(hp){
-    .galeri{
+    .streeters{
         .container{
-            columns: 2;
-            column-gap: 20px;
-            padding: 60px 0;
+            margin-top: 20px;
+            h1{
+                font-size: 1.5em;
+            }
+            .profiles{
+                .profile{
+                    .image{
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+            }
+        }
+    }
+    .ygDicari{
+        h1{
+            font-size: 1.5em;
+        }
+        .container{
+            .galeri{
+                columns: 2;
+                column-gap: 20px;
+                padding: 60px 0;
+            }
         }
     }
     .preViewImgGallery{

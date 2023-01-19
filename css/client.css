@@ -772,8 +772,17 @@ html {
   font-weight: bold;
   margin-bottom: 0;
 }
-.container#container .card .info .addToKeranjang {
-  background-color: #18A13D;
+.container#container .card .info form.action {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  right: 20px;
+  top: -40px;
+  display: flex;
+  background-color: red;
+}
+.container#container .card .info form.action button.circle {
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -783,14 +792,32 @@ html {
   position: absolute;
   right: 20px;
   top: -40px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  background-color: #18A13D;
 }
-.container#container .card .info .addToKeranjang .icon {
+.container#container .card .info form.action button.circle:last-child {
+  background-color: #a02525;
+}
+.container#container .card .info form.action button.circle .icon {
   width: 32px;
   height: 32px;
-  border: 0;
   background-color: transparent;
   cursor: pointer;
+}
+.container#container .card .info form.action button.circle .icon.iconAdd {
   background-image: url(../img/icon/keranjang2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container#container .card .info form.action button.circle .icon.iconDelete {
+  background-image: url(../img/icon/delete.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -887,4 +914,4 @@ html {
     width: 230px;
     height: 330px;
   }
-}/*# sourceMappingURL=street.css.map */
+}/*# sourceMappingURL=client.css.map */

@@ -3,7 +3,18 @@
     include '../function/function.php';
     $urlToRoot = '../';
 
-    $idActive = $_SESSION['idActive'];
+    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+        $idActive = $_SESSION['idActive'];
+    } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
+        $idActive = $_GET['idActive'];
+    } else{
+        echo' <script>
+                setTimeout(() => {
+                    window.location.href = "' . $urlToRoot . 'profile/gallery.php";
+                }, 2000);
+            </script>
+        ';
+    }
 
     $account = takeAccount($idActive);
     $profile = takeProfile($idActive);

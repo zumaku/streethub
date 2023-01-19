@@ -3,7 +3,18 @@
     include '../function/function.php';
     $urlToRoot = '../';
 
-    $idActive = $_SESSION['idActive'];
+    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+        $idActive = $_SESSION['idActive'];
+    } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
+        $idActive = $_GET['idActive'];
+    } else{
+        echo' <script>
+                setTimeout(() => {
+                    window.location.href = "' . $urlToRoot . 'profile/gallery.php";
+                }, 2000);
+            </script>
+        ';
+    }
 
     $account = takeAccount($idActive);
     $profile = takeProfile($idActive);
@@ -78,7 +89,7 @@
         <div class="container">
             <?php foreach($images as $img) : ?>
             <div class="gambar">
-                <img src="../img/gallery/<?= $img['foto_galery'] ?>" class="imgGallery" data-id="<?= $img['id_galery'] ?>" data-idUser="<?= $img['id_user'] ?>" data-tglUpload="<?= $img['tgl_upload'] ?>" alt="<?= $img['foto_galery'] ?>">
+                <img src="../img/gallery/<?= $img['foto_galery'] ?>" class="imgGallery" data-id="<?= $img['id_galery'] ?>" data-idUser="<?= $img['id_user'] ?>" data-tglUpload="<?= $img['tgl_upload'] = date('d/m/y') ?>" alt="<?= $img['foto_galery'] ?>">
             </div>
             <?php endforeach; ?>
         </div>
@@ -90,13 +101,19 @@
             <img src="" alt="<?= $account['username'] ?> Photos">
             <a href="#" class="uploader">
                 <div class="profilePic" style="background-image: url(../img/account/profile/<?= $profile['foto_profile'] ?>);"></div>
-                <h2>Nurul Habibie</h2>
+                <h2><?= $account['username'] ?></h2>
             </a>
             <p id="tglUpload"></p>
             <form action="" method="post" class="action">
-                <input type="text" name="idImageGallery" id="inputId" hidden>
-                <input type="text" name="imgGalleryName" id="inputImgName" hidden>
-                <button type="submit" name="deleteGallery" class="btn hapus"><p>Hapus</p> <div class="icon iconHapus"></div></button>
+                <?php
+                if( isset($_SESSION['idActive']) ){
+                    echo'
+                        <input type="text" name="idImageGallery" id="inputId" hidden>
+                        <input type="text" name="imgGalleryName" id="inputImgName" hidden>
+                        <button type="submit" name="deleteGallery" class="btn hapus"><p>Hapus</p> <div class="icon iconHapus"></div></button>
+                    ';
+                }
+                ?>
                 <a href="#" class="btn unduh" title="<?= $account['username'] ?> Photos" download><p>Unduh</p> <div class="icon iconUnduh"></div></a>
             </form>
             <div class="close"><div class="icon"></div></div>

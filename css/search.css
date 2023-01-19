@@ -621,23 +621,55 @@ footer.footer .container .copyright .dll {
   background-color: #a02525;
 }
 
-.hero {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #18A13D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #191A19;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.streeters {
+  width: 100%;
   width: 100%;
   font-size: 16px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  align-items: flex-start;
 }
-.hero .container {
+.streeters .container {
   width: 90%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
-  height: 100vh;
+  height: fit-content;
   padding: 100px 0;
   box-sizing: border-box;
   display: flex;
@@ -646,425 +678,62 @@ footer.footer .container .copyright .dll {
   align-items: center;
 }
 @media (max-width: 576px) {
-  .hero .container {
+  .streeters .container {
     width: 95%;
     padding: 60px 0;
   }
 }
-.hero .bGradient {
-  background-color: red;
+.streeters .container {
+  align-items: flex-start;
+  overflow: hidden;
 }
-.hero .container {
-  width: 100%;
-  background: linear-gradient(180deg, rgba(25, 26, 25, 0.3) 0%, #191A19 94.68%);
-}
-.hero .container img {
-  width: 180px;
-  border-radius: 50%;
-  border: 5px solid white;
-  margin-bottom: 10px;
-}
-.hero .container h1 {
-  margin-bottom: 10px;
-  font-size: 3em;
-}
-.hero .container .sosmed {
-  display: flex;
-}
-.hero .container .sosmed .icon {
-  width: 16px;
-  height: 16px;
-  margin: 0 10px 50px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.hero .container .sosmed .icon.fb {
-  background-image: url(../img/icon/facebook.png);
-}
-.hero .container .sosmed .icon.ig {
-  background-image: url(../img/icon/instagram.png);
-}
-.hero .container .sosmed .icon.tw {
-  background-image: url(../img/icon/twitter.png);
-}
-.hero .container .sosmed .icon.web {
-  background-image: url(../img/icon/web.png);
-}
-.hero .container .sosmed .icon:hover {
-  transform: scale(1.1);
-}
-.hero .container p.quote {
-  font-style: italic;
-  text-align: center;
-  max-width: 720px;
-  width: 90%;
-}
-
-@media (max-width: 768px) {
-  .hero .container h1 {
-    font-size: 2.5em;
-  }
-}
-@media (max-width: 576px) {
-  .hero .container img {
-    width: 140px;
-  }
-  .hero .container h1 {
-    font-size: 2em;
-  }
-}
-.navProfile {
-  width: 100%;
-  padding: 20px 0;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.377);
-  z-index: 99;
-  background-color: #191A19;
-}
-.navProfile .container {
-  margin: auto;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.navProfile .container ul {
-  list-style: none;
-  display: flex;
-}
-.navProfile .container ul li {
-  margin: 0 20px;
-}
-.navProfile .container ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-.navProfile .container ul li a:hover {
+.streeters .container h1 span {
   color: #18A13D;
 }
-.navProfile .container ul .ulActive a {
-  color: white;
-}
-.navProfile .container ul .ulActive a:hover {
-  color: white;
-}
-.navProfile .container ul .ulActive span {
+.streeters .container .profiles {
   width: 100%;
-  height: 3px;
-  display: block;
-  background-color: #18A13D;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
 }
-
-@media (max-width: 390px) {
-  .navProfile .container ul li {
-    margin: 0 5px;
-  }
-}
-.fotoTerbaru {
-  width: 100%;
-  font-size: 16px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.fotoTerbaru .container {
-  width: 90%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: auto;
-  height: fit-content;
-  padding: 100px 0;
-  box-sizing: border-box;
+.streeters .container .profiles .profile {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 20px 20px;
 }
-@media (max-width: 576px) {
-  .fotoTerbaru .container {
-    width: 95%;
-    padding: 60px 0;
-  }
-}
-.fotoTerbaru .tambahFoto {
-  padding: 50px 0 0;
-}
-.fotoTerbaru .tambahFoto .btn {
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  background-color: #18A13D;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: 0.1s linear;
-  cursor: pointer;
-}
-.fotoTerbaru .tambahFoto .btn:hover {
-  transform: scale(1.02);
-}
-.fotoTerbaru .tambahFoto .btn:active {
-  transform: scale(0.98);
-}
-.fotoTerbaru .tambahFoto h4 {
-  margin: auto;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  box-sizing: border-box;
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-}
-.fotoTerbaru .tambahFoto h4 a {
-  margin: auto;
-  text-decoration: none;
-  color: white;
-}
-.fotoTerbaru .container {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.fotoTerbaru .container .cardTerbaru {
-  width: 410px;
-  height: 310px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-bottom: 80px;
-}
-.fotoTerbaru .container .cardTerbaru .backPic,
-.fotoTerbaru .container .cardTerbaru .frontPic {
-  width: 90%;
-  height: 90%;
+.streeters .container .profiles .profile .image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 5px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 6px solid white;
-  transition: 0.3s linear;
-}
-.fotoTerbaru .container .cardTerbaru .frontPic {
-  position: absolute;
-  display: flex;
-  text-decoration: none;
-  z-index: 2;
-}
-.fotoTerbaru .container .cardTerbaru .frontPic .content {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-.fotoTerbaru .container .cardTerbaru .frontPic .content h2, .fotoTerbaru .container .cardTerbaru .frontPic .content p {
-  text-align: center;
-}
-.fotoTerbaru .container .cardTerbaru .frontPic .content .line {
-  width: 75%;
-  height: 2.5px;
-  background-color: white;
-  margin: 30px 0;
-}
-.fotoTerbaru .container .cardTerbaru .backPic {
-  transform: rotateZ(-5deg);
-}
-.fotoTerbaru .container .cardTerbaru .frontPic:hover ~ .backPic {
-  transform: rotateZ(-8deg);
 }
 
-@media (max-width: 1220px) {
-  .fotoTerbaru .container .cardTerbaru {
-    width: 450px;
-    height: 350px;
-  }
+.ygDicari h1 span {
+  color: #18A13D;
 }
-@media (max-width: 990px) {
-  .fotoTerbaru .container .cardTerbaru {
-    width: 300px;
-    height: 200px;
-  }
+.ygDicari .container {
+  width: 90%;
+  margin: auto;
 }
-@media (max-width: 670px) {
-  .fotoTerbaru .container .cardTerbaru {
-    width: 350px;
-    height: 250px;
-    margin-bottom: 40px;
-  }
-}
-@media (max-width: 390px) {
-  .fotoTerbaru .container .cardTerbaru {
-    width: 300px;
-    height: 200px;
-  }
-}
-.fotoLawas {
+.ygDicari .container .galeri {
   width: 100%;
-  font-size: 16px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.fotoLawas .container {
-  width: 90%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: auto;
-  height: fit-content;
-  padding: 100px 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 576px) {
-  .fotoLawas .container {
-    width: 95%;
-    padding: 60px 0;
-  }
-}
-.fotoLawas .container {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.fotoLawas .container .cardLawas {
-  width: 310px;
-  height: 210px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-}
-.fotoLawas .container .cardLawas .backPic,
-.fotoLawas .container .cardLawas .frontPic {
-  width: 90%;
-  height: 90%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 6px solid white;
-  transition: 0.3s linear;
-}
-.fotoLawas .container .cardLawas .frontPic {
-  position: absolute;
-  display: flex;
-  text-decoration: none;
-  z-index: 2;
-}
-.fotoLawas .container .cardLawas .frontPic .content {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-.fotoLawas .container .cardLawas .frontPic .content h2 {
-  text-align: center;
-}
-.fotoLawas .container .cardLawas .frontPic .content .line {
-  width: 75%;
-  height: 2.5px;
-  background-color: white;
-  margin: 20px 0;
-}
-.fotoLawas .container .cardLawas .backPic {
-  transform: rotateZ(-5deg);
-}
-.fotoLawas .container .cardLawas .frontPic:hover ~ .backPic {
-  transform: rotateZ(-8deg);
-}
-
-@media (max-width: 1220px) {
-  .fotoLawas .container .cardLawas {
-    width: 400px;
-    height: 300px;
-  }
-}
-@media (max-width: 990px) {
-  .fotoLawas .container .cardLawas {
-    width: 300px;
-    height: 200px;
-  }
-}
-@media (max-width: 768px) {
-  .fotoLawas .container .cardLawas {
-    width: 250px;
-    height: 150px;
-  }
-}
-@media (max-width: 576px) {
-  .fotoLawas .container .cardLawas {
-    width: 300px;
-    height: 200px;
-  }
-}
-@media (max-width: 390px) {
-  .fotoLawas .container .cardLawas {
-    width: 250px;
-    height: 150px;
-  }
-}
-.galeri .tambahFoto {
-  padding: 50px 0 0;
-}
-.galeri .tambahFoto .btn {
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  background-color: #18A13D;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: 0.1s linear;
-  cursor: pointer;
-}
-.galeri .tambahFoto .btn:hover {
-  transform: scale(1.02);
-}
-.galeri .tambahFoto .btn:active {
-  transform: scale(0.98);
-}
-.galeri .tambahFoto h4 {
-  margin: auto;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  box-sizing: border-box;
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-}
-.galeri .tambahFoto h4 a {
-  margin: auto;
-  text-decoration: none;
-  color: white;
-}
-.galeri .container {
-  width: 90%;
   -moz-columns: 3;
        columns: 3;
   -moz-column-gap: 20px;
        column-gap: 20px;
-  margin: auto;
   padding: 40px 0;
 }
-.galeri .container .gambar {
+.ygDicari .container .galeri .gambar {
   position: relative;
 }
-.galeri .container .gambar img {
+.ygDicari .container .galeri .gambar img {
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1072,31 +741,8 @@ footer.footer .container .copyright .dll {
   margin-bottom: 20px;
   transition: 0.2s linear;
 }
-.galeri .container .gambar img:hover {
+.ygDicari .container .galeri .gambar img:hover {
   transform: scale(1.01);
-}
-.galeri .container .gambar .aksi {
-  display: flex;
-  flex-direction: row;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  position: absolute;
-  z-index: 3;
-  top: 10px;
-  right: 10px;
-}
-.galeri .container .gambar .aksi a .iconDownload {
-  height: 25px;
-  width: 25px;
-  background-image: url(../img/icon/download.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.7;
-}
-.galeri .container .gambar .aksi a .iconDownload:hover {
-  opacity: 1;
 }
 
 .preViewImgGallery {
@@ -1218,7 +864,7 @@ footer.footer .container .copyright .dll {
 }
 
 @media (max-width: 576px) {
-  .galeri .container {
+  .ygDicari .container .galeri {
     -moz-columns: 2;
          columns: 2;
     -moz-column-gap: 20px;
@@ -1244,7 +890,20 @@ footer.footer .container .copyright .dll {
   }
 }
 @media (max-width: 390px) {
-  .galeri .container {
+  .streeters .container {
+    margin-top: 20px;
+  }
+  .streeters .container h1 {
+    font-size: 1.5em;
+  }
+  .streeters .container .profiles .profile .image {
+    width: 70px;
+    height: 70px;
+  }
+  .ygDicari h1 {
+    font-size: 1.5em;
+  }
+  .ygDicari .container .galeri {
     -moz-columns: 2;
          columns: 2;
     -moz-column-gap: 20px;
@@ -1275,452 +934,4 @@ footer.footer .container .copyright .dll {
     width: 20px;
     height: 20px;
   }
-}
-.siapaAku {
-  width: 100%;
-  font-size: 16px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.siapaAku .container {
-  width: 90%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: auto;
-  height: fit-content;
-  padding: 100px 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 576px) {
-  .siapaAku .container {
-    width: 95%;
-    padding: 60px 0;
-  }
-}
-.siapaAku .container {
-  flex-direction: row;
-  justify-content: space-around;
-}
-.siapaAku .container .fotoku {
-  max-height: 520px;
-  overflow: hidden;
-  max-width: 500px;
-  width: 35%;
-}
-.siapaAku .container .fotoku img {
-  width: 100%;
-}
-.siapaAku .container .tentangku {
-  width: 50%;
-}
-.siapaAku .container .tentangku h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-.siapaAku .container .tentangku h1 span {
-  color: #18A13D;
-}
-.siapaAku .container .tentangku p {
-  margin-bottom: 30px;
-}
-.siapaAku .container .tentangku .btnArrow {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 8px 16px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: 0.1s linear;
-  background-color: #18A13D;
-  border: 0;
-}
-.siapaAku .container .tentangku .btnArrow p {
-  margin: 0;
-}
-.siapaAku .container .tentangku .btnArrow .arrow {
-  width: 16px;
-  height: 16px;
-  background-image: url(../img/icon/panahKanan1.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-left: 10px;
-}
-.siapaAku .container .tentangku .btnArrow:hover {
-  transform: scale(1.03);
-}
-@media (max-width: 990px) {
-  .siapaAku .container .tentangku .btnArrow {
-    padding: 5px 10px;
-    padding: 5px 10px;
-  }
-  .siapaAku .container .tentangku .btnArrow .arrow {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-@media (max-width: 576px) {
-  .siapaAku .container {
-    flex-direction: column;
-  }
-  .siapaAku .container .fotoku {
-    width: 70%;
-    margin-bottom: 20px;
-  }
-  .siapaAku .container .tentangku {
-    width: 90%;
-  }
-}
-@media (max-width: 390px) {
-  .siapaAku .container .tentangku {
-    width: 90%;
-  }
-  .siapaAku .container .tentangku h1 {
-    font-size: 2em;
-  }
-}
-.alat {
-  width: 100%;
-  font-size: 16px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.alat .container {
-  width: 90%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: auto;
-  height: fit-content;
-  padding: 100px 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 576px) {
-  .alat .container {
-    width: 95%;
-    padding: 60px 0;
-  }
-}
-.alat .container {
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: flex-start;
-  width: 100%;
-  padding: 100px 5%;
-}
-.alat .container h1 {
-  font-size: 3em;
-  width: 350px;
-  margin-bottom: 50px;
-}
-.alat .container h1 span {
-  color: #18A13D;
-}
-.alat .container .alatku {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.alat .container .alatku .card {
-  width: 22%;
-}
-.alat .container .alatku .card .icon {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 10px;
-}
-.alat .container .alatku .card .icon.kamera {
-  background-image: url(../img/icon/cameraProfile.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.alat .container .alatku .card .icon.lensa {
-  background-image: url(../img/icon/lensProfile.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.alat .container .alatku .card .icon.filter {
-  background-image: url(../img/icon/filterProfile.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.alat .container .alatku .card .icon.tripod {
-  background-image: url(../img/icon/podProfile.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-@media (max-width: 768px) {
-  .alat .container {
-    padding: 100px 10%;
-  }
-  .alat .container h1 {
-    font-size: 3em;
-    width: 350px;
-    margin-bottom: 20px;
-  }
-  .alat .container .alatku .card {
-    width: 48%;
-    margin-bottom: 20px;
-  }
-  .alat .container .alatku .card .icon {
-    width: 58px;
-    height: 58px;
-  }
-}
-@media (max-width: 390px) {
-  .alat .container h1 {
-    font-size: 2.5em;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-  .alat .container .alatku .card {
-    width: 100%;
-  }
-  .alat .container .alatku .card .icon {
-    width: 50px;
-    height: 50px;
-  }
-}
-.contact {
-  width: 100%;
-  font-size: 16px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.contact .container {
-  width: 90%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: auto;
-  height: fit-content;
-  padding: 100px 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 576px) {
-  .contact .container {
-    width: 95%;
-    padding: 60px 0;
-  }
-}
-.contact .container {
-  flex-direction: row;
-  justify-content: space-around;
-}
-.contact .container .favImage {
-  width: 500px;
-  height: 350px;
-  display: flex;
-  position: relative;
-}
-.contact .container .favImage .img {
-  width: 70%;
-  height: 60%;
-  border: 5px solid white;
-  position: absolute;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.contact .container .favImage .img:last-child {
-  bottom: 0;
-  right: 0;
-}
-.contact .container form {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.contact .container form h1 {
-  font-size: 3em;
-}
-.contact .container form h1 span {
-  color: #18A13D;
-}
-.contact .container form label {
-  font-size: 1em;
-  font-weight: bold;
-}
-.contact .container form input {
-  width: 100%;
-  max-width: 350px;
-  border: 0;
-  outline: none;
-  border-radius: 10px;
-  padding: 5px 12px;
-  box-sizing: border-box;
-  background-color: rgba(224, 224, 224, 0.4352941176);
-  border: 1px solid #191A19;
-  color: white;
-  margin: 10px 0;
-}
-.contact .container form input:focus {
-  border: 1px solid #18A13D;
-}
-.contact .container form textarea {
-  width: 100%;
-  height: 100px;
-  max-width: 350px;
-  border: 0;
-  outline: none;
-  border-radius: 10px;
-  padding: 10px 12px;
-  box-sizing: border-box;
-  background-color: rgba(224, 224, 224, 0.4352941176);
-  border: 1px solid #191A19;
-  color: white;
-  margin: 10px 0;
-  resize: vertical;
-}
-.contact .container form textarea:focus {
-  border: 1px solid #18A13D;
-}
-.contact .container form .btn {
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  background-color: #18A13D;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: 0.1s linear;
-  cursor: pointer;
-}
-.contact .container form .btn:hover {
-  transform: scale(1.02);
-}
-.contact .container form .btn:active {
-  transform: scale(0.98);
-}
-.contact .container form .btn {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  border: 0;
-}
-
-@media (max-width: 990px) {
-  .contact .container {
-    justify-content: space-between;
-  }
-  .contact .container .favImage {
-    width: 400px;
-    height: 300px;
-  }
-  .contact .container form {
-    width: 45%;
-  }
-  .contact .container form h1 {
-    font-size: 3em;
-  }
-}
-@media (max-width: 830px) {
-  .contact .container {
-    justify-content: space-between;
-  }
-  .contact .container .favImage {
-    width: 350px;
-    height: 250px;
-  }
-  .contact .container form {
-    width: 45%;
-  }
-  .contact .container form h1 {
-    font-size: 2.5em;
-  }
-}
-@media (max-width: 768px) {
-  .contact .container {
-    flex-direction: column;
-  }
-  .contact .container .favImage {
-    width: 90%;
-    height: 400px;
-    margin-bottom: 20px;
-  }
-  .contact .container form {
-    width: 90%;
-  }
-  .contact .container form h1 {
-    font-size: 3em;
-  }
-}
-@media (max-width: 576px) {
-  .contact .container .favImage {
-    width: 90%;
-    height: 300px;
-  }
-  .contact .container form h1 {
-    font-size: 3em;
-  }
-}
-@media (max-width: 390px) {
-  .contact .container .favImage {
-    width: 90%;
-    height: 200px;
-  }
-  .contact .container form h1 {
-    font-size: 2em;
-  }
-}
-/* width */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: black;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #18A13D;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  background-color: #191A19;
-}/*# sourceMappingURL=profile.css.map */
+}/*# sourceMappingURL=search.css.map */

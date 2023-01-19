@@ -124,7 +124,32 @@ function hasilAlert($event = false){
 
 
 
+// SEARCHING FUNCTION
+function searchGallery($key){
+    global $koneksi;
+    global $tblGalery;
 
+    $query = mysqli_query($koneksi, "SELECT * FROM $tblGalery WHERE tag_foto LIKE '%$key%'");
+
+    $hasil = [];
+    while ( $baris = mysqli_fetch_assoc($query) ){
+        $hasil[] = $baris;
+    }
+    return $hasil;
+}
+// SEARCH STREETERS
+function searchStreeters($key){
+    global $koneksi;
+    global $tblAccount;
+
+    $query = mysqli_query($koneksi, "SELECT * FROM $tblAccount WHERE username LIKE '%$key%'");
+
+    $hasil = [];
+    while ( $baris = mysqli_fetch_assoc($query) ){
+        $hasil[] = $baris;
+    }
+    return $hasil;
+}
 
 
 
@@ -232,13 +257,12 @@ function takeImageGallery($idUser){
     global $koneksi;
     global $tblGalery;
 
-    $query = "SELECT * FROM $tblGalery WHERE id_user = '$idUser'";
-    $hasil = mysqli_query($koneksi, $query);
-    $bnykBaris = [];
-    while ( $baris = mysqli_fetch_assoc($hasil) ){
-        $bnykBaris[] = $baris;
+    $query = mysqli_query($koneksi, "SELECT * FROM $tblGalery WHERE id_user = '$idUser'");
+    $hasil = [];
+    while ( $baris = mysqli_fetch_assoc($query) ){
+        $hasil[] = $baris;
     }
-    return $bnykBaris;
+    return $hasil;
 }
 // FUNGSI HAPUS IMAGE GALLERY
 function deleteImageGallery($idImageGallery){

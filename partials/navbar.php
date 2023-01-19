@@ -8,7 +8,17 @@
         hasilAlert('signout');
     }
 
-    $profile = takeProfile($idActive);
+    if( isset($_SESSION['idActive']) ){
+        $profile = takeProfile($idActive);
+    }
+
+    if( isset($_POST['search']) ){
+        echo'
+            <script>
+                window.location.href = "' . $urlToRoot . 'pages/?search=' . $_POST['cariapa'] . '"
+            </script>
+        ';
+    }
 
 ?>
 
@@ -29,8 +39,9 @@
                 </div>
 
                 <div class="navbar">
-                    <form action="" method="" class="pencarian">
+                    <form action="" method="post" class="pencarian">
                         <input type="text" name="cariapa" id="cariapa" placeholder="Cari di sini" autocomplete="none">
+                        <button type="submit" name="search" hidden></button>
                     </form>
                     <ul class="navMenu">
                         <li>
@@ -91,9 +102,9 @@
 
     <nav class="nav2" id="nav2" style="display: none;">
         <div class="navbar">
-            <form action="" method="" class="pencarian">
+            <form action="" method="post" class="pencarian">
                 <input type="text" name="cariapa" id="cariapa" placeholder="Cari di sini">
-                <button type="submit" name="cari" hidden></button>
+                <button type="submit" name="search" hidden></button>
                 <span class="underline"></span>
             </form>
             <ul class="navMenu">

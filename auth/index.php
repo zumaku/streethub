@@ -3,7 +3,7 @@
     include '../function/function.php';
     include '../function/loginFunction.php';
 
-    if( isset($_SESSION['idActive']) ){
+    if( isset($_SESSION['idActive']) || $_SESSION['idActive'] == '' ){
         echo'
             <script>
                 setTimeout(()=>{

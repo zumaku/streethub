@@ -3,7 +3,13 @@
     include '../function/function.php';
     $urlToRoot = '../';
 
-    $idActive = $_SESSION['idActive'];
+    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+        $idActive = $_SESSION['idActive'];
+        $linkBack = '../profile/magazine.php';
+    } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
+        $idActive = $_GET['idActive'];
+        $linkBack = '../profile/magazine.php?idActive=' . $idActive;
+    }
 
     if( !isset($_GET['jalan']) && !isset($_GET['tgl']) ){
         echo' <script>
@@ -27,7 +33,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Street</title>
-    <link rel="stylesheet" href="../css/street.css">
+    <link rel="stylesheet" href="../css/client.css">
 </head>
 <body>
     
@@ -44,7 +50,7 @@
     ?>
 
     <div class="secBackBtn" id="secBackBtn">
-        <a href="../profile/magazine.php" class="btnArrow"><div class="arrow"></div>Kembali</a>
+        <a href="<?= $linkBack ?>" class="btnArrow"><div class="arrow"></div>Kembali</a>
     </div>
 
     <div class="container" id="container">
@@ -59,8 +65,10 @@
                 <h2><?= substr($data['foto_magazine'], 15) ?></h2>
                 <p>Tanggal: <?= $tgl = date('d/m/y') ?></p>
                 <p class="harga">Harga: 5000</p>
-                <form action="" method="post" class="addToKeranjang">
-                    <button class="icon"></button>
+                <form action="" method="post" class="action">
+                    <input type="text" name="id_magazine" value="<?= $data['id_magazine'] ?>">
+                    <button class="circle"><div class="icon iconAdd"></div></button>
+                    <button type="submit" name="delete" class="circle"><div class="icon iconDelete"></div></button>
                 </form>
             </div>
         </div>
