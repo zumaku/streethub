@@ -183,13 +183,13 @@ function storePhoto($foto, $folderTujuan){
                 return $namaFotoBaru;
                 // echo' <script> alert("File Berhasil Diupload!!!"); window.location.href = "ujiCobaSignup.php" </script> ';
             } else{
-                echo' <script> alert("Ukuran foto lebih besar dari 1mb!!!"); </script> ';
+                return 'Ukuran foto terlalu besar!';
             }
         } else{
-            echo' <script> alert("Terdapat Error saat upload!!!"); </script> ';
+            return 'Terdapat error saat upload!';
         }
     } else{
-        echo' <script> alert("Ekstensi File Salah!!!"); </script> ';
+        return 'Ekstensi file tidak didukung!';
     }
 }
 
@@ -220,13 +220,16 @@ function storeMultiplePhoto($fotos, $folderTujuan){
                     
                     $kumpulanNamaFotoBaru[$i] = $namaFotoBaru;
                 } else{
-                    echo' <script> alert("Ukuran foto lebih besar dari 1mb pada foto ke-' . $i+1 . '!!!"); </script> ';
+                    // pesan error
+                    $kumpulanNamaFotoBaru[$i] = 'Ukuran foto terlalu besar pada foto ke-' . $i+1 . '!';
                 }
             } else{
-                echo' <script> alert("Terdapat Error Saat Upload pada foto ke-' . $i+1 . '!!!"); </script> ';
+                // pesan error
+                $kumpulanNamaFotoBaru[$i] = 'Terdapat error saat upload pada foto ke-' . $i+1 . '!';
             }
         } else{
-            echo' <script> alert("Ekstensi File Salah pada foto ke-' . $i+1 . '!!!"); </script> ';
+            // pesan error
+            $kumpulanNamaFotoBaru[$i] = 'Ekstensi file tidak didukung pada foto ke-' . $i+1 . '!';
         }
     }
 
@@ -344,7 +347,14 @@ function displayImageMagazine($idUser, $namaJalan, $tglFoto){
     
     return $infos;
 }
-
+// FUNGSI MENGAHPUS FOTO MAGAZINE
+function deleteImageMagazine($idImageMagazine){
+    global $koneksi;
+    global $tblMagazine;
+    
+    $query = "DELETE FROM $tblMagazine WHERE id_magazine = $idImageMagazine";
+    return mysqli_query($koneksi, $query);
+}
 
 
 

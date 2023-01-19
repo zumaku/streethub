@@ -780,7 +780,6 @@ html {
   right: 20px;
   top: -40px;
   display: flex;
-  background-color: red;
 }
 .container#container .card .info form.action button.circle {
   width: 52px;
@@ -790,8 +789,8 @@ html {
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 20px;
-  top: -40px;
+  right: 0px;
+  top: -5px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -801,7 +800,7 @@ html {
   border: 0;
   background-color: #18A13D;
 }
-.container#container .card .info form.action button.circle:last-child {
+.container#container .card .info form.action button.circle.delete {
   background-color: #a02525;
 }
 .container#container .card .info form.action button.circle .icon {

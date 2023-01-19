@@ -106,7 +106,6 @@ html{
                 right: 20px;
                 top: -40px;
                 display: flex;
-                background-color: red;
                 button.circle{
                     width: 52px;
                     height: 52px;
@@ -115,8 +114,8 @@ html{
                     justify-content: center;
                     align-items: center;
                     position: absolute;
-                    right: 20px;
-                    top: -40px;
+                    right: 0px;
+                    top: -5px;
                     width: 52px;
                     height: 52px;
                     border-radius: 50%;
@@ -125,7 +124,7 @@ html{
                     align-items: center;
                     border: 0;
                     background-color: $secondary;
-                    &:last-child{
+                    &.delete{
                         background-color: $danger;
                     }
                     .icon{

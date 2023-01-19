@@ -38,10 +38,10 @@
                     foreach($streeters as $profile) :
                     $pic = takeProfile($profile['id_user']);
                 ?>
-                <div class="profile">
+                <a href="../profile/?idActive=<?= $pic['id_user'] ?>" class="profile">
                     <div class="image" style="background-image: url(../img/account/profile/<?=$pic['foto_profile']?>);"></div>
                     <h3><?= $profile['username'] ?></h3>
-                </div>
+                </a>
                 <?php endforeach; ?>
             </div>
         </div>

@@ -75,8 +75,20 @@
         $namaFoto = storePhoto($_FILES['upGallery'], '../img/gallery');
         $tags = $_POST['upTags'];
 
-        if( uploadImageGallery($tags, $namaFoto, $idActive) > 0 ){
-            alert(true, false, 'Berhasil!', 'Foto telah diunggah ke galeri. Ingin tambah foto lagi?', 'Ya', 'Tidak');
+        if($namaFoto == 'Ekstensi file tidak didukung!' || $namaFoto == 'Terdapat error saat upload!' || $namaFoto == 'Ukuran foto terlalu besar!'){
+            $pesan = $namaFoto;
+            alert(true, false, 'Gagal!', $pesan);
+            echo'
+                <script>
+                    setTimeout(()=>{
+                        window.location.href = "uploadImage.php?upload=gallery";
+                    }, 2000)
+                </script>
+            ';
+        } else{
+            if( uploadImageGallery($tags, $namaFoto, $idActive) > 0 ){
+                alert(true, false, 'Berhasil!', 'Foto telah diunggah ke galeri. Ingin tambah foto lagi?', 'Ya', 'Tidak');
+            }
         }
     }
 
@@ -87,13 +99,30 @@
         // var_dump($namaFotos);
 
         $berhasil = 0;
+        $gagal = false;
         for($i=0; $i<$bnykFoto; $i++){
-            if( uploadImageMagazine($namaJalan, $namaFotos[$i], $idActive) > 0){
-                $berhasil++;
+            if($namaFotos[$i] == 'Ekstensi file tidak didukung pada foto ke-' . $i+1 . '!' || $namaFotos[$i] == 'Terdapat error saat upload pada foto ke-' . $i+1 . '!' || $namaFotos[$i] == 'Ukuran foto terlalu besar pada foto ke-' . $i+1 . '!'){
+                $pesan = $namaFotos[$i];
+                $gagal = $pesan;
+                break;
+            } else{
+                if( uploadImageMagazine($namaJalan, $namaFotos[$i], $idActive) > 0){
+                    $berhasil++;
+                }
+            }
+            if( $berhasil == $bnykFoto ){
+                alert(true, false, 'Berhasil!', 'Foto telah diunggah ke Bingkai. Ingin tambah foto lagi?', 'Ya', 'Tidak');
             }
         }
-        if( $berhasil == $bnykFoto ){
-            alert(true, false, 'Berhasil!', 'Foto telah diunggah ke Bingkai. Ingin tambah foto lagi?', 'Ya', 'Tidak');
+        if( $gagal != false ){
+            alert(true, false, 'Gagal!', $gagal);
+            echo'
+                <script>
+                    setTimeout(()=>{
+                        window.location.href = "uploadImage.php?upload=magazine";
+                    }, 2000);
+                </script>
+            ';
         }
     }
     

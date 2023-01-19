@@ -13,7 +13,22 @@
 
     if( !isset($_GET['jalan']) && !isset($_GET['tgl']) ){
         echo' <script>
-            window.location.href = "' . $urlToRoot . 'profile/magazine.php";
+                window.location.href = "' . $urlToRoot . 'profile/magazine.php";
+            </script>
+        ';
+    }
+
+    if( isset($_POST['delete']) ){
+        if( deleteImageMagazine($_POST['id_magazine']) > 0 ){
+            alert(true, false, 'Berhasil!', 'Foto berhasil dihapus.');
+            unlink( $urlToRoot . 'img/magazine/' . $_POST['foto_magazine'] );
+        } else{
+            alert(true, false, 'Gagal!', 'Terdapat error saat penghapusan.');
+        }
+        echo' <script>
+                setTimeout(() => {
+                    window.location.href = "' . $urlToRoot . 'profile/magazine.php";
+                }, 2000);
             </script>
         ';
     }
@@ -66,9 +81,15 @@
                 <p>Tanggal: <?= $tgl = date('d/m/y') ?></p>
                 <p class="harga">Harga: 5000</p>
                 <form action="" method="post" class="action">
-                    <input type="text" name="id_magazine" value="<?= $data['id_magazine'] ?>">
-                    <button class="circle"><div class="icon iconAdd"></div></button>
-                    <button type="submit" name="delete" class="circle"><div class="icon iconDelete"></div></button>
+                    <input type="text" name="id_magazine" value="<?= $data['id_magazine'] ?>" hidden>
+                    <input type="text" name="foto_magazine" value="<?= $data['foto_magazine'] ?>" hidden>
+                    <?php
+                        if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+                            echo'<button type="submit" name="delete" class="circle delete"><div class="icon iconDelete"></div></button>';
+                        } else if( isset($_GET['search']) && $_GET['search'] != '' ){
+                            echo'<button class="circle add"><div class="icon iconAdd"></div></button>';
+                        }
+                    ?>
                 </form>
             </div>
         </div>

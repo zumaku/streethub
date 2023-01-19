@@ -704,6 +704,12 @@ html {
   justify-content: center;
   align-items: center;
   margin: 0 20px 20px;
+  color: white;
+  text-decoration: none;
+  transition: 0.1s linear;
+}
+.streeters .container .profiles .profile:hover {
+  transform: scale(1.01);
 }
 .streeters .container .profiles .profile .image {
   width: 100px;
