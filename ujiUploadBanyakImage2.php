@@ -36,5 +36,7 @@ if( isset($_POST['upload']) ){
         <button type="submit" name="delete">Delete</button>
     </form>
 
+    <img src="www.pexels.com/photo/photo-of-man-holding-a-camera-1567730/" alt="asidbas">
+
 </body>
 </html>

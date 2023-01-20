@@ -3,7 +3,7 @@
     include '../function/function.php';
     $urlToRoot = '../';
 
-    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['idActive']) ){
         $idActive = $_SESSION['idActive'];
         $linkBack = '../profile/magazine.php';
     } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
@@ -84,9 +84,9 @@
                     <input type="text" name="id_magazine" value="<?= $data['id_magazine'] ?>" hidden>
                     <input type="text" name="foto_magazine" value="<?= $data['foto_magazine'] ?>" hidden>
                     <?php
-                        if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+                        if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['idActive']) ){
                             echo'<button type="submit" name="delete" class="circle delete"><div class="icon iconDelete"></div></button>';
-                        } else if( isset($_GET['search']) && $_GET['search'] != '' ){
+                        } else{
                             echo'<button class="circle add"><div class="icon iconAdd"></div></button>';
                         }
                     ?>

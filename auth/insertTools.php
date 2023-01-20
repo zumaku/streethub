@@ -1,40 +1,55 @@
 <?php
-session_start();
-include '../function/function.php';
-include '../function/loginFunction.php';
+    session_start();
+    include '../function/function.php';
+    include '../function/loginFunction.php';
 
-if( isset($_SESSION['idActive']) ){
-    echo'
-    <script>
-        window.location.href = "../";
-        setTimeout(()=>{
-            alert("Woi.. Anda telah login");
-        }, 1000);
-    </script>
-';
-}
-
-
-$id = $_SESSION['idNewUser'][0];
-
-if( !isset($_SESSION['idNewUser']) ){
-    echo' <script> window.location.href = "./"; </script> ';
-}
-
-
-if(isset($_POST['finish'])){
-
-    if( insertProfile03($_POST) > 0 ){
-        session_destroy();
-        session_start();
-        $_SESSION['idActive'] = $id;
-        echo' <script> alert("Upload data Berhasil!!! Profile Selesai"); window.location.href = "../profile/aboutme.php"; </script> ';
-        
-    } else{
-        echo' <script> alert("Upload data Gagal!!!"); window.location.href = "insertTools.php"; </script> ';
+    if( isset($_SESSION['idActive']) ){
+        echo'
+        <script>
+            window.location.href = "../";
+            setTimeout(()=>{
+                alert("Woi.. Anda telah login");
+            }, 1000);
+        </script>
+    ';
     }
 
-}
+
+    $id = $_SESSION['idNewUser'][0];
+
+    if( !isset($_SESSION['idNewUser']) ){
+        echo' <script> window.location.href = "./"; </script> ';
+    }
+    
+
+    $socialPhoto = [
+        'cameras\ \(1\).jpg',
+        'cameras\ \(2\).jpg',
+        'cameras\ \(3\).jpg',
+        'cameras\ \(4\).jpg',
+        'cameras\ \(5\).jpg',
+        'cameras\ \(6\).jpg',
+        'cameras\ \(7\).jpg',
+        'cameras\ \(8\).jpg',
+        'cameras\ \(9\).jpg',
+        'cameras\ \(10\).jpg',
+        'cameras\ \(11\).jpg'
+    ];
+    $randIndex = array_rand($socialPhoto);
+
+
+    if(isset($_POST['finish'])){
+
+        if( insertProfile03($_POST) > 0 ){
+            session_destroy();
+            session_start();
+            $_SESSION['idActive'] = $id;
+            echo' <script> alert("Upload data Berhasil!!! Profile Selesai"); window.location.href = "../profile/index.php"; </script> ';
+            
+        } else{
+            echo' <script> alert("Upload data Gagal!!!"); window.location.href = "insertTools.php"; </script> ';
+        }
+    }
 
 ?>
 
@@ -57,7 +72,7 @@ if(isset($_POST['finish'])){
             <div class="step">
                 <p>step 4/4</p>
                 <p>Beritahu kami alat yang kau gunakan</p>
-                <input type="text" name="id_user" value="<?= $id ?>">
+                <input type="text" name="id_user" value="<?= $id ?>" hidden>
                 <label for="camera">KAMERA</label>
                 <input type="text" name="camera">
                 <label for="lensa">LENSA</label>
@@ -65,12 +80,12 @@ if(isset($_POST['finish'])){
                 <label for="filter">FILTER</label>
                 <input type="text" name="filter">
                 <label for="tripod">TRIPOD</label>
-                <input type="text" name="tripod">
+                <input type="text" name="tripod"><br>
                 <button type="submit" name="finish" class="btn">Lanjut</button>
             </div>
         </form>
     </div>
-    <div class="sectionRight" style="background-image: url(../img/login/tools.jpg);"></div>
+    <div class="sectionRight" style="background-image: url(../img/resource/<?= $socialPhoto[$randIndex] ?>);"></div>
 
 </body>
 </html>

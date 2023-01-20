@@ -21,6 +21,8 @@ function insertProfile01($data, $file){
     global $koneksi;
     global $tblProfile;
 
+    // $cropePhotoProfile;
+
     $idNewUser = $data['id_user'];
     $namaFotoProfile = storePhoto($file['profilePhoto'], '../img/account/profile');
     $namaFotoSampul = storePhoto($file['sampulPhoto'], '../img/account/cover');
@@ -89,11 +91,12 @@ function signin($data){
     if($hasil['email'] === $email){
         if( password_verify($pw, $hasil['password']) == 1 ){
             $_SESSION['idActive'] = $hasil['id_user'];
+            alert(true, false, 'Selamat Datang', 'Sign in berhasil');
             echo'
-                <script>
-                    alert(' . $_SESSION['idActive'] . ');
-                    alert("Login berhasil!!!");
-                    window.location.href = "../";
+            <script>
+                setTimeout(()=>{
+                        window.location.href = "../";
+                    }, 3000);
                 </script>
             ';
         } else{

@@ -3,7 +3,7 @@
     include '../function/function.php';
     $urlToRoot = '../';
 
-    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['idActive']) ){
         $idActive = $_SESSION['idActive'];
     } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
         $idActive = $_GET['idActive'];
@@ -74,7 +74,7 @@
     ?>
     <div class="fotoTerbaru">
         <?php
-        if( isset($_SESSION['idActive']) ){
+        if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
             echo'<div class="tambahFoto">';
                 echo'<h4 class="btn"><a href="../pages/uploadImage.php?upload=magazine">Tambah Bingkai</a></h4>';
             echo'</div>';

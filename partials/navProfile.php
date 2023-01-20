@@ -9,7 +9,7 @@ function navProfile($li1 = false, $li2 = false, $li3 = false){
             echo'<ul>';
                 echo'<li class="' . $li1 . '">';
 
-                    if( isset($_SESSION['idActive']) ){
+                    if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
                         $magazineLink = 'magazine.php#navProfile';
                     } else if( isset($_GET['idActive']) ){
                         $magazineLink = 'magazine.php?idActive=' . $_GET['idActive'] . '#navProfile';
@@ -20,7 +20,7 @@ function navProfile($li1 = false, $li2 = false, $li3 = false){
                 echo'</li>';
                 echo'<li class="' . $li2 . '">';
                 
-                    if( isset($_SESSION['idActive']) ){
+                    if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
                         $galleryLink = 'gallery.php#navProfile';
                     } else if( isset($_GET['idActive']) ){
                         $galleryLink = 'gallery.php?idActive=' . $_GET['idActive'] . '#navProfile';
@@ -31,7 +31,7 @@ function navProfile($li1 = false, $li2 = false, $li3 = false){
                 echo'</li>';
                 echo'<li class="' . $li3 . '">';
                 
-                    if( isset($_SESSION['idActive']) ){
+                    if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
                         $indexLink = '.#navProfile';
                     } else if( isset($_GET['idActive']) ){
                         $indexLink = '.?idActive=' . $_GET['idActive'] . '#navProfile';

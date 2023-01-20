@@ -50,6 +50,19 @@ function randomBookmarCover($idUser){
     return $barisKe[$randomNo]['foto_galery'];
 }
 
+// FUNGSI MENGAMBIL FOTO GALLERY ACAK SECARA KESELURUHAN
+function randomGallery(){
+    global $koneksi;
+    global $tblGalery;
+
+    $query = mysqli_query($koneksi, "SELECT foto_galery FROM $tblGalery");
+    $hasil = [];
+    while( $randomFoto = mysqli_fetch_assoc($query) ){
+        $hasil[] = $randomFoto;
+    }
+    $randomNo = array_rand($hasil);
+    return $hasil[$randomNo]['foto_galery'];
+}
 
 // FUNGSI ALERT
 function alert($color = true, $jenis = true, $h1, $p, $btn1 = false, $btn2 = false){

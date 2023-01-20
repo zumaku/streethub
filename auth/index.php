@@ -11,10 +11,22 @@
                 }, 3000);
             </script>
         ';
-        // sleep(2);
-        alert(true, true, 'Perhatian!', 'Anda Telah Login');
-        // alert(true, true, 'Yos..', 'Sign In Berhasil', 'Ok');
+        alert(false, true, 'Perhatian!', 'Anda Telah Login');
     }
+
+    $signPhoto = [
+        'sign\ \(1\).jpg',
+        'sign\ \(2\).jpg',
+        'sign\ \(3\).jpg',
+        'sign\ \(4\).jpg',
+        'sign\ \(5\).jpg',
+        'sign\ \(6\).jpg',
+        'sign\ \(7\).jpg',
+        'sign\ \(8\).jpg',
+        'sign\ \(9\).jpg',
+        'sign\ \(10\).jpg'
+    ];
+    $randIndex = array_rand($signPhoto);
 
     if(isset($_POST['signup'])){
         if(signup($_POST) > 0){
@@ -56,7 +68,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="../css/login.css">
 </head>
-<body>
+<body onclick="indexFunction()">
 
     <div class="sectionLeft">
         <div class="option">
@@ -84,7 +96,7 @@
             <button name="signup" class="btn" id="signup">SIGN UP</button>
         </form>
     </div>
-    <div class="sectionRight" style="background-image: url(../img/login/signin.jpg);"></div>
+    <div class="sectionRight" style="background-image: url(../img/resource/<?= $signPhoto[$randIndex] ?>);"></div>
 
     <script src="../js/login.js"></script>
 </body>

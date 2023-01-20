@@ -38,16 +38,6 @@ inputMagazine.addEventListener('change', (e)=>{
 });
 
 
-
-
-
-
-
-
-
-
-
-
 iconBtn.addEventListener('click', ()=>{
     inpImg.click();
     console.log('ke klik');

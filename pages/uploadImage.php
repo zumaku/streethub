@@ -24,9 +24,12 @@
         }
     }
 
+    $leftSect = randomGallery();
 
     function formUploadGallery(){
-        echo'<div class="leftSect" style="background-image: url(../img/upload/upGallery.jpg);"></div>';
+        global $leftSect;
+
+        echo'<div class="leftSect" style="background-image: url(../img/gallery/' . $leftSect . ');"></div>';
         echo'<form  action="" method="post" enctype="multipart/form-data" class="rightSect">';
             echo'<h1>Galeri <span>baru</span>..</h1>';
             echo'<div class="previewImg">';
@@ -48,7 +51,9 @@
     }
 
     function formUploadMagazine(){
-        echo'<div class="leftSect" style="background-image: url(../img/upload/upMagazine.jpg);"></div>';
+        global $leftSect;
+
+        echo'<div class="leftSect" style="background-image: url(../img/gallery/' . $leftSect . ');"></div>';
         echo'<form  action="" method="post" enctype="multipart/form-data" class="rightSect">';
             echo'<h1>Bingkai <span>baru</span>..</h1>';
             echo'<div class="previewImg">';

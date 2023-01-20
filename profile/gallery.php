@@ -3,7 +3,7 @@
     include '../function/function.php';
     $urlToRoot = '../';
 
-    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['idActive']) ){
         $idActive = $_SESSION['idActive'];
     } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
         $idActive = $_GET['idActive'];
@@ -80,7 +80,7 @@
     <!-- =============== GALERI START =============== -->
     <div class="galeri">
         <?php
-        if( isset($_SESSION['idActive']) ){
+        if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
             echo'<div class="tambahFoto">';
                 echo'<h4 class="btn"><a href="../pages/uploadImage.php?upload=gallery">Tambah Foto</a></h4>';
             echo'</div>';
@@ -106,7 +106,7 @@
             <p id="tglUpload"></p>
             <form action="" method="post" class="action">
                 <?php
-                if( isset($_SESSION['idActive']) ){
+                if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
                     echo'
                         <input type="text" name="idImageGallery" id="inputId" hidden>
                         <input type="text" name="imgGalleryName" id="inputImgName" hidden>

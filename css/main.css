@@ -688,10 +688,10 @@ footer.footer .container .copyright .dll {
 }
 @-webkit-keyframes herobg {
   0% {
-    background-image: url(../img/home/home1.png);
+    background-image: url(../img/home/home3.png);
   }
   24% {
-    background-image: url(../img/home/home1.png);
+    background-image: url(../img/home/home4.png);
   }
   25% {
     background-image: url(../img/home/home2.png);
@@ -700,10 +700,10 @@ footer.footer .container .copyright .dll {
     background-image: url(../img/home/home2.png);
   }
   50% {
-    background-image: url(../img/home/home3.png);
+    background-image: url(../img/home/home1.png);
   }
   74% {
-    background-image: url(../img/home/home3.png);
+    background-image: url(../img/home/home1.png);
   }
   75% {
     background-image: url(../img/home/home4.png);
@@ -717,10 +717,10 @@ footer.footer .container .copyright .dll {
 }
 @keyframes herobg {
   0% {
-    background-image: url(../img/home/home1.png);
+    background-image: url(../img/home/home3.png);
   }
   24% {
-    background-image: url(../img/home/home1.png);
+    background-image: url(../img/home/home4.png);
   }
   25% {
     background-image: url(../img/home/home2.png);
@@ -729,10 +729,10 @@ footer.footer .container .copyright .dll {
     background-image: url(../img/home/home2.png);
   }
   50% {
-    background-image: url(../img/home/home3.png);
+    background-image: url(../img/home/home1.png);
   }
   74% {
-    background-image: url(../img/home/home3.png);
+    background-image: url(../img/home/home1.png);
   }
   75% {
     background-image: url(../img/home/home4.png);

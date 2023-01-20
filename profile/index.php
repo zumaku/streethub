@@ -3,7 +3,7 @@
     include '../function/function.php';
     $urlToRoot = '../';
 
-    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' ){
+    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['idActive']) ){
         $idActive = $_SESSION['idActive'];
     } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
         $idActive = $_GET['idActive'];
