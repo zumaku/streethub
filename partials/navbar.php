@@ -72,9 +72,7 @@
                 <div class="logo"></div>
             </a>
             <div class="sec2">
-                <div class="keranjang">
-                    <a href="#"></a>
-                </div>
+                <a href="<?= $urlToRoot ?>pages/keranjang.php" class="keranjang"></a>
 
                 <?php
                 if( isset($_SESSION['idActive']) ){

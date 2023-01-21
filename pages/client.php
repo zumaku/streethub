@@ -13,7 +13,7 @@
 
     if( !isset($_GET['jalan']) && !isset($_GET['tgl']) ){
         echo' <script>
-                window.location.href = "' . $urlToRoot . 'profile/magazine.php";
+                window.location.href = "' . $urlToRoot . '";
             </script>
         ';
     }

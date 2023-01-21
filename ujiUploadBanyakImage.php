@@ -62,7 +62,7 @@ if (isset($_POST['crop'])) {
 
 }
 
-
+echo '<h1>' . $_COOKIE['noBarang'] . '</h1>';
 
 
 

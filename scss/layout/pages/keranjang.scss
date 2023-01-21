@@ -1,0 +1,301 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: $secondary;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    background-color: $primary;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.keranjangSect{
+    display: flex;
+    margin: 60px auto 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .leftSect{
+        width: 65%;
+        // height: 120vh;
+        padding-left: 5%;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+        background: transparent;
+        }
+        .card{
+            margin: 20px;
+            background-color: $semu;
+            display: flex;
+            .image{
+                width: 300px;
+                height: 300px;
+                background-color: darkblue;
+                @include bg();
+                .watermark{
+                    width: 100%;
+                    height: 100%;
+                    @include bg(url(../img/icon/watermark.png));
+                }
+            }
+            .info{
+                width: 100%;
+                padding: 30px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .upper{
+                    .author{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        text-decoration: none;
+                        color: white;
+                        .profile{
+                            width: 50px;
+                            height: 50px;
+                            background-color: dimgray;
+                            margin-right: 5px;
+                            border-radius: 50%;
+                            @include bg();
+                        }
+                    }
+                    p{
+                        margin-bottom: 10px;
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .price{
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    h3{
+                        span{
+                            color: $secondary;
+                        }
+                    }
+                    a{
+                        text-decoration: none;
+                        color: $danger;
+                        font-weight: bold;
+                    }
+                }
+            }
+            &:last-child{
+                margin-bottom: 100px;
+            }
+        }
+    }
+    .rightSect{
+        padding: 20px 20px 5% 20px;
+        width: 35%;
+        min-width: 400px;
+        box-sizing: border-box;
+        background-color: $semu;
+        h1{
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        table{
+            width: 70%;
+            // background-color: darkgreen;
+            font-size: 1.3em;
+            tr{
+                td{
+                    font-weight: bold;
+                    p{
+                        margin-bottom: 10px;
+                        &.total{
+                            margin-top: 30px;
+                            color: $secondary;
+                        }
+                    }
+                    input{
+                        margin-bottom: 10px;
+                        width: 70%;
+                        max-width: 350px;
+                        border: 0;
+                        outline: none;
+                        border-radius: 10px;
+                        padding: 5px 12px;
+                        box-sizing: border-box;
+                        background-color: $iform;
+                        border: 1px solid $primary;
+                        color: white;
+                        margin: 10px 0;
+                        &:focus{
+                            border: 1px solid $secondary;
+                        }
+                    }
+                    button{
+                        width: 100%;
+                        height: 30px;
+                        padding: 10px 0;
+                        box-sizing: border-box;
+                        border-radius: 20px;
+                        border: 0;
+                        cursor: pointer;
+                        transition: .1s linear;
+                        &:hover{
+                            transform: scale(1.01);
+                        }
+                        &.checkout{
+                            margin-top: 30px;
+                            font-size: 1em;
+                            line-height: 0;
+                            font-weight: bold;
+                            color: white;
+                            background-color: $secondary;
+                            margin-bottom: 5px;
+                        }
+                        &.dana{
+                            padding: 5px 0;
+                            .logo{
+                                margin: auto;
+                                width: 100px;
+                                height: 100%;
+                                @include bg(url(../img/icon/dana.png), contain);
+                            }
+                        }
+                    }
+                    &:nth-child(2){
+                        text-align: end;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media(monitor){
+    .keranjangSect{
+        .rightSect{
+            min-width: 350px;
+        }
+    }
+}
+@include media(leptop){
+    .keranjangSect{
+        .leftSect{
+            .card{
+                .info{
+                    .price{
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+        .rightSect{
+            min-width: 300px;
+            table{
+                width: 100%;
+            }
+        }
+    }
+}
+@include media(notebook){
+    body{
+        overflow: scroll;
+    }
+    .keranjangSect{
+        margin: 80px auto 0;
+        flex-direction: column;
+        height: fit-content;
+        padding: 0 5%;
+        box-sizing: border-box;
+        .leftSect{
+            padding: 0;
+            width: 100%;
+            .card{
+                width: 100%;
+                margin: 0 0 20px 0;
+                .image{
+                    width: 40%;
+                    height: 200px;
+                }
+                .info{
+                    width: 60%;
+                    .price{
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+        .rightSect{
+            width: 100%;
+            table{
+                width: 100%;
+            }
+        }
+    }
+}
+@include media(tablet){
+    .keranjangSect{
+        .leftSect{
+            padding: 0;
+            width: 100%;
+            .card{
+                width: 100%;
+                margin: 0 0 20px 0;
+                flex-direction: column;
+                .image{
+                    width: 100%;
+                    height: 200px
+                }
+                .info{
+                    width: 100%;
+                    .price{
+                        flex-direction: row;
+                    }
+                }
+            }
+        }
+        .rightSect{
+            padding: 10px;
+            margin-bottom: 50px;
+            h1{
+                font-size: 2em;
+            }
+            table{
+                width: 100%;
+                font-size: 1.1em;
+            }
+        }
+    }
+}
