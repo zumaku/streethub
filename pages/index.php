@@ -10,6 +10,12 @@
     if( isset($_GET['search']) && $_GET['search'] != '' ){
         $streeters = searchStreeters($_GET['search']);
         $images = searchGallery($_GET['search']);
+    } else{
+        echo'
+            <script>
+                window.location.href = "../";
+            </script>
+        ';
     }
 ?>
 

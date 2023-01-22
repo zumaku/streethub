@@ -6,9 +6,9 @@
     if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['idActive']) ){
         $idActive = $_SESSION['idActive'];
         $linkBack = '../profile/magazine.php';
-    } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
-        $idActive = $_GET['idActive'];
-        $linkBack = '../profile/magazine.php?idActive=' . $idActive;
+    } else if( isset($_GET['id']) && $_GET['id'] != '' ){
+        $idActive = $_GET['id'];
+        $linkBack = '../profile/magazine.php?idActive='.$_GET['id'];
     }
 
     if( !isset($_GET['jalan']) && !isset($_GET['tgl']) ){
@@ -33,11 +33,55 @@
         ';
     }
 
+    if( isset($_POST['addToCart']) ){
+        if (isset($_COOKIE["keranjang"])) {
+            $cookie_data = stripslashes($_COOKIE['keranjang']);
+            $cart_data = json_decode($cookie_data, true);
+        } else {
+            $cart_data = array();
+        }
+    
+        $item_id_list = array_column($cart_data, 'idMagazine');
+    
+        if (in_array($_POST["idMagazine"], $item_id_list)) {
+            foreach ($cart_data as $keys => $values) {
+                if ($cart_data[$keys]["item_id"] == $_POST["idMagazine"]) {
+                    $cart_data[$keys]["item_quantity"] = $cart_data[$keys]["item_quantity"] + $_POST["quantity"];
+                }
+            }
+        } else {
+            $item_array = array(
+                'item_id'			=>	$_POST["idMagazine"],
+                'item_quantity'		=>	$_POST["quantity"]
+            );
+            $cart_data[] = $item_array;
+        }
+    
+        
+        
+        $item_data = json_encode($cart_data);
+        // setcookie('keranjang', $item_data, time() + (86400 * 30));
+        setcookie('keranjang', $item_data, time() - (86400 * 30));
+        var_dump($_COOKIE['keranjang']);
+        header("location:client.php?jalan=".$_GET['jalan'].'&tgl='.$_GET['tgl']."&id=".$_GET['id']."&success=1");
+    }
+    
+    else if( isset($_GET['success']) && $_GET['success'] == '1'){
+        alert(true, false, 'Yoss', 'Foto telah ditambahkan ke keranjang');
+        echo'
+            <script>
+                setTimeout(()=>{
+                    window.location.href = "client.php?jalan='.$_GET['jalan'].'&tgl='.$_GET['tgl'].'&id='.$_GET['id'].'";
+                }, 3000)
+            </script>
+        ';
+    }
+
     $jalan = $_GET['jalan'];
     $tgl = $_GET['tgl'];
     // $tgl = date('l, d M Y ');
 
-    $infos = displayImageMagazine($idActive, $jalan, $tgl);
+    $infos = displayImageMagazine($_GET['id'], $jalan, $tgl);
     // var_dump($infos);
 ?>
 
@@ -64,9 +108,22 @@
         setBookmark('url(../img/magazine/' . $infos[$random]['foto_magazine'] . ')', 'Jl. Aja Dulu', false, $tgl = date('l, d M Y '));
     ?>
 
-    <div class="secBackBtn" id="secBackBtn">
-        <a href="<?= $linkBack ?>" class="btnArrow"><div class="arrow"></div>Kembali</a>
-    </div>
+    <?php
+    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['id']) ){
+        echo'
+            <div class="secBackBtn" id="secBackBtn">
+                <a href="'.$linkBack.'" class="btnArrow"><div class="arrow"></div>Kembali</a>
+            </div>
+        ';
+    } else{
+        echo'
+            <div class="secBackBtn" id="secBackBtn">
+                <a href="../profile/magazine.php?idActive='.$_GET['id'].'" class="btnArrow"><div class="arrow"></div>Kembali</a>
+            </div>
+        ';
+    }
+    ?>
+    
 
     <div class="container" id="container">
 
@@ -78,16 +135,16 @@
             </div>
             <div class="info">
                 <h2><?= substr($data['foto_magazine'], 15) ?></h2>
-                <p>Tanggal: <?= $tgl = date('d/m/y') ?></p>
+                <p>Tanggal: <?= $tgl = $data['tgl_upload'] ?></p>
                 <p class="harga">Harga: 5000</p>
                 <form action="" method="post" class="action">
-                    <input type="text" name="id_magazine" value="<?= $data['id_magazine'] ?>" hidden>
-                    <input type="text" name="foto_magazine" value="<?= $data['foto_magazine'] ?>" hidden>
+                    <input type="text" name="idMagazine" value="<?= $data['id_magazine'] ?>" hidden>
+                    <input type="text" name="quantity" value="1" hidden>
                     <?php
-                        if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['idActive']) ){
+                        if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['id']) ){
                             echo'<button type="submit" name="delete" class="circle delete"><div class="icon iconDelete"></div></button>';
                         } else{
-                            echo'<button class="circle add"><div class="icon iconAdd"></div></button>';
+                            echo'<button type="submit" name="addToCart" class="circle add"><div class="icon iconAdd"></div></button>';
                         }
                     ?>
                 </form>

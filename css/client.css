@@ -781,7 +781,7 @@ html {
   top: -40px;
   display: flex;
 }
-.container#container .card .info form.action button.circle {
+.container#container .card .info form.action button.circle, .container#container .card .info form.action div.circle {
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -800,23 +800,29 @@ html {
   border: 0;
   background-color: #18A13D;
 }
-.container#container .card .info form.action button.circle.delete {
+.container#container .card .info form.action button.circle.delete, .container#container .card .info form.action div.circle.delete {
   background-color: #a02525;
 }
-.container#container .card .info form.action button.circle .icon {
+.container#container .card .info form.action button.circle .icon, .container#container .card .info form.action div.circle .icon {
   width: 32px;
   height: 32px;
   background-color: transparent;
   cursor: pointer;
 }
-.container#container .card .info form.action button.circle .icon.iconAdd {
+.container#container .card .info form.action button.circle .icon.iconAdd, .container#container .card .info form.action div.circle .icon.iconAdd {
   background-image: url(../img/icon/keranjang2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-.container#container .card .info form.action button.circle .icon.iconDelete {
+.container#container .card .info form.action button.circle .icon.iconDelete, .container#container .card .info form.action div.circle .icon.iconDelete {
   background-image: url(../img/icon/delete.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container#container .card .info form.action button.circle .icon.addAlready, .container#container .card .info form.action div.circle .icon.addAlready {
+  background-image: url(../img/icon/keranjang3.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -31,6 +31,7 @@
                         </a>
                         <p><Span>Tanggal: </Span>31 Desember 2022</p>
                         <p><Span>Jalan: </Span>Jl. Kemana Aja</p>
+                        <p><Span>Total: </Span>1</p>
                     </div>
                     <div class="price">
                         <h3><span>Harga</span>: 50000</h3>
@@ -50,6 +51,7 @@
                         </a>
                         <p><Span>Tanggal: </Span>31 Desember 2022</p>
                         <p><Span>Jalan: </Span>Jl. Kemana Aja</p>
+                        <p><Span>Total: </Span>1</p>
                     </div>
                     <div class="price">
                         <h3><span>Harga</span>: 50000</h3>
@@ -69,6 +71,7 @@
                         </a>
                         <p><Span>Tanggal: </Span>30 Desember 2022</p>
                         <p><Span>Jalan: </Span>Jl. Kemana Aja</p>
+                        <p><Span>Total: </Span>1</p>
                     </div>
                     <div class="price">
                         <h3><span>Harga</span>: 50000</h3>

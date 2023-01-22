@@ -106,7 +106,7 @@ html{
                 right: 20px;
                 top: -40px;
                 display: flex;
-                button.circle{
+                button.circle, div.circle{
                     width: 52px;
                     height: 52px;
                     border-radius: 50%;
@@ -137,6 +137,9 @@ html{
                         }
                         &.iconDelete{
                             @include bg(url(../img/icon/delete.png));
+                        }
+                        &.addAlready{
+                            @include bg(url(../img/icon/keranjang3.png));
                         }
                     }
                 }

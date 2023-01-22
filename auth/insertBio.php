@@ -59,9 +59,9 @@
     <title>Lengkapi Profilmu</title>
     <link rel="stylesheet" href="../css/login.css">
 </head>
-<body>
+<body onclick="insertBio()">
     
-    <div class="sectionLeft insertBio" onclick="insertBio()">
+    <div class="sectionLeft insertBio">
         <form action="" method="post" class="signForm coplateAccount" enctype="multipart/form-data">
             <h3>LENGKAPI PROFILMU</h3>
             <div class="step">

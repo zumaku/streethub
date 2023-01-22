@@ -3,7 +3,9 @@
     include 'function/function.php';
     $urlToRoot = './';
 
-    $idActive = $_SESSION['idActive'];
+    if( isset($_SESSION['idActive']) ){
+        $idActive = $_SESSION['idActive'];
+    }
 ?>
 
 <!DOCTYPE html>
