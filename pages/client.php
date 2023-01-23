@@ -3,6 +3,7 @@
     include '../function/function.php';
     $urlToRoot = '../';
 
+    // Pengecekan dan pembuatan idActive dari GET atau SESSION
     if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['idActive']) ){
         $idActive = $_SESSION['idActive'];
         $linkBack = '../profile/magazine.php';
@@ -11,6 +12,7 @@
         $linkBack = '../profile/magazine.php?idActive='.$_GET['id'];
     }
 
+    // Pengecekan data jalan dan tanggal pada GET
     if( !isset($_GET['jalan']) && !isset($_GET['tgl']) ){
         echo' <script>
                 window.location.href = "' . $urlToRoot . '";
@@ -18,6 +20,7 @@
         ';
     }
 
+    // Pengecekan perintah penghapusan foto magazine
     if( isset($_POST['delete']) ){
         if( deleteImageMagazine($_POST['id_magazine']) > 0 ){
             alert(true, false, 'Berhasil!', 'Foto berhasil dihapus.');
@@ -33,6 +36,7 @@
         ';
     }
 
+    // Pengecekan penambahan foto ke cart
     if( isset($_POST['addToCart']) ){
         if (isset($_COOKIE["keranjang"])) {
             $cookie_data = stripslashes($_COOKIE['keranjang']);
@@ -41,7 +45,7 @@
             $cart_data = array();
         }
     
-        $item_id_list = array_column($cart_data, 'idMagazine');
+        $item_id_list = array_column($cart_data, 'item_id');
     
         if (in_array($_POST["idMagazine"], $item_id_list)) {
             foreach ($cart_data as $keys => $values) {
@@ -56,18 +60,24 @@
             );
             $cart_data[] = $item_array;
         }
-    
-        
-        
+
         $item_data = json_encode($cart_data);
-        // setcookie('keranjang', $item_data, time() + (86400 * 30));
-        setcookie('keranjang', $item_data, time() - (86400 * 30));
+        setcookie('keranjang', $item_data, time() + (86400 * 30));
+        // setcookie('keranjang', $item_data, time() - (86400 * 30));
         var_dump($_COOKIE['keranjang']);
         header("location:client.php?jalan=".$_GET['jalan'].'&tgl='.$_GET['tgl']."&id=".$_GET['id']."&success=1");
     }
-    
     else if( isset($_GET['success']) && $_GET['success'] == '1'){
         alert(true, false, 'Yoss', 'Foto telah ditambahkan ke keranjang');
+        echo'
+            <script>
+                setTimeout(()=>{
+                    window.location.href = "client.php?jalan='.$_GET['jalan'].'&tgl='.$_GET['tgl'].'&id='.$_GET['id'].'";
+                }, 1000)
+            </script>
+        ';
+    } else if( isset($_GET['success']) && $_GET['success'] != '1'){
+        alert(true, false, 'Gagal', 'Foto gagal ditambahkan ke keranjang');
         echo'
             <script>
                 setTimeout(()=>{
@@ -79,7 +89,6 @@
 
     $jalan = $_GET['jalan'];
     $tgl = $_GET['tgl'];
-    // $tgl = date('l, d M Y ');
 
     $infos = displayImageMagazine($_GET['id'], $jalan, $tgl);
     // var_dump($infos);
@@ -108,6 +117,7 @@
         setBookmark('url(../img/magazine/' . $infos[$random]['foto_magazine'] . ')', 'Jl. Aja Dulu', false, $tgl = date('l, d M Y '));
     ?>
 
+    <!-- Menyetel link pada tombol kembali -->
     <?php
     if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['id']) ){
         echo'

@@ -56,6 +56,22 @@ html{
         &::-webkit-scrollbar-thumb {
         background: transparent;
         }
+        .alertDelete#alertDelete{
+            margin: 0 20px;
+            background-color: $secondary;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            a{
+                .close{
+                    width: 15px;
+                    height: 15px;
+                    @include bg(url(../img/icon/close.png))
+                }
+            }
+        }
         .card{
             margin: 20px;
             background-color: $semu;
@@ -105,20 +121,45 @@ html{
                     display: flex;
                     width: 100%;
                     justify-content: space-between;
+                    align-items: center;
                     h3{
                         span{
                             color: $secondary;
                         }
                     }
-                    a{
-                        text-decoration: none;
-                        color: $danger;
+                    // @include normalBtn($danger);
+                    .btn{
+                        margin: 0;
+                        border: 0;
+                        font-size: 1.2em;
                         font-weight: bold;
+                        color: $danger;
+                        background-color: transparent;
+                        cursor: pointer;
+                        text-decoration: none;
+                        &:hover{
+                            transform: scale(1.02);
+                        }
                     }
                 }
             }
             &:last-child{
                 margin-bottom: 100px;
+            }
+            &.empty{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+                .icon{
+                    width: 40px;
+                    height: 40px;
+                    @include bg(url(../img/icon/keranjang4.png));
+                    margin-bottom: 10px;
+                }
+                h3{
+                    color: white;
+                }
             }
         }
     }
@@ -139,6 +180,11 @@ html{
             tr{
                 td{
                     font-weight: bold;
+                    &.potongan{
+                        p{
+                            color: rgb(189, 174, 41);
+                        }
+                    }
                     p{
                         margin-bottom: 10px;
                         &.total{
@@ -148,7 +194,7 @@ html{
                     }
                     input{
                         margin-bottom: 10px;
-                        width: 70%;
+                        width: 75%;
                         max-width: 350px;
                         border: 0;
                         outline: none;
@@ -198,6 +244,26 @@ html{
                         text-align: end;
                     }
                 }
+                &.kupon{
+                    // display: flex;
+                    td:last-child{
+                        form{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            button{
+                                width: fit-content;
+                                height: fit-content;
+                                padding: 5px 10px;
+                                margin-left: 10px;
+                                border-radius: 10px;
+                                font-weight: bold;
+                                color: white;
+                                background-color: $secondary;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -216,7 +282,7 @@ html{
             .card{
                 .info{
                     .price{
-                        flex-direction: column;
+                        flex-direction: row;
                     }
                 }
             }
@@ -242,6 +308,9 @@ html{
         .leftSect{
             padding: 0;
             width: 100%;
+            .alertDelete#alertDelete{
+                margin: 0 0 20px 0;
+            }
             .card{
                 width: 100%;
                 margin: 0 0 20px 0;
@@ -252,7 +321,7 @@ html{
                 .info{
                     width: 60%;
                     .price{
-                        flex-direction: column;
+                        flex-direction: row;
                     }
                 }
             }
@@ -295,6 +364,21 @@ html{
             table{
                 width: 100%;
                 font-size: 1.1em;
+            }
+        }
+    }
+}
+@include media(hp){
+    .keranjangSect{
+        .leftSect{
+            .card{
+                .info{
+                    width: 100%;
+                    .price{
+                        align-items: flex-start;
+                        flex-direction: column;
+                    }
+                }
             }
         }
     }

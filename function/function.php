@@ -34,6 +34,8 @@ function takeTools($id){
     return mysqli_fetch_assoc( mysqli_query($koneksi, "SELECT * FROM $tblTools WHERE id_user = '$id'") );
 }
 
+
+
 // FUNGSI AMBIL GAMBAR GALLERY SECARA ACAK UNTUK BOOKMARK
 function randomBookmarCover($idUser){
     global $koneksi;
@@ -49,7 +51,6 @@ function randomBookmarCover($idUser){
     
     return $barisKe[$randomNo]['foto_galery'];
 }
-
 // FUNGSI MENGAMBIL FOTO GALLERY ACAK SECARA KESELURUHAN
 function randomGallery(){
     global $koneksi;
@@ -63,6 +64,9 @@ function randomGallery(){
     $randomNo = array_rand($hasil);
     return $hasil[$randomNo]['foto_galery'];
 }
+
+
+
 
 // FUNGSI ALERT
 function alert($color = true, $jenis = true, $h1, $p, $btn1 = false, $btn2 = false){
@@ -205,7 +209,6 @@ function storePhoto($foto, $folderTujuan){
         return 'Ekstensi file tidak didukung!';
     }
 }
-
 // FUNGSI STORE BANYAK FOTO
 function storeMultiplePhoto($fotos, $folderTujuan){
     $allowEks = ['jpg', 'jpeg', 'png'];
@@ -304,6 +307,14 @@ function uploadImageMagazine($namaJalan, $namaFoto, $idUser){
     $hasil = mysqli_query($koneksi, $query);
     return $hasil;
 }
+// FUNGSI MENGAMBIL SEMUA DATA MAGAZINE BERDASARKAN ID SAJA
+function takeMagazine($idMagazine){
+    global $koneksi;
+    global $tblMagazine;
+    $query = mysqli_query( $koneksi, "SELECT * FROM $tblMagazine WHERE id_magazine = " . $idMagazine );
+    $hasil = mysqli_fetch_assoc($query);
+    return $hasil;
+}
 // FUNGSI MENGAMBIL INFO FOTO MAGAZINE TERBARU
 function takeInfoMagazine($kondisiFoto, $idUser){
     global $koneksi;
@@ -368,6 +379,13 @@ function deleteImageMagazine($idImageMagazine){
     $query = "DELETE FROM $tblMagazine WHERE id_magazine = $idImageMagazine";
     return mysqli_query($koneksi, $query);
 }
+
+
+
+
+
+
+
 
 
 

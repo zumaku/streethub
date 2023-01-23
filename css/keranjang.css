@@ -677,6 +677,23 @@ html {
 .keranjangSect .leftSect::-webkit-scrollbar-thumb {
   background: transparent;
 }
+.keranjangSect .leftSect .alertDelete#alertDelete {
+  margin: 0 20px;
+  background-color: #18A13D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.keranjangSect .leftSect .alertDelete#alertDelete a .close {
+  width: 15px;
+  height: 15px;
+  background-image: url(../img/icon/close.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .keranjangSect .leftSect .card {
   margin: 20px;
   background-color: #1E201E;
@@ -733,17 +750,44 @@ html {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
 }
 .keranjangSect .leftSect .card .info .price h3 span {
   color: #18A13D;
 }
-.keranjangSect .leftSect .card .info .price a {
-  text-decoration: none;
-  color: #a02525;
+.keranjangSect .leftSect .card .info .price .btn {
+  margin: 0;
+  border: 0;
+  font-size: 1.2em;
   font-weight: bold;
+  color: #a02525;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+.keranjangSect .leftSect .card .info .price .btn:hover {
+  transform: scale(1.02);
 }
 .keranjangSect .leftSect .card:last-child {
   margin-bottom: 100px;
+}
+.keranjangSect .leftSect .card.empty {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.keranjangSect .leftSect .card.empty .icon {
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/icon/keranjang4.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 10px;
+}
+.keranjangSect .leftSect .card.empty h3 {
+  color: white;
 }
 .keranjangSect .rightSect {
   padding: 20px 20px 5% 20px;
@@ -763,6 +807,9 @@ html {
 .keranjangSect .rightSect table tr td {
   font-weight: bold;
 }
+.keranjangSect .rightSect table tr td.potongan p {
+  color: rgb(189, 174, 41);
+}
 .keranjangSect .rightSect table tr td p {
   margin-bottom: 10px;
 }
@@ -772,7 +819,7 @@ html {
 }
 .keranjangSect .rightSect table tr td input {
   margin-bottom: 10px;
-  width: 70%;
+  width: 75%;
   max-width: 350px;
   border: 0;
   outline: none;
@@ -824,6 +871,25 @@ html {
 .keranjangSect .rightSect table tr td:nth-child(2) {
   text-align: end;
 }
+.keranjangSect .rightSect table tr.kupon td:last-child form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.keranjangSect .rightSect table tr.kupon td:last-child form button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: #18A13D;
+}
 
 @media (max-width: 1220px) {
   .keranjangSect .rightSect {
@@ -832,7 +898,7 @@ html {
 }
 @media (max-width: 990px) {
   .keranjangSect .leftSect .card .info .price {
-    flex-direction: column;
+    flex-direction: row;
   }
   .keranjangSect .rightSect {
     min-width: 300px;
@@ -858,6 +924,9 @@ html {
     padding: 0;
     width: 100%;
   }
+  .keranjangSect .leftSect .alertDelete#alertDelete {
+    margin: 0 0 20px 0;
+  }
   .keranjangSect .leftSect .card {
     width: 100%;
     margin: 0 0 20px 0;
@@ -870,7 +939,7 @@ html {
     width: 60%;
   }
   .keranjangSect .leftSect .card .info .price {
-    flex-direction: column;
+    flex-direction: row;
   }
   .keranjangSect .rightSect {
     width: 100%;
@@ -909,5 +978,14 @@ html {
   .keranjangSect .rightSect table {
     width: 100%;
     font-size: 1.1em;
+  }
+}
+@media (max-width: 390px) {
+  .keranjangSect .leftSect .card .info {
+    width: 100%;
+  }
+  .keranjangSect .leftSect .card .info .price {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }/*# sourceMappingURL=keranjang.css.map */
