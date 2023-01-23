@@ -43,8 +43,13 @@
                 <?php
                     foreach($streeters as $profile) :
                     $pic = takeProfile($profile['id_user']);
+                    if( isset($_SESSION['idActive']) && $pic['id_user'] == $idActive){
+                        $href = '../profile/';
+                    } else{
+                        $href = '../profile/?idActive='.$pic['id_user'];
+                    }
                 ?>
-                <a href="../profile/?idActive=<?= $pic['id_user'] ?>" class="profile">
+                <a href="<?= $href ?>" class="profile">
                     <div class="image" style="background-image: url(../img/account/profile/<?=$pic['foto_profile']?>);"></div>
                     <h3><?= $profile['username'] ?></h3>
                 </a>
