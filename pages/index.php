@@ -41,6 +41,10 @@
             <h1><span>Streeters: </span>'<?= $_GET['search'] ?>'</h1>
             <div class="profiles">
                 <?php
+                    if( empty($streeters) ){
+                        echo'<p>Tidak ada streeters ditemukan.</p>';
+                    }
+
                     foreach($streeters as $profile) :
                     $pic = takeProfile($profile['id_user']);
                     if( isset($_SESSION['idActive']) && $pic['id_user'] == $idActive){
@@ -64,6 +68,10 @@
             <h1><span>Stok: </span>'<?= $_GET['search'] ?>'</h1>
             <div class="galeri">
                 <?php
+                    if( empty($images) ){
+                        echo'<p>Tidak ada foto ditemukan.</p>';
+                    }
+
                     foreach($images as $img) :
                     $uname = takeAccount($img['id_user']);
                     $pic = takeProfile($img['id_user']);

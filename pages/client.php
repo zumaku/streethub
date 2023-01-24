@@ -13,7 +13,7 @@
     }
 
     // Pengecekan data jalan dan tanggal pada GET
-    if( !isset($_GET['jalan']) && !isset($_GET['tgl']) ){
+    if( !isset($_GET['jalan']) && !isset($_GET['tgl']) && !isset($_GET['id']) ){
         echo' <script>
                 window.location.href = "' . $urlToRoot . '";
             </script>
@@ -133,7 +133,6 @@
         ';
     }
     ?>
-    
 
     <div class="container" id="container">
 
@@ -151,7 +150,7 @@
                     <input type="text" name="idMagazine" value="<?= $data['id_magazine'] ?>" hidden>
                     <input type="text" name="quantity" value="1" hidden>
                     <?php
-                        if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['id']) ){
+                        if( isset($_SESSION['idActive']) && $_GET['id'] == $idActive ){
                             echo'<button type="submit" name="delete" class="circle delete"><div class="icon iconDelete"></div></button>';
                         } else{
                             echo'<button type="submit" name="addToCart" class="circle add"><div class="icon iconAdd"></div></button>';

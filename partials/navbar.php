@@ -83,7 +83,7 @@
                     echo '</div>';
                     echo '<div class="dropdown" style="display: none;">';
                         echo '<div class="segitiga"></div>';
-                        echo '<a href="profile/gallery.php">Foto baru</a><span></span>';
+                        echo '<a href="' . $urlToRoot . 'profile/gallery.php">Foto baru</a><span></span>';
                         echo '<a href="' . $urlToRoot . 'profile/">Profile</a><span></span>';
                         echo '<a href="#">Pengaturan</a><span></span>';
                         echo '<form action="" method="post"><button type="submit" name="logout"><p>Sign out</p></button></form>';

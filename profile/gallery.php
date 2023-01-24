@@ -89,7 +89,7 @@
         <div class="container">
             <?php foreach($images as $img) : ?>
             <div class="gambar">
-                <img src="../img/gallery/<?= $img['foto_galery'] ?>" class="imgGallery" data-id="<?= $img['id_galery'] ?>" data-idUser="<?= $img['id_user'] ?>" data-tglUpload="<?= $img['tgl_upload'] = date('d/m/y') ?>" alt="<?= $img['foto_galery'] ?>">
+                <img src="../img/gallery/<?= $img['foto_galery'] ?>" class="imgGallery" data-id="<?= $img['id_galery'] ?>" data-idUser="<?= $img['id_user'] ?>" data-tglUpload="<?= $img['tgl_upload'] ?>" alt="<?= $img['foto_galery'] ?>">
             </div>
             <?php endforeach; ?>
         </div>

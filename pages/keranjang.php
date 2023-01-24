@@ -1,9 +1,14 @@
 <?php
+session_start();
     include '../function/function.php';
     $urlToRoot = '../';
 
     $cookie_data = stripslashes($_COOKIE['keranjang']);
     $cart_data = json_decode($cookie_data, true);
+
+    if( isset($_SESSION['idActive']) ){
+        $idActive = $_SESSION['idActive'];
+    }
 
 
     // Pengecekan kode kupon
@@ -139,13 +144,13 @@
 
     <script src="../js/navbar.js"></script>
     <script>
-        const alertDelete = document.querySelector(".alertDelete#alertDelete");
-        const btnDelete = alertDelete.querySelector(".close");
-        alertDelete.addEventListener("click", (e)=>{
-            if( e.target == btnDelete ){
-                alertDelete.style.display = "none";
-            }
-        });
+        // const alertDelete = document.querySelector(".alertDelete#alertDelete");
+        // const btnDelete = alertDelete.querySelector(".close");
+        // alertDelete.addEventListener("click", (e)=>{
+        //     if( e.target == btnDelete ){
+        //         alertDelete.style.display = "none";
+        //     }
+        // });
     </script>
 </body>
 </html>
