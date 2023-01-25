@@ -108,8 +108,8 @@
                 <?php
                 if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
                     echo'
-                        <input type="text" name="idImageGallery" id="inputId" hidden>
-                        <input type="text" name="imgGalleryName" id="inputImgName" hidden>
+                        <input type="text" spellcheck="false" name="idImageGallery" id="inputId" hidden>
+                        <input type="text" spellcheck="false" name="imgGalleryName" id="inputImgName" hidden>
                         <button type="submit" name="deleteGallery" class="btn hapus"><p>Hapus</p> <div class="icon iconHapus"></div></button>
                     ';
                 }

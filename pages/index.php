@@ -93,8 +93,8 @@
             </a>
             <p id="tglUpload"></p>
             <form action="" method="post" class="action">
-                <input type="text" name="idImageGallery" id="inputId" hidden>
-                <input type="text" name="imgGalleryName" id="inputImgName" hidden>
+                <input type="text" spellcheck="false" name="idImageGallery" id="inputId" hidden>
+                <input type="text" spellcheck="false" name="imgGalleryName" id="inputImgName" hidden>
                 <a href="#" class="btn unduh" title="Photos" download><p>Unduh</p> <div class="icon iconUnduh"></div></a>
             </form>
             <div class="close"><div class="icon"></div></div>

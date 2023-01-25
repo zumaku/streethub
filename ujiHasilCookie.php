@@ -31,8 +31,8 @@ if (isset($_COOKIE["keranjang"])) :
 
 
 <form method="get" class="card">
-    <input type="text" name="idMagazine" value="<?=$values['itemId']?>">
-    <input type="text" name="namaJalan" value="<?=$values['itemJalan']?>">
+    <input type="text" spellcheck="false" name="idMagazine" value="<?=$values['itemId']?>">
+    <input type="text" spellcheck="false" name="namaJalan" value="<?=$values['itemJalan']?>">
     <a href="ujiHasilCookie.php?action=delete&id=<?=$values['itemId']?>">Delete</a>
 </form>
 

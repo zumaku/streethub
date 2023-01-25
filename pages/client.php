@@ -147,8 +147,8 @@
                 <p>Tanggal: <?= $tgl = $data['tgl_upload'] ?></p>
                 <p class="harga">Harga: 5000</p>
                 <form action="" method="post" class="action">
-                    <input type="text" name="idMagazine" value="<?= $data['id_magazine'] ?>" hidden>
-                    <input type="text" name="quantity" value="1" hidden>
+                    <input type="text" spellcheck="false" name="idMagazine" value="<?= $data['id_magazine'] ?>" hidden>
+                    <input type="text" spellcheck="false" name="quantity" value="1" hidden>
                     <?php
                         if( isset($_SESSION['idActive']) && $_GET['id'] == $idActive ){
                             echo'<button type="submit" name="delete" class="circle delete"><div class="icon iconDelete"></div></button>';

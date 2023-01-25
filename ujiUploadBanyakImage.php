@@ -82,11 +82,11 @@ echo '<h1>' . $_COOKIE['noBarang'] . '</h1>';
 <body>
 
     <form action="" method="post" enctype="multipart/form-data">
-        <input type="text" name="teks[]">
+        <input type="text" spellcheck="false" name="teks[]">
         <input type="file" name="image[]"><br>
-        <input type="text" name="teks[]">
+        <input type="text" spellcheck="false" name="teks[]">
         <input type="file" name="image[]"><br>
-        <input type="text" name="teks[]">
+        <input type="text" spellcheck="false" name="teks[]">
         <input type="file" name="image[]"><br>
         <button type="submit" name="upload">Upload</button>
     </form>

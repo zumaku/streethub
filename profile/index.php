@@ -16,6 +16,16 @@
         ';
     }
 
+    if( isset($_GET['setting']) && $_GET['setting'] == 1 ){
+        alert(true, true, 'Selesai.', 'Pengaturan telah disimpan');
+        echo' <script>
+                setTimeout(() => {
+                    window.location.href = "' . $urlToRoot . 'profile/";
+                }, 2000);
+            </script>
+        ';
+    }
+
     $account = takeAccount($idActive);
     $profile = takeProfile($idActive);
     $medsos = takeMedsos($idActive);
@@ -143,13 +153,13 @@
             <form action="">
                 <h1>Hubungi <span>aku</span>?</h1>
                 <label for="nama">Nama</label>
-                <input type="text" name="nama" id="nama">
+                <input type="text" spellcheck="false" name="nama" id="nama">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email">
                 <label for="telp">Telp</label>
                 <input type="number" name="telp" id="telp">
                 <label for="pesan">Pesan</label>
-                <textarea name="pesan" id="pesan"></textarea>
+                <textarea spellcheck="false" name="pesan" id="pesan"></textarea>
                 <button type="submit" class="btn">Kirim</button>
             </form>
         </div>

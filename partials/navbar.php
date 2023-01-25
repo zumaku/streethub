@@ -41,7 +41,7 @@
 
                 <div class="navbar">
                     <form action="" method="post" class="pencarian">
-                        <input type="text" name="cariapa" id="cariapa" placeholder="Cari di sini" autocomplete="none">
+                        <input type="text" spellcheck="false" name="cariapa" id="cariapa" placeholder="Cari di sini" autocomplete="none">
                         <button type="submit" name="search" hidden></button>
                     </form>
                     <ul class="navMenu">
@@ -83,9 +83,9 @@
                     echo '</div>';
                     echo '<div class="dropdown" style="display: none;">';
                         echo '<div class="segitiga"></div>';
-                        echo '<a href="' . $urlToRoot . 'profile/gallery.php">Foto baru</a><span></span>';
+                        echo '<a href="' . $urlToRoot . 'profile/magazine.php">Foto baru</a><span></span>';
                         echo '<a href="' . $urlToRoot . 'profile/">Profile</a><span></span>';
-                        echo '<a href="#">Pengaturan</a><span></span>';
+                        echo '<a href="' . $urlToRoot . 'pages/pengaturan.php">Pengaturan</a><span></span>';
                         echo '<form action="" method="post"><button type="submit" name="logout"><p>Sign out</p></button></form>';
                     echo '</div>';
                 } else{
@@ -102,7 +102,7 @@
     <nav class="nav2" id="nav2" style="display: none;">
         <div class="navbar">
             <form action="" method="post" class="pencarian">
-                <input type="text" name="cariapa" id="cariapa" placeholder="Cari di sini">
+                <input type="text" spellcheck="false" name="cariapa" id="cariapa" placeholder="Cari di sini">
                 <button type="submit" name="search" hidden></button>
                 <span class="underline"></span>
             </form>
@@ -135,7 +135,7 @@
                 <?php
                 if( isset($_SESSION['idActive']) ){
                     echo '<li>';
-                        echo '<a href="#">Pengaturan</a>';
+                        echo '<a href="' . $urlToRoot . 'pages/pengaturan.php">Pengaturan</a>';
                         echo '<span class="underline"></span>';
                     echo '</li>';
                     echo '<li>';

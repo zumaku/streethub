@@ -66,15 +66,15 @@
             <div class="step">
                 <p>step 3/4</p>
                 <p>Mari lebih akrab di sosial media</p>
-                <input type="text" name="id_user" value="<?= $id ?>" hidden>
+                <input type="text" spellcheck="false" name="id_user" value="<?= $id ?>" hidden>
                 <label for="fb">FACEBOOK <p>*boleh kosong</p></label>
-                <input type="text" name="fb">
+                <input type="text" spellcheck="false" name="fb">
                 <label for="ig">INSTAGRAM <p>*boleh kosong</p></label>
-                <input type="text" name="ig">
+                <input type="text" spellcheck="false" name="ig">
                 <label for="tw">TWITER <p>*boleh kosong</p></label>
-                <input type="text" name="tw">
+                <input type="text" spellcheck="false" name="tw">
                 <label for="web">WEBSITE <p>*boleh kosong</p></label>
-                <input type="text" name="web"><br>
+                <input type="text" spellcheck="false" name="web"><br>
                 <button type="submit" name="lanjut" class="btn">Lanjut</button>
             </div>
         </form>

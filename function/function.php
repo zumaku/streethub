@@ -35,6 +35,32 @@ function takeTools($id){
 }
 
 
+// FUNGSI UPDATE
+function updateAccount($id, $username, $email){
+    global $koneksi;
+    global $tblAccount;
+    $query = mysqli_query($koneksi, "UPDATE $tblAccount SET `username`='$username',`email`='$email' WHERE id_user = '$id'");
+    return $query;
+}
+function updateProfile($id, $fotoProfile, $fotoSampul, $kalimatMotivasi, $fotoTentangku, $tentangku, $fotoFavorit, $fotoKece1, $fotoKece2){
+    global $koneksi;
+    global $tblProfile;
+    $query = mysqli_query($koneksi, "UPDATE $tblProfile SET `foto_profile`='$fotoProfile',`foto_sampul`='$fotoSampul',`kalimat_motivasi`='$kalimatMotivasi',`foto_tentangku`='$fotoTentangku',`tentangku`='$tentangku',`foto_tempat_favorit`='$fotoFavorit',`foto_kece1`='$fotoKece1',`foto_kece2`='$fotoKece2' WHERE id_user = '$id'");
+    return $query;
+}
+function updateMedsos($id, $fb, $ig, $tw, $web){
+    global $koneksi;
+    global $tblMedsos;
+    $query = mysqli_query($koneksi, "UPDATE $tblMedsos SET `facebook`='$fb',`instagram`='$ig',`twiter`='$tw',`website`='$web' WHERE id_user = '$id'");
+    return $query;
+}
+function updateTools($id, $camera, $lensa, $filter, $tripod){
+    global $koneksi;
+    global $tblTools;
+    $query = mysqli_query($koneksi, "UPDATE $tblTools SET `camera`='$camera',`lensa`='$lensa',`filter`='$filter',`tripod`='$tripod' WHERE id_user = '$id'");
+    return $query;
+}
+
 
 // FUNGSI AMBIL GAMBAR GALLERY SECARA ACAK UNTUK BOOKMARK
 function randomBookmarCover($idUser){
@@ -87,6 +113,12 @@ function alert($color = true, $jenis = true, $h1, $p, $btn1 = false, $btn2 = fal
             echo '</div>';
         echo '</div>';
     echo '</form>';
+
+    echo'
+        <script>
+            document.body.setAttribute("style", "overflow: hidden");
+        </script>
+    ';
 }
 // FUNGSI MENGECEK HASIL ALERT
 function hasilAlert($event = false){

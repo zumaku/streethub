@@ -41,7 +41,7 @@
             echo'<input type="file" name="upGallery" id="upInput">';
             echo'<h3 for="upTag">Tag</h3>';
             echo'<p>*gunakan spasi sebagai pemisah tag</p>';
-            echo'<textarea name="upTags" id="upTag" cols="30" rows="10"></textarea>';
+            echo'<textarea spellcheck="false" name="upTags" id="upTag" cols="30" rows="10"></textarea>';
 
             echo'<div class="buttons">';
                 echo'<button type="submit" name="submitGallery" class="btn">Unggah</button>';
@@ -64,7 +64,7 @@
 
             echo'<input type="file" name="upMagazine[]" class="inputMagazine" id="upInput" multiple>';
             echo'<h3 for="upTag">Jalan</h3>';
-            echo'<input type="text" name="namaJalan" id="namaJalan">';
+            echo'<input type="text" spellcheck="false" name="namaJalan" id="namaJalan">';
 
             echo'<div class="buttons">';
                 echo'<button type="submit" name="submitMagazine" class="btn">Unggah</button>';

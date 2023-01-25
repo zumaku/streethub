@@ -72,15 +72,15 @@
             <div class="step">
                 <p>step 4/4</p>
                 <p>Beritahu kami alat yang kau gunakan</p>
-                <input type="text" name="id_user" value="<?= $id ?>" hidden>
+                <input type="text" spellcheck="false" name="id_user" value="<?= $id ?>" hidden>
                 <label for="camera">KAMERA</label>
-                <input type="text" name="camera">
+                <input type="text" spellcheck="false" name="camera">
                 <label for="lensa">LENSA</label>
-                <input type="text" name="lensa">
+                <input type="text" spellcheck="false" name="lensa">
                 <label for="filter">FILTER</label>
-                <input type="text" name="filter">
+                <input type="text" spellcheck="false" name="filter">
                 <label for="tripod">TRIPOD</label>
-                <input type="text" name="tripod"><br>
+                <input type="text" spellcheck="false" name="tripod"><br>
                 <button type="submit" name="finish" class="btn">Lanjut</button>
             </div>
         </form>

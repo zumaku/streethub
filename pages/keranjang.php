@@ -122,7 +122,7 @@ session_start();
                 <tr class="kupon">
                     <td colspan="2">
                         <form action="" method="post">
-                            <input type="text" name="kodeKupon">
+                            <input type="text" spellcheck="false" name="kodeKupon">
                             <button type="submit" name="checkKupon">Cek</button>
                         </form>
                     </td>

@@ -16,6 +16,14 @@ if( isset($_POST['upload']) ){
     unlink('img/63c7dc015c2716.86336175.jpg');
 }
 
+    if( isset($_POST['uji']) ){
+        if( $_FILES['foto']['name'] != "" ){
+            echo'adaji';
+            // var_dump($_FILES['foto']);
+        }else{
+            echo'ndak ada';
+        }
+    }
 
 ?>
 
@@ -38,5 +46,9 @@ if( isset($_POST['upload']) ){
 
     <img src="www.pexels.com/photo/photo-of-man-holding-a-camera-1567730/" alt="asidbas">
 
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="foto">
+        <button type="submit" name="uji">uji</button>
+    </form>
 </body>
 </html>

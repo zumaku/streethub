@@ -54,8 +54,8 @@
     <?php foreach($magazines as $data): ?>
         <form action="" method="post" class="card">
             <img src="img/magazine/<?= $data['foto_magazine'] ?>" alt="" width="200px"><br>
-            <input type="text" name="idMagazine" value="<?= $data['id_magazine'] ?>"><br>
-            <input type="text" name="namaJalan" value="<?= $data['nama_jalan'] ?>"><br>
+            <input type="text" spellcheck="false" name="idMagazine" value="<?= $data['id_magazine'] ?>"><br>
+            <input type="text" spellcheck="false" name="namaJalan" value="<?= $data['nama_jalan'] ?>"><br>
             <button type="submit" name="addToCart">Add To Cart</button><br><br>
         </form>
     <?php endforeach; ?>

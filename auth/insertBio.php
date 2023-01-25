@@ -66,7 +66,7 @@
             <h3>LENGKAPI PROFILMU</h3>
             <div class="step">
                 <p>step 1/4</p>
-                <input type="text" name="id_user" value="<?= $id ?>" hidden>
+                <input type="text" spellcheck="false" name="id_user" value="<?= $id ?>" hidden>
                 
                 <label for="profilePhoto">FOTO PROFIL</label>
                 <input type="file" name="profilePhoto" class="imgFileInput">
@@ -83,7 +83,7 @@
                 </div>
 
                 <label for="motivationQuote">KALIMAT PENYEMANGAT</label>
-                <input type="text" name="motivationQuote">
+                <input type="text" spellcheck="false" name="motivationQuote">
 
                 <label for="yourPhoto">FOTO TENTANGMU</label>
                 <input type="file" name="yourPhoto" class="imgFileInput">
@@ -93,7 +93,7 @@
                 </div>
 
                 <label for="yourSelf">CERITAKAN DIRIMU</label>
-                <textarea name="yourSelf" id="" cols="30" rows="10"></textarea>
+                <textarea name="yourSelf" spellcheck="false" id="" cols="30" rows="10"></textarea>
                 <br>
             </div>
             <div class="step">

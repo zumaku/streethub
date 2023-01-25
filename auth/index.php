@@ -88,7 +88,7 @@
         </form>
         <form action="" class="signForm dnone" method="post">
             <label for="username">USER NAME</label>
-            <input type="text" name="username" id="username">
+            <input type="text" spellcheck="false" name="username" id="username">
             <label for="email">EMAIL</label>
             <input type="email" name="email" id="email">
             <label for="password">PASSWORD</label>
