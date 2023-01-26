@@ -69,9 +69,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+    <meta name="description" content="Sales Website and Stock Photos">
+    <meta name="keywords" content="HTML, CSS, JavaScript, PHP, MySQL">
+    <meta name="author" content="Zul Fadli Ahmad">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/icon/streetHub.png" type="image/x-icon">
     <title>Pengaturan</title>
     <link rel="stylesheet" href="../css/pengaturan.css">
 </head>
@@ -96,8 +100,6 @@
                 <input type="email" id="email" name="newEmail" value="<?= $account['email'] ?>">
                 <label for="motivationQuote">Kalimat penyemangat</label>
                 <textarea type="text" spellcheck="false" id="motivationQuote" name="newMotivationQuote"><?= $profile['kalimat_motivasi'] ?></textarea>
-                <!-- <label for="password">Password</label>
-                <input type="text" spellcheck="false" id="password" name="newPassword" value="<?= $account['password'] ?>"> -->
                 <a href="#" class="hapusAkun">Hapus akun?</a>
             </div>
             <div class="rightSect">
@@ -173,7 +175,7 @@
                 </div>
                 <div class="buttons">
                     <button type="submit" name="update" class="btn">Simpan</button>
-                    <a href="#" class="btn">Batal</a>
+                    <a href="../" class="btn">Batal</a>
                 </div>
             </div>
         </div>

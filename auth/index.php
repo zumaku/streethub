@@ -63,9 +63,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Sales Website and Stock Photos">
+    <meta name="keywords" content="HTML, CSS, JavaScript, PHP, MySQL">
+    <meta name="author" content="Zul Fadli Ahmad">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="shortcut icon" href="../img/icon/streetHub.png" type="image/x-icon">
+    <title>Akun</title>
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body onclick="indexFunction()">
