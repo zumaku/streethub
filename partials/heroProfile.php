@@ -3,7 +3,11 @@ function heroProfile($bgLink, $profilePicLink, $nama, $quote ,$fb = false, $ig =
     echo'<div class="hero" style="background-image: ' . $bgLink . ';">';
         echo'<div class="bGradient"></div>';
         echo'<div class="container">';
-            echo'<img src="' . $profilePicLink . '" alt="Profileku">';
+            // echo'<img src="' . $profilePicLink . '" alt="Profileku">';
+            echo'<div class="streetersPicture">';
+                echo'<img src="' . $profilePicLink . '" alt="Profileku">';
+                echo'<div class="storake"></div>';
+            echo'</div>';
             echo'<h1>' . $nama . '</h1>';
             echo'<div class="sosmed">';
                 if($fb != false){ echo'<a href="' . $fb . '" class="icon fb"></a>'; }
