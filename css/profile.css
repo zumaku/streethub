@@ -666,8 +666,8 @@ footer.footer .container .copyright .dll {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -45%);
-  -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-          clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 99%, 5% 75%, 5% 25%);
+          clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 99%, 5% 75%, 5% 25%);
   margin-bottom: 10px;
 }
 .hero .container .streetersPicture .storake {
