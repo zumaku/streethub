@@ -10,10 +10,10 @@ function heroProfile($bgLink, $profilePicLink, $nama, $quote ,$fb = false, $ig =
             echo'</div>';
             echo'<h1>' . $nama . '</h1>';
             echo'<div class="sosmed">';
-                if($fb != false){ echo'<a href="' . $fb . '" class="icon fb"></a>'; }
-                if($ig != false){ echo'<a href="' . $ig . '" class="icon ig"></a>'; }
-                if($tw != false){ echo'<a href="' . $tw . '" class="icon tw"></a>'; }
-                if($web != false){ echo'<a href="' . $web . '" class="icon web"></a>'; }
+                if($fb != false){ echo'<a href="' . $fb . '" target="_blank" class="icon fb"></a>'; }
+                if($ig != false){ echo'<a href="' . $ig . '" target="_blank" class="icon ig"></a>'; }
+                if($tw != false){ echo'<a href="' . $tw . '" target="_blank" class="icon tw"></a>'; }
+                if($web != false){ echo'<a href="' . $web . '" target="_blank" class="icon web"></a>'; }
             echo'</div>';
             // echo'<p class="quote">"Fotografi menyadarkanku bahwa setiap detik itu berarti dan setiap hasil yang bagus ada kerja keras"</p>';
             echo'<p class="quote">"' . $quote . '"</p>';
