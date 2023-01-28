@@ -68,6 +68,9 @@ function randomBookmarCover($idUser){
     global $tblGalery;
 
     $id_gallery = mysqli_query($koneksi, "SELECT foto_galery FROM $tblGalery WHERE id_user = '$idUser'");
+    if( empty(mysqli_fetch_assoc($id_gallery)) ){
+        $id_gallery = mysqli_query($koneksi, "SELECT foto_galery FROM $tblGalery");
+    }
     $barisKe = [];
     while ( $baris = mysqli_fetch_assoc($id_gallery) ){
         $barisKe[] = $baris;

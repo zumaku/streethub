@@ -95,7 +95,7 @@
                     '../pages/client.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'],
                     'url(../img/magazine/' . $img . ')',
                     $data['nama_jalan'],
-                    $data['tgl_upload'] = date('l, d M Y '),
+                    $data['tgl_upload'],
 
                 );
             }
