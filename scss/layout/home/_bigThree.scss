@@ -33,8 +33,10 @@
                     padding: 20px;
                     box-sizing: border-box;
                     transition: .2s linear;
-                    cursor: pointer;
                     @include btnArrow(colorHover);
+                    .btnArrow{
+                        cursor: pointer;
+                    }
                     h1{
                         text-align: start;
                     }

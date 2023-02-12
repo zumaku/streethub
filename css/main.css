@@ -1135,7 +1135,6 @@ footer.footer .container .copyright .dll {
   padding: 20px;
   box-sizing: border-box;
   transition: 0.2s linear;
-  cursor: pointer;
 }
 .big3 .container .cards .card .img .btnArrow {
   width: -webkit-fit-content;
@@ -1182,6 +1181,9 @@ footer.footer .container .copyright .dll {
     width: 12px;
     height: 12px;
   }
+}
+.big3 .container .cards .card .img .btnArrow {
+  cursor: pointer;
 }
 .big3 .container .cards .card .img h1 {
   text-align: start;
@@ -1584,13 +1586,12 @@ footer.footer .container .copyright .dll {
 }
 .produk .container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
-  position: relative;
 }
 .produk .container .sidebox {
   width: 500px;
-  margin-right: 200px;
 }
 .produk .container .sidebox h2 {
   color: #18A13D;
@@ -1665,9 +1666,6 @@ footer.footer .container .copyright .dll {
     height: 12px;
   }
 }
-.produk .container #sb1 {
-  display: none;
-}
 .produk .container .slider {
   display: flex;
   align-items: center;
@@ -1675,11 +1673,13 @@ footer.footer .container .copyright .dll {
 }
 .produk .container .slider .cards {
   display: flex;
+  justify-content: space-around;
   align-items: center;
+  width: 550px;
 }
 .produk .container .slider .cards .card {
-  width: 250px;
-  height: 350px;
+  width: 230px;
+  height: 330px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1693,9 +1693,10 @@ footer.footer .container .copyright .dll {
   padding: 20px;
   box-sizing: border-box;
   border-radius: 10px;
-  margin-right: 80px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-  transition: 0.3s linear;
+  transform: scale(0.95);
+  -webkit-animation: scaleUp 0.4s ease-in forwards alternate;
+          animation: scaleUp 0.4s ease-in forwards alternate;
 }
 .produk .container .slider .cards .card .icon {
   width: 32px;
@@ -1711,8 +1712,30 @@ footer.footer .container .copyright .dll {
 .produk .container .slider .cards .card:hover {
   transform: scale(1.02);
 }
-.produk .container .btnMove {
-  position: absolute;
+@-webkit-keyframes scaleUp {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes scaleUp {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.produk .container .slider .cards .dnone {
+  display: none;
+}
+.produk .container .slider .btnMove {
   top: 45%;
   width: 40px;
   height: 40px;
@@ -1722,94 +1745,112 @@ footer.footer .container .copyright .dll {
   align-items: center;
   cursor: pointer;
 }
-.produk .container .btnMove .arrow {
+.produk .container .slider .btnMove .arrow {
   width: 30px;
   height: 30px;
   cursor: pointer;
 }
-.produk .container .btnMove.next {
+.produk .container .slider .btnMove.next {
   right: 0;
   background-image: url(../img/icon/arrowNext.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-.produk .container .btnMove.previous {
+.produk .container .slider .btnMove.previous {
   left: 0;
   background-image: url(../img/icon/arrowPriveous.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-.produk .container .dnone {
+.produk .container .slider .dnone {
   display: none;
 }
 
 @media (max-width: 990px) {
-  .produk .container .slider .sidebox {
-    width: 400px;
-    margin-right: 50px;
-  }
-}
-@media (max-width: 768px) {
-  .produk .container .slider .sidebox {
-    width: 300px;
-    margin-right: 30px;
-  }
-  .produk .container .slider .cards .card {
-    margin-right: 40px;
-  }
-}
-@media (max-width: 576px) {
   .produk {
-    min-height: 800px;
-  }
-  .produk .container {
+    width: 100%;
+    font-size: 16px;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
-  .produk .container #sb1 {
-    display: block;
-    align-self: center;
-    margin-right: 0;
-    margin-bottom: 40px;
+  .produk .container {
     width: 90%;
-  }
-  .produk .container .slider #sb2 {
-    display: none;
-  }
-  .produk .container .slider .cards .card {
-    margin-right: 80px;
-  }
-  .produk .container .slider .cards .card:first-child {
-    margin-left: 130px;
-  }
-  .produk .container .btnMove {
-    top: 70%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: auto;
+    height: fit-content;
+    padding: 100px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
-@media (max-width: 430px) {
-  .produk .container .slider .cards .card {
-    margin-right: 80px;
+@media (max-width: 990px) and (max-width: 576px) {
+  .produk .container {
+    width: 95%;
+    padding: 60px 0;
   }
-  .produk .container .slider .cards .card:first-child {
-    margin-left: 70px;
+}
+@media (max-width: 990px) {
+  .produk .sidebox {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 990px) {
+  .produk .container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .produk .container .sidebox {
+    width: 90%;
+  }
+  .produk .container .slider {
+    width: 90%;
+  }
+  .produk .container .slider .cards .card {
+    width: 180px;
+    height: 280px;
+  }
+}
+@media (max-width: 576px) {
+  .produk .container .sidebox {
+    width: 90%;
+  }
+  .produk .container .slider {
+    width: 90%;
+  }
+  .produk .container .slider .cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .produk .container .slider .cards .card {
+    margin-bottom: 10px;
+    width: 280px;
+    height: 130px;
   }
 }
 @media (max-width: 390px) {
-  .produk .container .slider .cards .card:first-child {
-    margin-left: 50px;
+  .produk .container .sidebox {
+    width: 90%;
   }
-}
-@media (max-width: 330px) {
-  .produk .container .slider .cards .card:first-child {
-    margin-left: 30px;
+  .produk .container .slider {
+    width: 95%;
   }
-}
-@media (max-width: 290px) {
-  .produk .container .slider .cards .card:first-child {
-    margin-left: 0;
+  .produk .container .slider .cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .produk .container .slider .cards .card {
+    margin-bottom: 10px;
+    width: 180px;
+    height: 130px;
   }
 }
 .komunitas {

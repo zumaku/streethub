@@ -1,0 +1,218 @@
+@use '../../abstracts' as *;
+@use '../../components' as *;
+
+.produk{
+    @include section(100vh);
+    @include bg(url(../img/home/alattempur.png), cover, top);
+    min-height: 500px;
+    overflow: hidden;
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        .sidebox{
+            @include homeSideBoxTitle();
+            @include btnArrow(color, 10px, 2);
+            width: 500px;
+            margin-right: 200px;
+        }
+        #sb1{
+            // background-color: green;
+            display: none;
+        }
+        .slider{
+            display: flex;
+            align-items: center;
+            transition: .3s ease-in-out;
+            // transform: translateX(-350px);
+            #sb2{
+                // background-color: blue;
+            }
+            .cards{
+                display: flex;
+                align-items: center;
+                .card{
+                    width: 250px;
+                    height: 350px;
+                    @include bg();
+                    border: 10px;
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    margin-right: 80px;
+                    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+                    transition: .3s linear;
+                    .icon{
+                        width: 32px;
+                        height: 32px;
+                        opacity: .5;
+                        @include bg(false, cover, center);
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                    &:hover{
+                        transform: scale(1.02);
+                    }
+                }
+            }
+        }
+        .btnMove{
+            position: absolute;
+            top: 45%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            .arrow{
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+            &.next{
+                right: 0;
+                @include bg(url(../img/icon/arrowNext.png), contain);
+            }
+            &.previous{
+                left: 0;
+                @include bg(url(../img/icon/arrowPriveous.png), contain);
+            }
+        }
+        .dnone{
+            display: none;
+        }
+    }
+}
+
+@include media(leptop){
+    .produk{
+        .container{
+            .slider{
+                .sidebox{
+                    width: 400px;
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+}
+@include media(notebook){
+    .produk{
+        .container{
+            .slider{
+                .sidebox{
+                    width: 300px;
+                    margin-right: 30px;
+                }
+                .cards{
+                    .card{
+                        margin-right: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media(tablet){
+    .produk{
+        min-height: 800px;
+        .container{
+            height: fit-content;
+
+            #sb1{
+                display: block;
+                align-self: center;
+                margin-right: 0;
+                margin-bottom: 40px;
+                width: 90%;
+            }
+            .slider{
+                #sb2{
+                    display: none;
+                }
+                .cards{
+                    .card{
+                        margin-right: 80px;
+                        &:first-child{
+                            margin-left: 130px;
+                        }
+                    }
+                }
+            }
+            .btnMove{
+                top: 70%;
+            }
+        }
+    }
+}
+@include media(430px){
+    .produk{
+        .container{
+            .slider{
+                .cards{
+                    .card{
+                        margin-right: 80px;
+                        &:first-child{
+                            margin-left: 70px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include media(hp){
+    .produk{
+        .container{
+            .slider{
+                .cards{
+                    .card{
+                        &:first-child{
+                            margin-left: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include media(330px){
+    .produk{
+        .container{
+            .slider{
+                .cards{
+                    .card{
+                        &:first-child{
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include media(290px){
+    .produk{
+        .container{
+            .slider{
+                .cards{
+                    .card{
+                        &:first-child{
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
