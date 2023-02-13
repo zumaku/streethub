@@ -13,12 +13,12 @@
         echo'<div class="content">';
         if($iconAddres != false){
             echo '
-                    <div class="logo" data-aos="flip-left">
-                        <div class="mainLogo" style="background-image: ' . $iconAddres . ';" data-aos="fade-up"></div>
+                    <div class="logo">
+                        <div class="mainLogo" style="background-image: ' . $iconAddres . ';"></div>
                     </div>
             ';
         }
-        echo '<h1 data-aos="zoom-out">' . $h1 . '</h1>';
+        echo '<h1>' . $h1 . '</h1>';
         if($p != false){
             echo '<p>' . $p . '</p>';
         }

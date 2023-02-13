@@ -31,8 +31,6 @@
     <link rel="shortcut icon" href="../img/icon/streetHub.png" type="image/x-icon">
     <title>Pencarian</title>
     <link rel="stylesheet" href="../css/search.css">
-    <!-- animation scrolling -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     
@@ -60,8 +58,8 @@
                     }
                 ?>
                 <a href="<?= $href ?>" class="profile">
-                    <div class="image" style="background-image: url(../img/account/profile/<?=$pic['foto_profile']?>);" data-aos="flip-left"></div>
-                    <h3 data-aos="fade-up"><?= $profile['username'] ?></h3>
+                    <div class="image" style="background-image: url(../img/account/profile/<?=$pic['foto_profile']?>);"></div>
+                    <h3><?= $profile['username'] ?></h3>
                 </a>
                 <?php endforeach; ?>
             </div>
@@ -82,7 +80,7 @@
                     $uname = takeAccount($img['id_user']);
                     $pic = takeProfile($img['id_user']);
                 ?>
-                <div class="gambar" data-aos="fade-up">
+                <div class="gambar">
                     <img src="../img/gallery/<?= $img['foto_galery'] ?>" alt="" class="imgGallery search" data-idUser="<?= $img['id_user'] ?>" data-name="<?= $uname['username'] ?>" data-picture="<?= $pic['foto_profile'] ?>" data-tglUpload="<?= $img['tgl_upload'] = date('d/m/y') ?>">
                 </div>
                 <?php endforeach; ?>
@@ -113,11 +111,5 @@
 
     <script src="../js/navbar.js"></script>
     <script src="../js/imgPreview.js"></script>
-
-    <!-- scroll animation -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 </html>

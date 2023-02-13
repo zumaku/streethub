@@ -2,44 +2,16 @@
     session_start();
     include '../function/function.php';
     $urlToRoot = '../';
-
-    if( isset($_SESSION['idActive']) && $_SESSION['idActive'] != '' && !isset($_GET['idActive']) ){
-        $idActive = $_SESSION['idActive'];
-    } else if( isset($_GET['idActive']) && $_GET['idActive'] != '' ){
-        $idActive = $_GET['idActive'];
-    } else{
-        echo' <script>
-                setTimeout(() => {
-                    window.location.href = "' . $urlToRoot . 'profile/gallery.php";
-                }, 2000);
-            </script>
-        ';
-    }
-
-    $account = takeAccount($idActive);
-    $profile = takeProfile($idActive);
-    $medsos = takeMedsos($idActive);
-
-    $bookmarImage1 = randomBookmarCover($idActive);
-    $bookmarImage2 = randomBookmarCover($idActive);
-
-    $infosTerbaru = takeInfoMagazine('terbaru', $idActive);
-    $infosLawas = takeInfoMagazine('lawas', $idActive);
-
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-    <meta name="description" content="Sales Website and Stock Photos">
-    <meta name="keywords" content="HTML, CSS, JavaScript, PHP, MySQL">
-    <meta name="author" content="Zul Fadli Ahmad">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/icon/streetHub.png" type="image/x-icon">
-    <title>Bingkai</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
@@ -51,16 +23,7 @@
     <!-- =============== HERO START =============== -->
     <?php
         include '../partials/heroProfile.php';
-        heroProfile(
-            'url(../img/account/cover/' . $profile['foto_sampul'] . ')',
-            '../img/account/profile/' . $profile['foto_profile'],
-            $account['username'],
-            $profile['kalimat_motivasi'],
-            $medsos['facebook'],
-            $medsos['instagram'],
-            $medsos['twiter'],
-            $medsos['website']
-        );
+        heroProfile('url(../img/profile/sampul01.jpg)', '../img/profile/profile1.png" alt="Profileku', 'Ukhhtie Kebo', '#', '#', '#', '#')
     ?>
     <!-- =============== HERO END =============== -->
 
@@ -74,56 +37,32 @@
     <!-- =============== FOTO TERBARU START =============== -->
     <?php
         include '../partials/bookmark.php';
-        setBookmark('url(../img/gallery/' . $bookmarImage1 . ')', 'Foto Terbaru', 'url(../img/icon/fotoTerbaru.png)', false);
+        setBookmark('url(../img/profile/bm01.jpg)', 'Foto Terbaru', 'url(../img/icon/fotoTerbaru.png)', false);
     ?>
     <div class="fotoTerbaru">
-        <?php
-        if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
-            echo'<div class="tambahFoto">';
-                echo'<h4 class="btn"><a href="../pages/uploadImage.php?upload=magazine">Tambah Bingkai</a></h4>';
-            echo'</div>';
-        }
-        ?>
         <div class="container">
-            <?php
-            include '../partials/cardTerbaru.php';
-
-            foreach($infosTerbaru as $data){
-                $img = takeImageMagazine('terbaru',$idActive, $data['nama_jalan'], $data['tgl_upload']);
-                // $data['tgl_upload'] = date('l, d M Y ');
-                setCardTerbaru(
-                    '../pages/client.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'],
-                    'url(../img/magazine/' . $img . ')',
-                    $data['nama_jalan'],
-                    $data['tgl_upload'],
-
-                );
-            }
-            
-            ?>
+            <?php include '../partials/cardTerbaru.php' ?>
+            <?= setCardTerbaru('#', 'url(../img/profile/00.jpg)', 'Jl. In Aja Dulu', '1 Januari 2023'); ?>
+            <?= setCardTerbaru('#', 'url(../img/profile/01.jpg)', 'Jl. Kita Masih Panjang', '31 Desember 2022'); ?>
+            <?= setCardTerbaru('#', 'url(../img/profile/02.jpg)', 'Jl. Yuk', '31 Desember 2022'); ?>
+            <?= setCardTerbaru('#', 'url(../img/profile/03.jpg)', 'Jl. Kemana Aja', '30 Desember 2022'); ?>
         </div>
     </div>
     <!-- =============== FOTO TERBARU END =============== -->
     
     <!-- =============== FOTO LAWAS START =============== -->
     <?php
-        setBookmark('url(../img/gallery/' . $bookmarImage2 . ')', 'Foto Lawas', 'url(../img/icon/fotoLawas.png)', false);
+        setBookmark('url(../img/profile/bm02.jpg)', 'Foto Lawas', 'url(../img/icon/fotoLawas.png)', false);
     ?>
     <div class="fotoLawas">
         <div class="container">
-            <?php
-            include '../partials/cardLawas.php';
-            
-            foreach($infosLawas as $data){
-                $img = takeImageMagazine('lawas',$idActive, $data['nama_jalan'], $data['tgl_upload']);
-                setCardLawas(
-                    '../pages/client.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'],
-                    'url(../img/magazine/' . $img . ')',
-                    $data['nama_jalan'],
-                    $data['tgl_upload']
-                );
-            }
-            ?>
+            <?php include '../partials/cardLawas.php' ?>
+            <?= setCardLawas('#', 'url(../img/profile/10.jpg)', 'Jl. In Aja Dulu') ?>
+            <?= setCardLawas('#', 'url(../img/profile/11.jpg)', 'Jl. Yuk') ?>
+            <?= setCardLawas('#', 'url(../img/profile/12.jpg)', 'Jl. Entah Dimana') ?>
+            <?= setCardLawas('#', 'url(../img/profile/13.jpg)', 'Jl. Kemana Aja') ?>
+            <?= setCardLawas('#', 'url(../img/profile/14.jpg)', 'Jl. Kaki') ?>
+            <?= setCardLawas('#', 'url(../img/profile/15.jpg)', 'Jl. Kita Masih Panjang') ?>
         </div>
     </div>
     <!-- =============== FOTO LAWAS END =============== -->

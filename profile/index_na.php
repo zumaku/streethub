@@ -45,8 +45,6 @@
     <link rel="shortcut icon" href="../img/icon/streetHub.png" type="image/x-icon">
     <title>Tentang Aku</title>
     <link rel="stylesheet" href="../css/profile.css">
-    <!-- animation scrolling -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- =============== NAVBAR START =============== -->
@@ -84,8 +82,8 @@
             </div>
             <div class="tentangku">
                 <h1>Siapa <span>Aku</span>?</h1>
-                <p data-aos="fade-right"><?= $profile['tentangku'] ?></p>
-                <a href="#" class="btnArrow" data-aos="fade-up">
+                <p><?= $profile['tentangku'] ?></p>
+                <a href="#" class="btnArrow">
                     <p>Traktir aku</p>
                     <div class="arrow"></div>
                 </a>
@@ -100,9 +98,9 @@
             <h1>Dengan apa aku <span>Memotret</span>?</h1>
             <div class="alatku">
                 <div class="card">
-                    <div class="icon kamera" data-aos="zoom-out-down"></div>
-                    <h2 data-aos="fade-right">Kamera</h2>
-                    <p data-aos="fade-up"><?= $tools['camera'] ?></p>
+                    <div class="icon kamera"></div>
+                    <h2>Kamera</h2>
+                    <p><?= $tools['camera'] ?></p>
                     <!-- <ol type="1">
                         <li>Canon EOS 6D II</li>
                         <li>Canon EOS 90D</li>
@@ -111,9 +109,9 @@
                     </ol> -->
                 </div>
                 <div class="card">
-                    <div class="icon lensa" data-aos="zoom-out-down"></div>
-                    <h2 data-aos="fade-right">Lensa</h2>
-                    <p data-aos="fade-up"><?= $tools['lensa'] ?></p>
+                    <div class="icon lensa"></div>
+                    <h2>Lensa</h2>
+                    <p><?= $tools['lensa'] ?></p>
                     <!-- <ol type="1">
                         <li>Canon EF 100-400mm f/4.5-6.5L IS II USM</li>
                         <li>Canon EF 100mm f/2.8L IS USM Macro</li>
@@ -123,9 +121,9 @@
                     </ol> -->
                 </div>
                 <div class="card">
-                    <div class="icon filter" data-aos="zoom-out-down"></div>
-                    <h2 data-aos="fade-right">Filter</h2>
-                    <p data-aos="fade-up"><?= $tools['filter'] ?></p>
+                    <div class="icon filter"></div>
+                    <h2>Filter</h2>
+                    <p><?= $tools['filter'] ?></p>
                     <!-- <ol type="1">
                         <li>Ultra Violet</li>
                         <li>Ultra Viola</li>
@@ -135,9 +133,9 @@
                     </ol> -->
                 </div>
                 <div class="card">
-                    <div class="icon tripod" data-aos="zoom-out-down"></div>
-                    <h2 data-aos="fade-right">Tripod</h2>
-                    <p data-aos="fade-up"><?= $tools['tripod'] ?></p>
+                    <div class="icon tripod"></div>
+                    <h2>Tripod</h2>
+                    <p><?= $tools['tripod'] ?></p>
                     <!-- <ol type="1">
                         <li>Befree 3-Way Live Advanced</li>
                         <li>Vesta FB 204AB</li>
@@ -153,20 +151,20 @@
     <div class="contact">
         <div class="container">
             <div class="favImage">
-                <div data-aos="fade-up" class="img" style="background-image: url(../img/account/kece/<?= $profile['foto_kece1'] ?>);"></div>
-                <div data-aos="fade-up" class="img" style="background-image: url(../img/account/kece/<?= $profile['foto_kece2'] ?>);"></div>
+                <div class="img" style="background-image: url(../img/account/kece/<?= $profile['foto_kece1'] ?>);"></div>
+                <div class="img" style="background-image: url(../img/account/kece/<?= $profile['foto_kece2'] ?>);"></div>
             </div>
             <form action="">
                 <h1>Hubungi <span>aku</span>?</h1>
-                <label data-aos="fade-right" for="nama">Nama</label>
-                <input data-aos="fade-up" type="text" spellcheck="false" name="nama" id="nama">
-                <label data-aos="fade-right" for="email">Email</label>
-                <input data-aos="fade-up" type="email" name="email" id="email">
-                <label data-aos="fade-right" for="telp">Telp</label>
-                <input data-aos="fade-up" type="number" name="telp" id="telp">
-                <label data-aos="fade-right" for="pesan">Pesan</label>
-                <textarea data-aos="fade-up" spellcheck="false" name="pesan" id="pesan"></textarea>
-                <button data-aos="fade-up" type="submit" class="btn">Kirim</button>
+                <label for="nama">Nama</label>
+                <input type="text" spellcheck="false" name="nama" id="nama">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="telp">Telp</label>
+                <input type="number" name="telp" id="telp">
+                <label for="pesan">Pesan</label>
+                <textarea spellcheck="false" name="pesan" id="pesan"></textarea>
+                <button type="submit" class="btn">Kirim</button>
             </form>
         </div>
     </div>
@@ -177,11 +175,5 @@
     <!-- =============== FOOTER END =============== -->
     
     <script src="../js/navbar.js"></script>
-
-    <!-- scroll animation -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 function setCardTerbaru($linkto, $imgLink, $jl, $tgl){
-    echo'<div class="cardTerbaru" data-aos="fade-up">';
+    echo'<div class="cardTerbaru">';
         echo'<a href="' . $linkto . '" class="frontPic" style="background-image: ' . $imgLink . ';">';
             echo'<div class="content">';
                 echo'<div class="line"></div>';

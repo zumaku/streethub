@@ -52,8 +52,6 @@
     <link rel="shortcut icon" href="../img/icon/streetHub.png" type="image/x-icon">
     <title>Galeri</title>
     <link rel="stylesheet" href="../css/profile.css">
-    <!-- animation scrolling -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- =============== NAVBAR START =============== -->
@@ -94,7 +92,7 @@
         ?>
         <div class="container">
             <?php foreach($images as $img) : ?>
-            <div class="gambar" data-aos="fade-up">
+            <div class="gambar">
                 <img src="../img/gallery/<?= $img['foto_galery'] ?>" class="imgGallery" data-id="<?= $img['id_galery'] ?>" data-idUser="<?= $img['id_user'] ?>" data-tglUpload="<?= $img['tgl_upload'] ?>" alt="<?= $img['foto_galery'] ?>">
             </div>
             <?php endforeach; ?>
@@ -133,10 +131,6 @@
     <script src="../js/navbar.js"></script>
     <script src="../js/imgPreview.js"></script>
 
-    <!-- scroll animation -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+
 </body>
 </html>

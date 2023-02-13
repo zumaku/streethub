@@ -20,25 +20,14 @@
     $profile = takeProfile($idActive);
     $medsos = takeMedsos($idActive);
 
-    $images = takeImageGallery($idActive);
-    // var_dump($images);
+    $bookmarImage1 = randomBookmarCover($idActive);
+    $bookmarImage2 = randomBookmarCover($idActive);
 
-    if( isset($_POST['deleteGallery']) ){
-        if( deleteImageGallery($_POST['idImageGallery']) > 0 ){
-            alert(true, false, 'Berhasil!', 'Foto berhasil dihapus.');
-            unlink( $urlToRoot . 'img/gallery/' . $_POST['imgGalleryName'] );
-        } else{
-            alert(true, false, 'Gagal!', 'Terdapat error saat penghapusan.');
-        }
-        echo' <script>
-                setTimeout(() => {
-                    window.location.href = "' . $urlToRoot . 'profile/gallery.php";
-                }, 2000);
-            </script>
-        ';
-    }
+    $infosTerbaru = takeInfoMagazine('terbaru', $idActive);
+    $infosLawas = takeInfoMagazine('lawas', $idActive);
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,12 +39,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/icon/streetHub.png" type="image/x-icon">
-    <title>Galeri</title>
+    <title>Bingkai</title>
     <link rel="stylesheet" href="../css/profile.css">
     <!-- animation scrolling -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    
     <!-- =============== NAVBAR START =============== -->
     <?php include '../partials/navbar.php' ?>
     <!-- =============== NAVBAR END =============== -->
@@ -79,59 +69,72 @@
     <!-- =============== NAV PROFILE START =============== -->
     <?php
         include '../partials/navProfile.php';
-        navProfile(false, true, false);
+        navProfile(true, false, false);
     ?>
     <!-- =============== NAV PROFILE END =============== -->
 
-    <!-- =============== GALERI START =============== -->
-    <div class="galeri">
+    <!-- =============== FOTO TERBARU START =============== -->
+    <?php
+        include '../partials/bookmark.php';
+        setBookmark('url(../img/gallery/' . $bookmarImage1 . ')', 'Foto Terbaru', 'url(../img/icon/fotoTerbaru.png)', false);
+    ?>
+    <div class="fotoTerbaru">
         <?php
         if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
             echo'<div class="tambahFoto">';
-                echo'<h4 class="btn"><a href="../pages/uploadImage.php?upload=gallery">Tambah Foto</a></h4>';
+                echo'<h4 class="btn"><a href="../pages/uploadImage.php?upload=magazine">Tambah Bingkai</a></h4>';
             echo'</div>';
         }
         ?>
         <div class="container">
-            <?php foreach($images as $img) : ?>
-            <div class="gambar" data-aos="fade-up">
-                <img src="../img/gallery/<?= $img['foto_galery'] ?>" class="imgGallery" data-id="<?= $img['id_galery'] ?>" data-idUser="<?= $img['id_user'] ?>" data-tglUpload="<?= $img['tgl_upload'] ?>" alt="<?= $img['foto_galery'] ?>">
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-    <!-- =============== GALERI END =============== -->
+            <?php
+            include '../partials/cardTerbaru.php';
 
-    <div class="preViewImgGallery" style="display: none;">
-        <div class="container">
-            <img src="" alt="<?= $account['username'] ?> Photos">
-            <a href="#" class="uploader">
-                <div class="profilePic" style="background-image: url(../img/account/profile/<?= $profile['foto_profile'] ?>);"></div>
-                <h2><?= $account['username'] ?></h2>
-            </a>
-            <p id="tglUpload"></p>
-            <form action="" method="post" class="action">
-                <?php
-                if( isset($_SESSION['idActive']) && !isset($_GET['idActive']) ){
-                    echo'
-                        <input type="text" spellcheck="false" name="idImageGallery" id="inputId" hidden>
-                        <input type="text" spellcheck="false" name="imgGalleryName" id="inputImgName" hidden>
-                        <button type="submit" name="deleteGallery" class="btn hapus"><p>Hapus</p> <div class="icon iconHapus"></div></button>
-                    ';
-                }
-                ?>
-                <a href="#" class="btn unduh" title="<?= $account['username'] ?> Photos" download><p>Unduh</p> <div class="icon iconUnduh"></div></a>
-            </form>
-            <div class="close"><div class="icon"></div></div>
+            foreach($infosTerbaru as $data){
+                $img = takeImageMagazine('terbaru',$idActive, $data['nama_jalan'], $data['tgl_upload']);
+                // $data['tgl_upload'] = date('l, d M Y ');
+                setCardTerbaru(
+                    '../pages/client.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'],
+                    'url(../img/magazine/' . $img . ')',
+                    $data['nama_jalan'],
+                    $data['tgl_upload'],
+
+                );
+            }
+            
+            ?>
         </div>
     </div>
+    <!-- =============== FOTO TERBARU END =============== -->
+    
+    <!-- =============== FOTO LAWAS START =============== -->
+    <?php
+        setBookmark('url(../img/gallery/' . $bookmarImage2 . ')', 'Foto Lawas', 'url(../img/icon/fotoLawas.png)', false);
+    ?>
+    <div class="fotoLawas">
+        <div class="container">
+            <?php
+            include '../partials/cardLawas.php';
+            
+            foreach($infosLawas as $data){
+                $img = takeImageMagazine('lawas',$idActive, $data['nama_jalan'], $data['tgl_upload']);
+                setCardLawas(
+                    '../pages/client.php?jalan=' . $data['nama_jalan'] . '&id=' . $idActive . '&tgl=' . $data['tgl_upload'],
+                    'url(../img/magazine/' . $img . ')',
+                    $data['nama_jalan'],
+                    $data['tgl_upload']
+                );
+            }
+            ?>
+        </div>
+    </div>
+    <!-- =============== FOTO LAWAS END =============== -->
 
     <!-- =============== FOOTER START =============== -->
     <?php include '../partials/footer.php' ?>
     <!-- =============== FOOTER END =============== -->
-    
+
     <script src="../js/navbar.js"></script>
-    <script src="../js/imgPreview.js"></script>
 
     <!-- scroll animation -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

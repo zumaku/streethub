@@ -20,8 +20,6 @@
     <link rel="shortcut icon" href="img/icon/streetHub.png" type="image/x-icon">
     <title>StreetHub</title>
     <link rel="stylesheet" href="css/main.css">
-    <!-- animation scrolling -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -32,9 +30,9 @@
     <!-- =============== HOME START =============== -->
     <div class="hero">
         <div class="container">
-            <h1>Temukan</h1>
+            <h1>TEMUKAN</h1>
             <h2>Semua yang ada di jalanan selalu memberikan sebuah pelajaran.</h2>
-            <p>Dapatkan inspirasi dan bagikan jepretanmu serta cerita yang kau dapat di jalan dan tunjukkan pada dunia.</p>
+            <p>Dapatkan inspirasi dan bagikan jepretanmu serta cerita yang kau dapat  di jalan dan tunjukkan pada dunia.</p>
             <a href="auth/" class="btn">Daftar Kuy</a>
         </div>
     </div>
@@ -46,33 +44,33 @@
             <h1>Apa yang membuat kami <span>berbeda</span>?</h1>
             <div class="cards">
                 <div class="card">
-                    <div class="icon ic1" data-aos="zoom-out-down"></div>
-                    <h2 data-aos="fade-right">Bangun <span>portpoliomu</span></h2>
-                    <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem tempore explicabo delectus vitae. Neque, amet aut modi itaque facilis esse incidunt saepe, commodi dicta, impedit dolorum sint assumenda rem doloremque provident optio.</p>
+                    <div class="icon ic1"></div>
+                    <h2>Bangun <span>portpoliomu</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem tempore explicabo delectus vitae. Neque, amet aut modi itaque facilis esse incidunt saepe, commodi dicta, impedit dolorum sint assumenda rem doloremque provident optio.</p>
                 </div>
                 <div class="card">
-                    <div class="icon ic2" data-aos="zoom-out-down"></div>
-                    <h2 data-aos="fade-right">Tingkatkan <span>levelmu</span></h2>
-                    <p data-aos="fade-up">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut nisi ut qui corporis necessitatibus cumque deserunt nihil facere, voluptatem consequatur harum non aliquam, laboriosam vel vero voluptas eius quasi voluptates! Cumque quidem quaerat, esse voluptatibus debitis accusantium quis veritatis corporis.</p>
+                    <div class="icon ic2"></div>
+                    <h2>Tingkatkan <span>levelmu</span></h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut nisi ut qui corporis necessitatibus cumque deserunt nihil facere, voluptatem consequatur harum non aliquam, laboriosam vel vero voluptas eius quasi voluptates! Cumque quidem quaerat, esse voluptatibus debitis accusantium quis veritatis corporis.</p>
                 </div>
                 <div class="card">
-                    <div class="icon ic3" data-aos="zoom-out-down"></div>
-                    <h2 data-aos="fade-right">Ukur <span>kemampuanmu</span></h2>
-                    <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, voluptas deserunt, ipsam non nisi totam ipsa iusto officiis magni repellendus rerum hic libero consequuntur adipisci ut pariatur itaque?</p>
+                    <div class="icon ic3"></div>
+                    <h2>Ukur <span>kemampuanmu</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, voluptas deserunt, ipsam non nisi totam ipsa iusto officiis magni repellendus rerum hic libero consequuntur adipisci ut pariatur itaque?</p>
                 </div>
                 <div class="card">
-                    <div class="icon ic4" data-aos="zoom-out-down"></div>
-                    <h2 data-aos="fade-right">Jual <span>jepretanmu</span></h2>
-                    <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, voluptas deserunt, ipsam non nisi totam ipsa iusto officiis magni repellendus rerum hic libero consequuntur adipisci ut pariatur itaque?</p>
+                    <div class="icon ic4"></div>
+                    <h2>Jual <span>jepretanmu</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, voluptas deserunt, ipsam non nisi totam ipsa iusto officiis magni repellendus rerum hic libero consequuntur adipisci ut pariatur itaque?</p>
                 </div>
             </div>
             <div class="unduhApp"> 
                 <div class="corner">
-                    <h1 class="unduh" data-aos="fade-right">Unduh <span>aplikasinya</span></h1>
-                    <p data-aos="fade-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nesciunt reprehenderit repudiandae culpa debitis possimus praesentium facere error, minus hic.</p>
+                    <h1 class="unduh">Unduh <span>aplikasinya</span></h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nesciunt reprehenderit repudiandae culpa debitis possimus praesentium facere error, minus hic.</p>
                     <div class="app">
-                        <a href="#" data-aos="flip-up"><div class="appIcon appStore"></div></a>
-                        <a href="#" data-aos="flip-up"><div class="appIcon googlePlay"></div></a>
+                        <a href="#"><div class="appIcon appStore"></div></a>
+                        <a href="#"><div class="appIcon googlePlay"></div></a>
                     </div>
                 </div>
                 <div class="mockupApp">
@@ -95,10 +93,10 @@
             <a href="#" class="btn">Top 10</a>
             <!-- BIG  3 HARUS DIBUATKAN HALAMAN TERTENTU NANTINYA -->
             <div class="cards" id="big3Cards">
-                <div class="card" data-aos="zoom-in">
+                <div class="card">
                     <div class="img" style="background-image: url(img/home/big1.jpg);">
-                        <h1 data-aos="fade-up">Baso Gege</h1>
-                        <div class="btnArrow" data-aos="fade-up">
+                        <h1>Baso Gege</h1>
+                        <div class="btnArrow">
                             <p>Info</p>
                             <div class="arrow"></div>
                         </div>
@@ -120,10 +118,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" data-aos="zoom-in">
+                <div class="card">
                     <div class="img" style="background-image: url(img/home/big2.jpg)">
-                        <h1 data-aos="fade-up">Cikali Kun</h1>
-                        <div class="btnArrow" data-aos="fade-up">
+                        <h1>Cikali Kun</h1>
+                        <div class="btnArrow">
                             <p>Info</p>
                             <div class="arrow"></div>
                         </div>
@@ -145,10 +143,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" data-aos="zoom-in">
+                <div class="card">
                     <div class="img" style="background-image: url(img/home/big3.jpg)">
-                        <h1 data-aos="fade-up">Baso Latto</h1>
-                        <div class="btnArrow" data-aos="fade-up">
+                        <h1>Baso Latto</h1>
+                        <div class="btnArrow">
                             <p>Info</p>
                             <div class="arrow"></div>
                         </div>
@@ -185,7 +183,7 @@
             <h1>Desain dan bangun <span>portpoliomu</span></h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis non incidunt tempore inventore ipsam labore?</p>
             <a href="#" class="btn">Mulai Sekarang</a>
-            <img src="img/home/portpolio.png" alt="Bangun Portpoliomu" data-aos="fade-up">
+            <img src="img/home/portpolio.png" alt="Bangun Portpoliomu">
         </div>
     </div>
     <!-- =============== PORTPOLIO END =============== -->
@@ -196,12 +194,12 @@
     ?>
     <div class="lisensi">
         <div class="container">
-            <img src="img/home/lisensi.png" alt="Lisensi" data-aos="fade-right">
+            <img src="img/home/lisensi.png" alt="Lisensi">
             <div class="sidebox">
                 <h2>Dapatkan bayaran dari</h2>
                 <h1>Hasil Jepretanmu</h1>
-                <p data-aos="fade-up">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta neque blanditiis illum animi eveniet cupiditate alias eos corrupti exercitationem consequatur a iure autem culpa aut et asperiores assumenda, quis quas sit odit! Eum illo ut exercitationem aliquam explicabo voluptate ratione!</p>
-                <a href="#" class="btnArrow" data-aos="fade-up">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta neque blanditiis illum animi eveniet cupiditate alias eos corrupti exercitationem consequatur a iure autem culpa aut et asperiores assumenda, quis quas sit odit! Eum illo ut exercitationem aliquam explicabo voluptate ratione!</p>
+                <a href="#" class="btnArrow">
                     <p>Info Lengkap</p>
                     <div class="arrow"></div>
                 </a>
@@ -211,20 +209,74 @@
     <!-- =============== LISENSI END =============== -->
 
     <!-- =============== PRODUK START =============== -->
+    <!-- <div class="produk" id="produkSec">
+        <div class="container">
+            <div class="sidebox" id="sb1">
+                <h2>Perhatikan dan lengkapi</h2>
+                <h1>Alat Tempurmu</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, magnam! Fugiat, reiciendis. Ipsum, dolorum aliquam itaque minima earum rerum sed amet quidem doloribus perferendis mollitia quis quisquam accusantium tempore voluptatem, corrupti non doloremque fugiat.</p>
+                <a href="#" class="btnArrow">
+                    <p>Lihat Lainnya</p>
+                    <div class="arrow"></div>
+                </a>
+            </div>
+            <div class="slider">
+                <div class="sidebox" id="sb2">
+                    <h2>Perhatikan dan lengkapi</h2>
+                    <h1>Alat Tempurmu</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, magnam! Fugiat, reiciendis. Ipsum, dolorum aliquam itaque minima earum rerum sed amet quidem doloribus perferendis mollitia quis quisquam accusantium tempore voluptatem, corrupti non doloremque fugiat.</p>
+                    <a href="#" class="btnArrow">
+                        <p>Lihat Lainnya</p>
+                        <div class="arrow"></div>
+                    </a>
+                </div>
+                <div class="cards">
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/camera.png)">
+                        <div class="icon" style="background-image: url(img/icon/cameraCard.png)"></div>
+                        <h1>Camera</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/lensa.png)">
+                        <div class="icon" style="background-image: url(img/icon/lensCard.png)"></div>
+                        <h1>Lensa</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/filter.png)">
+                        <div class="icon" style="background-image: url(img/icon/filterCard.png)"></div>
+                        <h1>Filter</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/tripod.png)">
+                        <div class="icon" style="background-image: url(img/icon/monopodCard.png)"></div>
+                        <h1>Treepod</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/tas.png)">
+                        <div class="icon" style="background-image: url(img/icon/bagCard.png)"></div>
+                        <h1>Tas</h1>
+                    </a>
+                    <a href="#produkSec" class="card" style="background-image: url(img/home/baju.png)">
+                        <div class="icon" style="background-image: url(img/icon/kaosCard.png)"></div>
+                        <h1>Shirt</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="btnMove next"></div>
+            <div class="btnMove previous dnone"></div>
+        </div>
+    </div> -->
+
+    <!-- class uji coba -->
     <div class="produk" id="produkSec">
         <div class="container">
             <!-- Sidebox untuk notebook, tablet dan mobile -->
             <div class="sidebox" id="sb1">
                 <h2>Perhatikan dan lengkapi</h2>
                 <h1>Alat Tempurmu</h1>
-                <p data-aos="fade-up">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, magnam! Fugiat, reiciendis. Ipsum, dolorum aliquam itaque minima earum rerum sed amet quidem doloribus perferendis mollitia quis quisquam accusantium tempore voluptatem, corrupti non doloremque fugiat.</p>
-                <a href="#" class="btnArrow" data-aos="fade-up">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, magnam! Fugiat, reiciendis. Ipsum, dolorum aliquam itaque minima earum rerum sed amet quidem doloribus perferendis mollitia quis quisquam accusantium tempore voluptatem, corrupti non doloremque fugiat.</p>
+                <a href="#" class="btnArrow">
                     <p>Lihat Lainnya</p>
                     <div class="arrow"></div>
                 </a>
             </div>
-            <div class="slider" data-aos="zoom-in">
-                <div class="btnMove previous" data-aos="flip-up"></div>
+            <div class="slider">
+                <div class="btnMove previous"></div>
                 <div class="cards">
                     <a href="#produkSec" class="card" style="background-image: url(img/home/camera.png)">
                         <div class="icon" style="background-image: url(img/icon/cameraCard.png)"></div>
@@ -259,10 +311,10 @@
 
     <!-- =============== KOMUNITAS START =============== -->
     <div class="komunitas">
-        <div class="container" data-aos="fade-up">
+        <div class="container">
             <h1>Gabung komunitas kami</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus iusto dolor quisquam, architecto maxime unde eaque amet illum ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio tempora ducimus deleniti possimus!</p>
-            <a href="auth/" class="btn" id="btn" data-aos="zoom-out">Daftar Kuy</a>
+            <a href="auth/" class="btn" id="btn">Daftar Kuy</a>
         </div>
     </div>
     <!-- =============== KOMUNITAS END =============== -->
@@ -271,14 +323,9 @@
     <?php include 'partials/footer.php' ?>
     <!-- =============== FOOTER END =============== -->
     
+    <!-- <BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR><BR></BR> -->
 
     <script src="js/navbar.js"></script>
     <script src="js/script.js"></script>
-
-    <!-- scroll animation -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 </html>

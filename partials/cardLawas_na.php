@@ -1,7 +1,7 @@
 <?php
 
     function setCardLawas($linkto, $imgLink, $jl){
-        echo'<div class="cardLawas" data-aos="fade-up">';
+        echo'<div class="cardLawas">';
             echo'<a href="' . $linkto . '" class="frontPic" style="background-image: ' . $imgLink . ';">';
                 echo'<div class="content">';
                     echo'<div class="line"></div>';

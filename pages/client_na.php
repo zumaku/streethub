@@ -106,8 +106,6 @@
     <link rel="shortcut icon" href="../img/icon/streetHub.png" type="image/x-icon">
     <title>Client Foto</title>
     <link rel="stylesheet" href="../css/client.css">
-    <!-- animation scrolling -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     
@@ -144,7 +142,7 @@
 
         <?php foreach($infos as $data) : ?>
 
-        <div class="card" data-aos="fade-up">
+        <div class="card">
             <div class="image" style="background-image: url(../img/magazine/<?= $data['foto_magazine'] ?>);">
                 <div class="watermark"></div>
             </div>
@@ -175,11 +173,5 @@
     <!-- =============== FOOTER END =============== -->
 
     <script src="../js/navbar.js"></script>
-
-    <!-- scroll animation -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 </html>
