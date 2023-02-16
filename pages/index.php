@@ -83,7 +83,7 @@
                     $pic = takeProfile($img['id_user']);
                 ?>
                 <div class="gambar" data-aos="fade-up">
-                    <img src="../img/gallery/<?= $img['foto_galery'] ?>" alt="" class="imgGallery search" data-idUser="<?= $img['id_user'] ?>" data-name="<?= $uname['username'] ?>" data-picture="<?= $pic['foto_profile'] ?>" data-tglUpload="<?= $img['tgl_upload'] = date('d/m/y') ?>">
+                    <img src="../img/gallery/<?= $img['foto_galery'] ?>" alt="" class="imgGallery search" data-idUser="<?= $img['id_user'] ?>" data-name="<?= $uname['username'] ?>" data-picture="<?= $pic['foto_profile'] ?>" data-tglUpload="<?= $img['tgl_upload'] ?>">
                 </div>
                 <?php endforeach; ?>
             </div>

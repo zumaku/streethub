@@ -411,13 +411,11 @@ div#bookmark.bookmark .content p {
 footer.footer {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 footer.footer .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -801,7 +799,6 @@ body {
   transform: scale(0.98);
 }
 .sectionLeft .signForm .btn {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border: none;

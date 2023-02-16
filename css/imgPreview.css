@@ -411,13 +411,11 @@ div#bookmark.bookmark .content p {
 footer.footer {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 footer.footer .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -638,13 +636,10 @@ footer.footer .container .copyright .dll {
 .preViewImgGallery .container {
   width: 80%;
   max-width: 1200px;
-  min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
   padding: 40px;
@@ -710,7 +705,6 @@ footer.footer .container .copyright .dll {
   right: 20px;
 }
 .preViewImgGallery .container img {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 90%;

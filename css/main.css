@@ -411,13 +411,11 @@ div#bookmark.bookmark .content p {
 footer.footer {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 footer.footer .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -624,17 +622,14 @@ footer.footer .container .copyright .dll {
 .hero {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  -webkit-animation: herobg 300s linear infinite;
-          animation: herobg 300s linear infinite;
+  animation: herobg 300s linear infinite;
   background-position: center;
   background-size: cover;
 }
 .hero .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -686,41 +681,15 @@ footer.footer .container .copyright .dll {
 .hero .container .btn:active {
   transform: scale(0.98);
 }
-@-webkit-keyframes herobg {
-  0% {
-    background-image: url(../img/home/home3.png);
-  }
-  24% {
-    background-image: url(../img/home/home4.png);
-  }
-  25% {
-    background-image: url(../img/home/home2.png);
-  }
-  49% {
-    background-image: url(../img/home/home2.png);
-  }
-  50% {
-    background-image: url(../img/home/home1.png);
-  }
-  74% {
-    background-image: url(../img/home/home1.png);
-  }
-  75% {
-    background-image: url(../img/home/home4.png);
-  }
-  99% {
-    background-image: url(../img/home/home4.png);
-  }
-  100% {
-    background-image: url(../img/home/home5.png);
-  }
-}
 @keyframes herobg {
   0% {
-    background-image: url(../img/home/home3.png);
+    background-image: url(../img/home/home5.png);
+  }
+  23% {
+    background-image: url(../img/home/home5.png);
   }
   24% {
-    background-image: url(../img/home/home4.png);
+    background-image: url(../img/home/home3.png);
   }
   25% {
     background-image: url(../img/home/home2.png);
@@ -741,7 +710,7 @@ footer.footer .container .copyright .dll {
     background-image: url(../img/home/home4.png);
   }
   100% {
-    background-image: url(../img/home/home5.png);
+    background-image: url(../img/home/home4.png);
   }
 }
 
@@ -793,13 +762,11 @@ footer.footer .container .copyright .dll {
 .about {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 .about .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -1042,13 +1009,11 @@ footer.footer .container .copyright .dll {
 .big3 {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 .big3 .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -1137,7 +1102,6 @@ footer.footer .container .copyright .dll {
   transition: 0.2s linear;
 }
 .big3 .container .cards .card .img .btnArrow {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 8px 16px;
@@ -1317,13 +1281,11 @@ footer.footer .container .copyright .dll {
 .portpolio {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 .portpolio .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -1398,13 +1360,11 @@ footer.footer .container .copyright .dll {
 .lisensi {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 .lisensi .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -1465,7 +1425,6 @@ footer.footer .container .copyright .dll {
   }
 }
 .lisensi .container .sidebox .btnArrow {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 10px 20px;
@@ -1511,13 +1470,11 @@ footer.footer .container .copyright .dll {
   .lisensi {
     width: 100%;
     font-size: 16px;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
   .lisensi .container {
     width: 90%;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin: auto;
@@ -1554,7 +1511,6 @@ footer.footer .container .copyright .dll {
 .produk {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   background-image: url(../img/home/alattempur.png);
@@ -1566,7 +1522,6 @@ footer.footer .container .copyright .dll {
 }
 .produk .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -1625,7 +1580,6 @@ footer.footer .container .copyright .dll {
   }
 }
 .produk .container .sidebox .btnArrow {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 10px 20px;
@@ -1695,8 +1649,7 @@ footer.footer .container .copyright .dll {
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   transform: scale(0.95);
-  -webkit-animation: scaleUp 0.4s ease-in forwards alternate;
-          animation: scaleUp 0.4s ease-in forwards alternate;
+  animation: scaleUp 0.4s ease-in forwards alternate;
 }
 .produk .container .slider .cards .card .icon {
   width: 32px;
@@ -1711,16 +1664,6 @@ footer.footer .container .copyright .dll {
 }
 .produk .container .slider .cards .card:hover {
   transform: scale(1.02);
-}
-@-webkit-keyframes scaleUp {
-  0% {
-    opacity: 0.5;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 @keyframes scaleUp {
   0% {
@@ -1772,13 +1715,11 @@ footer.footer .container .copyright .dll {
   .produk {
     width: 100%;
     font-size: 16px;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
   .produk .container {
     width: 90%;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin: auto;
@@ -1856,14 +1797,12 @@ footer.footer .container .copyright .dll {
 .komunitas {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #18A13D;
 }
 .komunitas .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;

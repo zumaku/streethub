@@ -411,13 +411,11 @@ div#bookmark.bookmark .content p {
 footer.footer {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 footer.footer .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -662,13 +660,11 @@ html {
   width: 100%;
   background-color: #191A19;
   margin: auto;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 3;
 }
 .secBackBtn#secBackBtn .btnArrow {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 8px 16px;
@@ -720,7 +716,6 @@ html {
 
 .container#container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -773,7 +768,6 @@ html {
   margin-bottom: 0;
 }
 .container#container .card .info form.action {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;

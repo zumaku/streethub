@@ -251,7 +251,7 @@
                         <h1>Shirt</h1>
                     </a>
                 </div>
-                <div class="btnMove next"></div>
+                <div class="btnMove next" data-aos="zoom-in"></div>
             </div>
         </div>
     </div>

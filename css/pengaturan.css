@@ -411,13 +411,11 @@ div#bookmark.bookmark .content p {
 footer.footer {
   width: 100%;
   font-size: 16px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 footer.footer .container {
   width: 90%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
@@ -669,7 +667,6 @@ html {
 .container .setting .leftSect {
   width: 35%;
   max-width: 380px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #1E201E;
@@ -955,7 +952,6 @@ html {
     height: 300px;
   }
   .container .setting .leftSect {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -1004,7 +1000,6 @@ html {
   }
   .container .setting .leftSect {
     position: static;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin-bottom: 20px;
